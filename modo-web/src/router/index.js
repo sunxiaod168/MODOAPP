@@ -31,7 +31,8 @@ import Version from '@/views/Mine/Version'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
+  mode: 'history',
   routes: [
     {
       path: '/Login',
@@ -39,109 +40,129 @@ export default new Router({
       component: Login
     },
     {
+      path: '/Regist',
+      name: 'Regist',
+      component: Regist
+    },
+    {
       path: '/Query',
       name: 'Query',
       component: Query
     },
     {
-      path:'/CostPriceQuery',
-      name:'CostPriceQuery',
-      component:CostPriceQuery
+      path: '/CostPriceQuery',
+      name: 'CostPriceQuery',
+      component: CostPriceQuery
     },
     {
-      path:'/InventoryQuery',
-      name:'InventoryQuery',
-      component:InventoryQuery
+      path: '/InventoryQuery',
+      name: 'InventoryQuery',
+      component: InventoryQuery
     },
     {
-      path:'/OrderQuery',
-      name:'OrderQuery',
-      component:OrderQuery
+      path: '/OrderQuery',
+      name: 'OrderQuery',
+      component: OrderQuery
     },
     {
-      path:'/RetailPriceQuery',
-      name:'RetailPriceQuery',
-      component:RetailPriceQuery
+      path: '/RetailPriceQuery',
+      name: 'RetailPriceQuery',
+      component: RetailPriceQuery
     },
     {
-      path:'/Stat',
-      name:'Stat',
-      component:Stat
+      path: '/Stat',
+      name: 'Stat',
+      component: Stat
     },
     {
-      path:'/AchievementStat',
-      name:'AchievementStat',
-      component:AchievementStat
+      path: '/AchievementStat',
+      name: 'AchievementStat',
+      component: AchievementStat
     },
     {
-      path:'/AssetStat',
-      name:'AssetStat',
-      component:AssetStat
+      path: '/AssetStat',
+      name: 'AssetStat',
+      component: AssetStat
     },
     {
-      path:'/IncomeExpensesStat',
-      name:'IncomeExpensesStat',
-      component:IncomeExpensesStat
+      path: '/IncomeExpensesStat',
+      name: 'IncomeExpensesStat',
+      component: IncomeExpensesStat
     },
     {
-      path:'/InventoryDailyStat',
-      name:'InventoryDailyStat',
-      component:InventoryDailyStat
+      path: '/InventoryDailyStat',
+      name: 'InventoryDailyStat',
+      component: InventoryDailyStat
     },
     {
-      path:'/ProfitAccounting',
-      name:'ProfitAccounting',
-      component:ProfitAccounting
+      path: '/ProfitAccounting',
+      name: 'ProfitAccounting',
+      component: ProfitAccounting
     },
     {
-      path:'/UnFinishOrderStat',
-      name:'UnFinishOrderStat',
-      component:UnFinishOrderStat
+      path: '/UnFinishOrderStat',
+      name: 'UnFinishOrderStat',
+      component: UnFinishOrderStat
     },
     {
-      path:'/Delivery',
-      name:'Delivery',
-      component:Delivery
+      path: '/Delivery',
+      name: 'Delivery',
+      component: Delivery
     },
     {
-      path:'/DeliveryReport',
-      name:'DeliveryReport',
-      component:DeliveryReport
+      path: '/DeliveryReport',
+      name: 'DeliveryReport',
+      component: DeliveryReport
     },
     {
-      path:'/InstallPlan',
-      name:'InstallPlan',
-      component:InstallPlan
+      path: '/InstallPlan',
+      name: 'InstallPlan',
+      component: InstallPlan
     },
     {
-      path:'/InstallReport',
-      name:'InstallReport',
-      component:InstallReport
+      path: '/InstallReport',
+      name: 'InstallReport',
+      component: InstallReport
     },
     {
-      path:'/Mine',
-      name:'Mine',
-      component:Mine
+      path: '/Mine',
+      name: 'Mine',
+      component: Mine
     },
     {
-      path:'/About',
-      name:'About',
-      component:About
+      path: '/About',
+      name: 'About',
+      component: About
     },
     {
-      path:'/ChangePassword',
-      name:'ChangePassword',
-      component:ChangePassword
+      path: '/ChangePassword',
+      name: 'ChangePassword',
+      component: ChangePassword
     },
     {
-      path:'/FindPassword',
-      name:'FindPassword',
-      component:FindPassword
+      path: '/FindPassword',
+      name: 'FindPassword',
+      component: FindPassword
     },
     {
-      path:'/Version',
-      name:'Version',
-      component:Version
-    } 
+      path: '/Version',
+      name: 'Version',
+      component: Version
+    }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  if (to == '/') {
+    next()
+    return
+  }
+  var isLogin = false
+  if (isLogin) {
+    next()
+  } else {
+    next('/Login')
+  }
+})
+
+export default router
