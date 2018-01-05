@@ -29,6 +29,8 @@ import ChangePassword from '@/views/Mine/ChangePassword'
 import FindPassword from '@/views/Mine/FindPassword'
 import Version from '@/views/Mine/Version'
 
+import api from '@/api'
+
 Vue.use(Router)
 
 const router = new Router({
@@ -153,16 +155,23 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  if (to == '/') {
+  if (to.fullPath === '/Login') {
     next()
     return
   }
-  var isLogin = false
-  if (isLogin) {
-    next()
-  } else {
+
+  api.getUserInfo(function (response) {
+    var data = response.data
+
+    if (data.code === 200) {
+      next()
+    } else {
+      next('/Login')
+    }
+  }, function (err) {
+    console.log(err)
     next('/Login')
-  }
+  })
 })
 
 export default router

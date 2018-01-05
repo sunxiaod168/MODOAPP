@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name:'NavTab'
+  name: 'NavTab'
 }
 </script>
 
