@@ -1,5 +1,6 @@
 import Login from 'pages/Login/Index'
 import Regist from 'pages/Login/Regist'
+import Tabs from 'pages/Tabs'
 
 import Query from 'pages/Query/Index'
 import CostPriceQuery from 'pages/Query/CostPriceQuery'
@@ -29,95 +30,105 @@ import Version from 'pages/Mine/Version'
 
 const routes = [
     {
-      path: '/Login',
+      path: '/login',
       component: Login
     },
     {
-      path: '/Regist',
+      path: '/regist',
       component: Regist
     },
     {
-      path: '/Query',
-      component: Query
-    },
+      path: '/tabbar/',
+      component: Tabs,
+      tabs: [
+        {
+          path: '/',
+          tabId: 'tab1',
+          component: Query
+        },
+        {
+          path: '/tab2/',
+          tabId: 'tab2',
+          component: Delivery
+        },
+        {
+          path: '/tab3/',
+          tabId: 'tab3',
+          component: Stat
+        },
+        {
+          path: '/tab4/',
+          tabId: 'tab4',
+          component: Mine
+        }        
+      ]
+    },    
     {
-      path: '/CostPriceQuery',
+      path: '/cost-price-query',
       component: CostPriceQuery
     },
     {
-      path: '/InventoryQuery',
+      path: '/inventory-query',
       component: InventoryQuery
     },
     {
-      path: '/OrderQuery',
+      path: '/order-query',
       component: OrderQuery
     },
     {
-      path: '/RetailPriceQuery',
+      path: '/retail-price-query',
       component: RetailPriceQuery
     },
     {
-      path: '/Stat',
-      component: Stat
-    },
-    {
-      path: '/AchievementStat',
+      path: '/achievement-stat',
       component: AchievementStat
     },
     {
-      path: '/AssetStat',
+      path: '/asset-stat',
       component: AssetStat
     },
     {
-      path: '/IncomeExpensesStat',
+      path: '/income-expenses-stat',
       component: IncomeExpensesStat
     },
     {
-      path: '/InventoryDailyStat',
+      path: '/inventory-daily-stat',
       component: InventoryDailyStat
     },
     {
-      path: '/ProfitAccounting',
+      path: '/profit-accounting',
       component: ProfitAccounting
     },
     {
-      path: '/UnFinishOrderStat',
+      path: '/unfinish-order-stat',
       component: UnFinishOrderStat
     },
     {
-      path: '/Delivery',
-      component: Delivery
-    },
-    {
-      path: '/DeliveryReport',
+      path: '/delivery-report',
       component: DeliveryReport
     },
     {
-      path: '/InstallPlan',
+      path: '/install-plan',
       component: InstallPlan
     },
     {
-      path: '/InstallReport',
+      path: '/install-report',
       component: InstallReport
     },
     {
-      path: '/Mine',
-      component: Mine
-    },
-    {
-      path: '/About',
+      path: '/about',
       component: About
     },
     {
-      path: '/ChangePassword',
+      path: '/change-password',
       component: ChangePassword
     },
     {
-      path: '/FindPassword',
+      path: '/find-password',
       component: FindPassword
     },
     {
-      path: '/Version',
+      path: '/version',
       component: Version
     }
   ]

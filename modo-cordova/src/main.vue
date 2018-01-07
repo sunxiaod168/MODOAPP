@@ -12,11 +12,10 @@
           <!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate props -->
           <f7-pages>
             <!-- Initial Page -->
-            <f7-page name="index">
-              
+            <f7-page name="start">              
               
                 <h1>墨斗云</h1>
-                <f7-link href="/Query">开始使用</f7-link>                           
+                <f7-link href="/tabbar/">开始使用</f7-link>                           
             </f7-page>
           </f7-pages>
         </f7-view>

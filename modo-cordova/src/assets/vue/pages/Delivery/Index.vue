@@ -1,5 +1,5 @@
 <template>
-  <div>Delivery Index</div>
+  <div>Delivery</div>
 </template>
 
 <script>

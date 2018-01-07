@@ -11,7 +11,9 @@ import Framework7ThemeColors from 'framework7/dist/css/framework7.ios.colors.min
  */
 
 // Import App Custom Styles
+import F7Icons from './assets/css/framework7-icons.css'
 import AppStyles from './assets/css/main.css'
+
 
 import Routes from 'routes'
 import App from './main.vue'

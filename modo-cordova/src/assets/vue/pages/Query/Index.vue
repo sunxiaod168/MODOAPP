@@ -1,14 +1,12 @@
 <template>
-<f7-page name="query">
-    <!-- Page content -->
+  <div>
     Query
-  </f7-page>   
+  </div>
+   
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style>
