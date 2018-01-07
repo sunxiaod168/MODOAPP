@@ -1,5 +1,6 @@
 const deviceJs = require('current-device').default;
 
+
 function bodyPrepend(platform) {
   let body = document.querySelector("body"),
     script = document.createElement("script");

@@ -1,14 +1,6 @@
 import axios from 'axios'
 
-// method: get
-// url: /api/user
-// response: { code: 200, data:[], msg: '成功'}
-
-// method: post
-// url: /api/login
-// params: {uid:'abc', pwd:'123'}
-// response:{ code: 200, data:[], msg: '成功'}
-
+// response:{ code: 200, data:[], msg: ''}
 const api = {
 
   getUserInfo: function (done, error) {

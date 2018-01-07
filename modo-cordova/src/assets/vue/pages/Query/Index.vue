@@ -1,7 +1,8 @@
 <template>
-    <div>
-        Query
-    </div>
+<f7-page name="query">
+    <!-- Page content -->
+    Query
+  </f7-page>   
 </template>
 
 <script>
