@@ -1,6 +1,6 @@
 <template>
   <div>
-    Query
+    查询
   </div>
    
 </template>
