@@ -17,6 +17,8 @@ import AppStyles from './assets/css/main.css'
 
 import Routes from 'routes'
 import App from './main.vue'
+import Api from 'api'
+import Mock from 'mock'
 
 Vue.use(Framework7Vue)
 
@@ -27,7 +29,15 @@ new Vue({
     root: '#app',
     /* Uncomment to enable Material theme: */
     // material: true,
-    routes: Routes
+    routes: Routes,
+    preroute: function (view, options) {
+      Api.getUserInfo(function (response) {
+        var data = response.data
+
+      }, function (err) {
+        console.log(err)
+      })
+    }
   },
   components: {
     app: App

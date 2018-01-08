@@ -1,2 +1,2 @@
-import '@/mock/UserMock.js'
-import '@/mock/LoginMock.js'
+import 'mock/UserMock.js'
+import 'mock/LoginMock.js'
