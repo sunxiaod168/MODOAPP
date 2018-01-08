@@ -10,7 +10,7 @@
 
 <script>
 import api from "api";
-import Cookie from "js-cookie";
+import CONST from "const";
 
 export default {
   data() {
@@ -28,9 +28,12 @@ export default {
         this.pwd,
         function(response) {
           var data = response.data;
-          if (data.code === 200) {
-            Cookie.set("access_token", data.data.access_token);
-            me.$router.push("/Query");
+          if (data.status === CONST.STATUS_SUCCESS) {
+            me.$store.commit("setUserInfo", {
+              uid: data.uid,
+              uname: data.uname
+            });
+            me.$router.loadPage("/tabbar/");
           } else {
             me.msg = data.msg;
           }

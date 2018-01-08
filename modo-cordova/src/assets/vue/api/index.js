@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-// response:{ code: 200, data:[], msg: ''}
+
 const api = {
 
   getUserInfo: function (done, error) {

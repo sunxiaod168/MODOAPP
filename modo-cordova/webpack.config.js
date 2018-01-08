@@ -26,7 +26,9 @@ let config = function (env) {
         'components': path.resolve(__dirname, 'src/assets/vue/components/'),
         'routes': path.resolve(__dirname, 'src/assets/vue/routes/'),
         'api': path.resolve(__dirname, 'src/assets/vue/api/'),
-        'mock': path.resolve(__dirname, 'src/assets/vue/mock/')       
+        'const': path.resolve(__dirname, 'src/assets/vue/const/'),
+        'mock': path.resolve(__dirname, 'src/assets/vue/mock/')
+               
         
       }
     },
