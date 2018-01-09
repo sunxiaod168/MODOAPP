@@ -49,13 +49,13 @@ const routes = [
         {
           path: '/tab2/',
           tabId: 'tab2',
-          component: Delivery
+          component: Stat
         },
         {
           path: '/tab3/',
           tabId: 'tab3',
-          component: Stat
-        },
+          component: Delivery
+        },       
         {
           path: '/tab4/',
           tabId: 'tab4',

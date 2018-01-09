@@ -1,7 +1,7 @@
 <template>
 
-  <f7-page tabbar-fixed>
-    
+  <f7-page navbar-fixed tabbar-fixed>    
+    <f7-navbar class="bg-blue color-white"  title="墨斗云"></f7-navbar>
 
     <f7-block tabs>
       <f7-tab id="tab1"/>
@@ -11,10 +11,10 @@
     </f7-block>
 
     <f7-toolbar tabbar labels>
-      <f7-link href="/tabbar/" route-tab-link="#tab1" text="search" class="f7-icons">查询</f7-link>
-      <f7-link href="/tabbar/tab2/" route-tab-link="#tab2" text="box" class="f7-icons">配送</f7-link>
-      <f7-link href="/tabbar/tab3/" route-tab-link="#tab3" text="pie" class="f7-icons">统计</f7-link>
-      <f7-link href="/tabbar/tab4/" route-tab-link="#tab4" text="person" class="f7-icons">我的</f7-link>      
+      <f7-link href="/tabbar/" route-tab-link="#tab1" text="查询" icon="fas fa-search"></f7-link>
+      <f7-link href="/tabbar/tab2/" route-tab-link="#tab2" text="统计" icon="fas fa-chart-bar"></f7-link>
+      <f7-link href="/tabbar/tab3/" route-tab-link="#tab3" text="配送" icon="fas fa-truck"></f7-link>      
+      <f7-link href="/tabbar/tab4/" route-tab-link="#tab4" text="我的" icon="fas fa-user"></f7-link>      
     </f7-toolbar>
 
   </f7-page>
@@ -24,7 +24,8 @@
 export default {};
 </script>
 
-<<style scoped>
-.tabbar-labels .f7-icons{font-size:16px;}
+<style>
+
+.tabbar-labels a.link i + span, .tabbar-labels a.tab-link i + span {font-size:14px;}
 </style>
 

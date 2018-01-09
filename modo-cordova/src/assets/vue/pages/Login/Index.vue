@@ -1,12 +1,30 @@
 <template>
-<f7-page name="login">
-    <!-- Page content -->  
-      <p><label> 用户名</label><input v-model="uname" placeholder="请输入用户名" type="text"/></p>
-      <p><label> 密码</label><input v-model="pwd" placeholder="请输入密码" type="password"/></p>
-      <p>{{msg}}</p>
-      <button @click="login">登录</button>
-  </f7-page> 
+      <f7-page login-screen>
+        <f7-login-screen-title>墨斗云</f7-login-screen-title>
+        <f7-list>
+          <f7-list-item>
+            <f7-label>用户名</f7-label>
+            <f7-input v-model="uname" type="text" placeholder="用户名"></f7-input>
+          </f7-list-item>
+          <f7-list-item>
+            <f7-label>密码</f7-label>
+            <f7-input v-model="pwd" type="password" placeholder="密码"></f7-input>
+          </f7-list-item>
+        </f7-list>
+        <f7-list>
+          <f7-list-item>
+             <f7-button class="btn-login" big active @click="login">登录</f7-button>
+          </f7-list-item>         
+          <f7-list-label>
+            <p>{{msg}}</p>
+          </f7-list-label>
+        </f7-list>
+      </f7-page>
+   
 </template>
+<style scoped>
+  .btn-login {width:100%}
+</style>
 
 <script>
 import api from "api";
@@ -47,7 +65,4 @@ export default {
 };
 </script>
 
-<style>
-
-</style>
 

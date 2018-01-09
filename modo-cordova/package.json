@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "description": "Brand new cordova project with framework7 - vue - webpack!",
     "scripts": {
-        "default": "echo \"There is no scripts you can run with npm run command.\" && exit 1"
+        "default": "echo \"There is no scripts you can run with npm run command.\" && exit 1",
+        "lint": "./node_modules/.bin/eslint"
     },
     "keywords": [
         "ecosystem:cordova"
@@ -16,6 +17,7 @@
         "css-loader": "^0.28.4",
         "current-device": "^0.6.3",
         "epipebomb": "^1.0.0",
+        "eslint": "^4.15.0",
         "extract-text-webpack-plugin": "^3.0.0",
         "file-loader": "^1.1.5",
         "html-loader": "^0.5.1",
