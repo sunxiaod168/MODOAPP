@@ -20,8 +20,7 @@
 
 </template>
 <style scoped>
-.content-block, .tabs .list-block{ margin:0;}
-.tabs {padding: 0;}
+
 </style>
 
 <script>
