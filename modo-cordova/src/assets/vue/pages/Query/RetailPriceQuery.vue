@@ -1,15 +1,18 @@
 <template>
-  <div>
-      Retail Price Query
-  </div>
+  <f7-page navTitle="销售价格查询">
+   
+   
+
+   
+  </f7-page>
 </template>
-
-<script>
-export default {
-
-}
-</script>
-
-<style>
+<style scoped>
 
 </style>
+<script>
+export default {
+ 
+};
+</script>
+
+

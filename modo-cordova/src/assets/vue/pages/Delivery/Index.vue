@@ -1,13 +1,20 @@
 <template>
-  <div>Delivery</div>
+
+  <f7-list inset>
+    <f7-list-item media="<i class='fas fa-yen-sign'></i>" title="配送安装计划" link="/install-plan"></f7-list-item>
+    <f7-list-item media="<i class='fas fa-yen-sign'></i>" title="送货完工汇报" link="/delivery-report"></f7-list-item>
+    <f7-list-item media="<i class='fas fa-yen-sign'></i>" title="安装完工汇报" link="/install-report"></f7-list-item>
+  </f7-list>
+
 </template>
-
-<script>
-export default {
-
-}
-</script>
-
-<style>
+<style scoped>
 
 </style>
+
+<script>
+export default {};
+</script>
+
+
+
+

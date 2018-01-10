@@ -22,6 +22,7 @@ import InstallPlan from 'pages/Delivery/InstallPlan'
 import InstallReport from 'pages/Delivery/InstallReport'
 
 import Mine from 'pages/Mine/Index'
+import Profile from 'pages/Mine/Profile'
 import About from 'pages/Mine/About'
 import ChangePassword from 'pages/Mine/ChangePassword'
 import FindPassword from 'pages/Mine/FindPassword'
@@ -72,7 +73,7 @@ const routes = [
       component: InventoryQuery
     },
     {
-      path: '/order-query',
+      path: '/order-progress-query',
       component: OrderQuery
     },
     {
@@ -114,6 +115,10 @@ const routes = [
     {
       path: '/install-report',
       component: InstallReport
+    },
+    {
+      path: '/profile',
+      component: Profile
     },
     {
       path: '/about',

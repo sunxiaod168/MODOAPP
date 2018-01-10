@@ -1,5 +1,12 @@
-
 .page-content {
     background-color: #fff;
-    text-align:center;
+    text-align: center;
+}
+
+.list-block .devider {
+    margin-bottom: 1em;
+}
+
+.list-block .devider .item-inner:after {
+    background-color: #fff;
 }

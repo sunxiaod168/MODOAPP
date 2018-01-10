@@ -25,12 +25,23 @@ Vue.use(Framework7Vue)
 const store = new Vuex.Store({
   state: {
     isLogin: false,
-    userInfo: null
+    userInfo: null,
+    navBackVisiable: false,
+    navBarTitle: '墨斗云'
   },
   mutations: {
     setUserInfo(state, userInfo) {
       state.isLogin = userInfo != null
       state.userInfo = userInfo
+    },
+    hideNavBack(state) {
+      state.navBackVisiable = false
+    },
+    showNavBack(state) {
+      state.navBackVisiable = true
+    },
+    setNavBarTitle(state, title) {
+      state.navBarTitle = title
     }
   }
 })
@@ -46,17 +57,32 @@ new Vue({
     routes: Routes,
     preroute: function (view, options) {
       var url = options.url
+
       if (url == '/login') {
         return true
       }
       if (store.state.isLogin == false) {
-        view.router.loadPage('/login')
+        view.router.load({ url: '/login', pushState: false })
         return false
       }
       return true
+    },
+    onPageBeforeAnimation: function (app, page) {
+      if (page.name == 'tabbar' || page.name == 'login') {
+        store.commit('hideNavBack')
+      } else {
+        store.commit('showNavBack')
+      }
+
+      var title = page.container.getAttribute('navtitle')
+      if (!title) {
+        title = '墨斗云'
+      }
+      store.commit('setNavBarTitle', title)
+
     }
   },
   components: {
     app: App
-  }
+  },
 })
