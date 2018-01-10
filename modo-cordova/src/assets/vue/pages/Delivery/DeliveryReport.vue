@@ -1,5 +1,5 @@
 <template>
-  <f7-page navTitle="">
+  <f7-page navTitle="送货完工汇报">
    
    
 

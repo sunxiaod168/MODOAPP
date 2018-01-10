@@ -1,12 +1,30 @@
 .page-content {
-    background-color: #fff;
     text-align: center;
+    background: #efeff4;
+    
+}
+.devider{ height: 1em; background: #efeff4;}
+.tabs.content-block,
+.tabs .list-block {
+    margin: 0;
 }
 
-.list-block .devider {
-    margin-bottom: 1em;
+.tabs {
+    padding: 0;
+    
 }
-
-.list-block .devider .item-inner:after {
-    background-color: #fff;
+.tabbar{
+    font-size: 14px;
+}
+.tabbar .icon{
+    font-size:22px;
+}
+.list-block .item-inner::after {
+    display: none;
+}
+.list-block ul::before{
+    display: none;
+}
+.list-block ul::after{
+    display: none;
 }

@@ -1,7 +1,7 @@
 <template>
 
-  <f7-page login-scree name="login" navTitle="">
-    <f7-login-screen-title>墨斗云</f7-login-screen-title>
+  <f7-page login-scree name="login">
+    
     <f7-list>
       <f7-list-item>
         <f7-label>用户名</f7-label>
@@ -10,9 +10,7 @@
       <f7-list-item>
         <f7-label>密码</f7-label>
         <f7-input v-model="pwd" type="password" placeholder="密码"></f7-input>
-      </f7-list-item>
-    </f7-list>
-    <f7-list>
+      </f7-list-item>   
       <f7-list-item>
         <f7-button class="btn-login" big active @click="login">登录</f7-button>
       </f7-list-item>
@@ -26,6 +24,9 @@
 <style scoped>
 .btn-login {
   width: 100%;
+}
+.list-block {
+  margin: 0;
 }
 </style>
 

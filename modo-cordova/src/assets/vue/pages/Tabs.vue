@@ -19,11 +19,9 @@
   </f7-page>
 
 </template>
-<style>
-.tabbar-labels a.link i + span,
-.tabbar-labels a.tab-link i + span {
-  font-size: 14px;
-}
+<style scoped>
+.content-block, .tabs .list-block{ margin:0;}
+.tabs {padding: 0;}
 </style>
 
 <script>
