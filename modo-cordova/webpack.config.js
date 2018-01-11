@@ -12,6 +12,7 @@ const path = require('path'),
   devServerPort = 8081
 
 let config = function (env) {
+  console.log("env:::" + env)
   let returner = {
     entry: entryFile,
     
@@ -96,7 +97,7 @@ let config = function (env) {
         path.resolve(__dirname, "webpack/dev_helpers/CordovaDeviceRouter.js")
       ]
       returner.output.publicPath = "/"
-      returner.devtool = "eval"
+      returner.devtool = "source-map"
       returner.devServer = {
         contentBase: path.join(__dirname, "www"),
         port: devServerPort,

@@ -19,14 +19,44 @@
   </f7-page>
 
 </template>
+
 <style scoped>
 
 </style>
 
 <script>
+import CONST from "const";
+
 export default {
- 
- 
+  data() {
+    return {};
+  },
+  mounted: function() {
+    var $$ = Dom7;
+    var me = this;
+    $$(".tab").on("tab:show", function() {
+      var tabID = this.id;
+      var title = "";
+
+      switch (tabID) {
+        case "tab1":
+          title = CONST.NAV_TITLE_QUERY;
+          break;
+        case "tab2":
+          title = CONST.NAV_TITLE_STAT;
+          break;
+        case "tab3":
+          title = CONST.NAV_TITLE_DELIVERY;
+          break;
+        case "tab4":
+          title = CONST.NAV_TITLE_MINE;
+          break;
+        default:
+          break;
+      }
+      me.$store.commit("setNavBarTitle", title);
+    });
+  }
 };
 </script>
 

@@ -27,7 +27,7 @@ const store = new Vuex.Store({
     isLogin: false,
     userInfo: null,
     navBackVisiable: false,
-    navBarTitle: '墨斗云'
+    navBarTitle: CONST.NAV_TITLE_DEFAULT
   },
   mutations: {
     setUserInfo(state, userInfo) {
@@ -68,21 +68,48 @@ new Vue({
       return true
     },
     onPageBeforeAnimation: function (app, page) {
-      if (page.name == 'tabbar' || page.name == 'login') {
-        store.commit('hideNavBack')
-      } else {
-        store.commit('showNavBack')
-      }
-
-      var title = page.container.getAttribute('navtitle')
-      if (!title) {
-        title = '墨斗云'
-      }
-      store.commit('setNavBarTitle', title)
-
+      setNavBack(page)
+      setNavTitle(page)
     }
   },
   components: {
     app: App
   },
 })
+
+function setNavBack(page) {
+  if (page.name == 'tabbar' || page.name == 'login') {
+    store.commit('hideNavBack')
+  } else {
+    store.commit('showNavBack')
+  }
+}
+
+function setNavTitle(page) {
+  var title = page.container.getAttribute('navtitle')
+  if (!title) {
+    if (page.name == 'tabbar') {
+      var tabID = Dom7(page.container).find('.tab.active').attr('id')
+      switch (tabID) {
+        case "tab1":
+          title = CONST.NAV_TITLE_QUERY;
+          break;
+        case "tab2":
+          title = CONST.NAV_TITLE_STAT;
+          break;
+        case "tab3":
+          title = CONST.NAV_TITLE_DELIVERY;
+          break;
+        case "tab4":
+          title = CONST.NAV_TITLE_MINE;
+          break;
+        default:
+          break;
+      }
+    } else {
+      title = CONST.NAV_TITLE_DEFAULT
+    }
+
+  }
+  store.commit('setNavBarTitle', title)
+}
