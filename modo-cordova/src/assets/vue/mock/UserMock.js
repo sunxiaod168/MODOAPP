@@ -1,11 +1,21 @@
 import Mock from 'mockjs'
 import Cookie from 'js-cookie'
+import CONST from 'const'
 
-Mock.mock('/api/user', 'get', function (options) {
-  var data = Cookie.get('access_token')
-  if (data != null) {
-    return { data: null, code: 200, msg: '已登录' }
-  } else {
-    return { data: null, code: 401, msg: '未登录' }
+
+Mock.mock('/api/user/login', 'post', function (options) {
+  var params = JSON.parse(options.body)
+  var uname = params.uname
+  var pwd = params.pwd
+
+  return {
+    status: CONST.STATUS_SUCCESS,
+    msg: '登录成功',
+    data: {
+      uid: 1, //user id
+      uname: 'admin',
+      permission: [1, 2, 3]
+    }
   }
+
 })

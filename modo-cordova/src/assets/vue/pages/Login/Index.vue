@@ -45,16 +45,13 @@ export default {
   methods: {
     login() {
       var me = this;
-      api.login(
+      api.user.login(
         this.uname,
         this.pwd,
         function(response) {
           var data = response.data;
           if (data.status === CONST.STATUS_SUCCESS) {
-            me.$store.commit("setUserInfo", {
-              uid: data.uid,
-              uname: data.uname
-            });
+            me.$store.commit("setUserInfo", data.data);
             me.$router.load({ url: "/tabbar/", pushState: false });
           } else {
             me.msg = data.msg;

@@ -1,29 +1,17 @@
 import axios from 'axios'
 
+import delivery from 'api/Delivery'
+import user from 'api/User'
+import mine from 'api/Mine'
+import query from 'api/Query'
+import stat from 'api/Stat'
 
 const api = {
-
-  getUserInfo: function (done, error) {
-    axios.get('/api/user')
-      .then(function (response) {
-        done(response)
-      })
-      .catch(function (err) {
-        error(err)
-      })
-  },
-  login: function (uname, pwd, done, error) {
-    axios.post('/api/login', {
-      uname: uname,
-      pwd: pwd
-    })
-      .then(function (response) {
-        done(response)
-      })
-      .catch(function (err) {
-        error(err)
-      })
-  }
+  delivery,
+  user,
+  mine,
+  query,
+  stat
 }
 
 export default api

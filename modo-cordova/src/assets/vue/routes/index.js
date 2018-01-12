@@ -5,7 +5,7 @@ import Tabs from 'pages/Tabs'
 import Query from 'pages/Query/Index'
 import CostPriceQuery from 'pages/Query/CostPriceQuery'
 import InventoryQuery from 'pages/Query/InventoryQuery'
-import OrderQuery from 'pages/Query/OrderQuery'
+import OrderProgressQuery from 'pages/Query/OrderProgressQuery'
 import RetailPriceQuery from 'pages/Query/RetailPriceQuery'
 
 import Stat from 'pages/Stat/Index'
@@ -74,7 +74,7 @@ const routes = [
     },
     {
       path: '/order-progress-query',
-      component: OrderQuery
+      component: OrderProgressQuery
     },
     {
       path: '/retail-price-query',

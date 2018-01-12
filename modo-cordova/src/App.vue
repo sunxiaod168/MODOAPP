@@ -11,7 +11,7 @@
           </f7-navbar>
           <f7-page name="start">
 
-            <f7-link href="/tabbar/">开始使用</f7-link>
+            <f7-link href="/login">开始使用</f7-link>
           </f7-page>
         </f7-pages>
       </f7-view>

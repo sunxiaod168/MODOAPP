@@ -12,9 +12,10 @@ import Framework7ThemeColors from 'framework7/dist/css/framework7.ios.colors.min
  */
 import F7Icons from './assets/css/framework7-icons.css'
 import FontAwsome from './assets/css/fontawesome-all.min.css'
-import AppStyles from './assets/css/main.css'
 
+import AppStyles from './assets/css/main.css'
 import CONST from 'const'
+import * as Common from 'common'
 import Routes from 'routes'
 import App from './App'
 import Mock from 'mock'
@@ -24,15 +25,18 @@ Vue.use(Framework7Vue)
 
 const store = new Vuex.Store({
   state: {
-    isLogin: false,
     userInfo: null,
+    permission: null,
     navBackVisiable: false,
     navBarTitle: CONST.NAV_TITLE_DEFAULT
   },
   mutations: {
     setUserInfo(state, userInfo) {
-      state.isLogin = userInfo != null
-      state.userInfo = userInfo
+
+      var permission = userInfo.permission
+      delete userInfo.permission     
+      state.userInfo = userInfo      
+      state.permission = Common.convertPermission(permission)
     },
     hideNavBack(state) {
       state.navBackVisiable = false
@@ -61,55 +65,18 @@ new Vue({
       if (url == '/login') {
         return true
       }
-      if (store.state.isLogin == false) {
+      if (store.state.userInfo == null) {
         view.router.load({ url: '/login', pushState: false })
         return false
       }
       return true
     },
     onPageBeforeAnimation: function (app, page) {
-      setNavBack(page)
-      setNavTitle(page)
+      Common.setNavBack(store,page)
+      Common.setNavTitle(store,page)
     }
   },
   components: {
     app: App
   },
 })
-
-function setNavBack(page) {
-  if (page.name == 'tabbar' || page.name == 'login') {
-    store.commit('hideNavBack')
-  } else {
-    store.commit('showNavBack')
-  }
-}
-
-function setNavTitle(page) {
-  var title = page.container.getAttribute('navtitle')
-  if (!title) {
-    if (page.name == 'tabbar') {
-      var tabID = Dom7(page.container).find('.tab.active').attr('id')
-      switch (tabID) {
-        case "tab1":
-          title = CONST.NAV_TITLE_QUERY;
-          break;
-        case "tab2":
-          title = CONST.NAV_TITLE_STAT;
-          break;
-        case "tab3":
-          title = CONST.NAV_TITLE_DELIVERY;
-          break;
-        case "tab4":
-          title = CONST.NAV_TITLE_MINE;
-          break;
-        default:
-          break;
-      }
-    } else {
-      title = CONST.NAV_TITLE_DEFAULT
-    }
-
-  }
-  store.commit('setNavBarTitle', title)
-}
