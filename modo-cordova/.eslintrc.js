@@ -3,6 +3,9 @@ module.exports = {
         "browser": true,
         "es6": true
     },
+    "parserOptions": {
+        "sourceType": "module"
+    },
     "extends": "eslint:recommended",
     "rules": {
         "indent": [
@@ -11,7 +14,7 @@ module.exports = {
         ],
         "linebreak-style": [
             "error",
-            "windows"
+            "unix"
         ],
         "quotes": [
             "error",
@@ -20,6 +23,9 @@ module.exports = {
         "semi": [
             "error",
             "never"
-        ]
+        ],
+        "no-unused-vars": [
+            "error",
+            { "vars": "all", "args": "none", "ignoreRestSiblings": false }]
     }
 };

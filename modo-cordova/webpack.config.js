@@ -28,7 +28,8 @@ let config = function (env) {
         'routes': path.resolve(__dirname, 'src/assets/vue/routes/'),
         'api': path.resolve(__dirname, 'src/assets/vue/api/'),
         'const': path.resolve(__dirname, 'src/assets/vue/const/'),
-        'common': path.resolve(__dirname, 'src/assets/vue/common/'),        
+        'common': path.resolve(__dirname, 'src/assets/vue/common/'), 
+        'directives': path.resolve(__dirname, 'src/assets/vue/directives/'),                
         'mock': path.resolve(__dirname, 'src/assets/vue/mock/')              
         
       }

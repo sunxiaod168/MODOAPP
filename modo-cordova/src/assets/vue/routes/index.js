@@ -30,112 +30,112 @@ import Version from 'pages/Mine/Version'
 
 
 const routes = [
-    {
-      path: '/login',
-      component: Login
-    },
-    {
-      path: '/regist',
-      component: Regist
-    },
-    {
-      path: '/tabbar/',
-      component: Tabs,
-      tabs: [
-        {
-          path: '/',
-          tabId: 'tab1',
-          component: Query
-        },
-        {
-          path: '/tab2/',
-          tabId: 'tab2',
-          component: Stat
-        },
-        {
-          path: '/tab3/',
-          tabId: 'tab3',
-          component: Delivery
-        },       
-        {
-          path: '/tab4/',
-          tabId: 'tab4',
-          component: Mine
-        }        
-      ]
-    },    
-    {
-      path: '/cost-price-query',
-      component: CostPriceQuery
-    },
-    {
-      path: '/inventory-query',
-      component: InventoryQuery
-    },
-    {
-      path: '/order-progress-query',
-      component: OrderProgressQuery
-    },
-    {
-      path: '/retail-price-query',
-      component: RetailPriceQuery
-    },
-    {
-      path: '/achievement-stat',
-      component: AchievementStat
-    },
-    {
-      path: '/asset-stat',
-      component: AssetStat
-    },
-    {
-      path: '/income-expenses-stat',
-      component: IncomeExpensesStat
-    },
-    {
-      path: '/inventory-daily-stat',
-      component: InventoryDailyStat
-    },
-    {
-      path: '/profit-accounting',
-      component: ProfitAccounting
-    },
-    {
-      path: '/unfinish-order-stat',
-      component: UnFinishOrderStat
-    },
-    {
-      path: '/delivery-report',
-      component: DeliveryReport
-    },
-    {
-      path: '/install-plan',
-      component: InstallPlan
-    },
-    {
-      path: '/install-report',
-      component: InstallReport
-    },
-    {
-      path: '/profile',
-      component: Profile
-    },
-    {
-      path: '/about',
-      component: About
-    },
-    {
-      path: '/change-password',
-      component: ChangePassword
-    },
-    {
-      path: '/find-password',
-      component: FindPassword
-    },
-    {
-      path: '/version',
-      component: Version
-    }
-  ]
+	{
+		path: '/login',
+		component: Login
+	},
+	{
+		path: '/regist',
+		component: Regist
+	},
+	{
+		path: '/tabbar/',
+		component: Tabs,
+		tabs: [
+			{
+				path: '/',
+				tabId: 'tab1',
+				component: Query
+			},
+			{
+				path: '/tab2/',
+				tabId: 'tab2',
+				component: Stat
+			},
+			{
+				path: '/tab3/',
+				tabId: 'tab3',
+				component: Delivery
+			},       
+			{
+				path: '/tab4/',
+				tabId: 'tab4',
+				component: Mine
+			}        
+		]
+	},    
+	{
+		path: '/cost-price-query',
+		component: CostPriceQuery
+	},
+	{
+		path: '/inventory-query',
+		component: InventoryQuery
+	},
+	{
+		path: '/order-progress-query',
+		component: OrderProgressQuery
+	},
+	{
+		path: '/retail-price-query',
+		component: RetailPriceQuery
+	},
+	{
+		path: '/achievement-stat',
+		component: AchievementStat
+	},
+	{
+		path: '/asset-stat',
+		component: AssetStat
+	},
+	{
+		path: '/income-expenses-stat',
+		component: IncomeExpensesStat
+	},
+	{
+		path: '/inventory-daily-stat',
+		component: InventoryDailyStat
+	},
+	{
+		path: '/profit-accounting',
+		component: ProfitAccounting
+	},
+	{
+		path: '/unfinish-order-stat',
+		component: UnFinishOrderStat
+	},
+	{
+		path: '/delivery-report',
+		component: DeliveryReport
+	},
+	{
+		path: '/install-plan',
+		component: InstallPlan
+	},
+	{
+		path: '/install-report',
+		component: InstallReport
+	},
+	{
+		path: '/profile',
+		component: Profile
+	},
+	{
+		path: '/about',
+		component: About
+	},
+	{
+		path: '/change-password',
+		component: ChangePassword
+	},
+	{
+		path: '/find-password',
+		component: FindPassword
+	},
+	{
+		path: '/version',
+		component: Version
+	}
+]
 
 export default routes
