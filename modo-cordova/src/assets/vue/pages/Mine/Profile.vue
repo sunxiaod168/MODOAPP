@@ -1,10 +1,5 @@
 <template>
-   <f7-page navTitle="我的信息">
-   
-   
-
-    
-  </f7-page>
+  <f7-page nav-title="我的信息"/>
 </template>
 <style scoped>
 

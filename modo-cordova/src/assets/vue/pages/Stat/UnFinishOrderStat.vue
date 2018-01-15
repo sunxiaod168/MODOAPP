@@ -1,10 +1,5 @@
 <template>
-  <f7-page navTitle="未完成订单统计">
-   
-   
-
-    
-  </f7-page>
+  <f7-page nav-title="未完成订单统计"/>
 </template>
 <style scoped>
 

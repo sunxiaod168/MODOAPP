@@ -1,10 +1,5 @@
 <template>
-  <f7-page navTitle="销售价格查询">
-   
-   
-
-   
-  </f7-page>
+  <f7-page nav-title="销售价格查询"/>
 </template>
 <style scoped>
 
@@ -12,7 +7,7 @@
 <script>
 export default {
  
-};
+}
 </script>
 
 

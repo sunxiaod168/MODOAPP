@@ -1,10 +1,5 @@
 <template>
-  <f7-page navTitle="送货完工汇报">
-   
-   
-
-    
-  </f7-page>
+  <f7-page nav-title="送货完工汇报"/>
 </template>
 <style scoped>
 

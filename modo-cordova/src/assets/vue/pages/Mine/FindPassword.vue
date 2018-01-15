@@ -1,10 +1,5 @@
 <template>
-   <f7-page navTitle="找回密码">
-   
-   
-
-    
-  </f7-page>
+  <f7-page nav-title="找回密码"/>
 </template>
 <style scoped>
 

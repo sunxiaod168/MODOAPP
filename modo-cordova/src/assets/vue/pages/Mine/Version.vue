@@ -1,10 +1,5 @@
 <template>
-   <f7-page navTitle="版本升级">
-   
-   
-
-    
-  </f7-page>
+  <f7-page nav-title="版本升级"/>
 </template>
 <style scoped>
 

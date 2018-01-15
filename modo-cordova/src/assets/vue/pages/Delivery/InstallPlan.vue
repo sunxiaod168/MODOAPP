@@ -1,10 +1,5 @@
 <template>
-   <f7-page navTitle="配送安装计划">
-   
-   
-
-    
-  </f7-page>
+  <f7-page nav-title="配送安装计划"/>
 </template>
 <style scoped>
 

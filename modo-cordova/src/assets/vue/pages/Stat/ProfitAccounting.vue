@@ -1,9 +1,5 @@
 <template>
-  <f7-page navTitle="利润核算分析">
-   
-
-    
-  </f7-page>
+  <f7-page nav-title="利润核算分析"/>
 </template>
 <style scoped>
 

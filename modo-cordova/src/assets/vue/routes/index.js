@@ -1,5 +1,4 @@
 import Login from 'pages/Login/Index'
-import Regist from 'pages/Login/Regist'
 import Tabs from 'pages/Tabs'
 
 import Query from 'pages/Query/Index'
@@ -33,11 +32,7 @@ const routes = [
 	{
 		path: '/login',
 		component: Login
-	},
-	{
-		path: '/regist',
-		component: Regist
-	},
+	},	
 	{
 		path: '/tabbar/',
 		component: Tabs,

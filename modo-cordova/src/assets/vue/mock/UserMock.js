@@ -12,10 +12,9 @@ Mock.mock('/api/user/login', 'post', function (options) {
 	return {
 		status: CONST.STATUS_SUCCESS,
 		msg: '登录成功',
-		data: {
-			uid: 1, //user id
+		data: {			
 			uname: 'admin',
-			token:'',
+			token:'597235720sfsf',
 			permission: [1, 2, 3, 4]
 		}
 	}

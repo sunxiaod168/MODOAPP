@@ -1,10 +1,5 @@
 <template>
-   <f7-page navTitle="关于墨斗云">
-   
-   
-
-    
-  </f7-page>
+  <f7-page nav-title="关于墨斗云"/>
 </template>
 <style scoped>
 

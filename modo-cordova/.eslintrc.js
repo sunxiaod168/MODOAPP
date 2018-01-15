@@ -1,17 +1,19 @@
 module.exports = {
     "env": {
-        "browser": true,
-        "es6": true
+        "browser": true,       
+        "es6": true      
     },
     "parserOptions": {
-        "sourceType": "module"
+        parser: 'babel-eslint'     
     },
-    "extends": "eslint:recommended",
+    "extends": [
+        "eslint:recommended",
+        "plugin:vue/essential"
+    ],
+    "plugins": [
+        "vue"
+      ],
     "rules": {
-        "indent": [
-            "error",
-            "tab"
-        ],
         "linebreak-style": [
             "error",
             "unix"
@@ -26,6 +28,9 @@ module.exports = {
         ],
         "no-unused-vars": [
             "error",
-            { "vars": "all", "args": "none", "ignoreRestSiblings": false }]
+            { "vars": "all", "args": "none", "ignoreRestSiblings": false }
+        ],
+        "vue/no-unused-vars": "error",
+
     }
 };

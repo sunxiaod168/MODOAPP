@@ -1,8 +1,8 @@
-import axios from 'axios'
+import axios from 'api/base'
 
 const api = {
 	info: function (done, error) {
-		axios.get('/api/user/info')
+		axios.get('/user/info')
 			.then(function (response) {
 				done(response)
 			})
@@ -11,7 +11,7 @@ const api = {
 			})
 	},
 	login: function (uname, pwd, done, error) {
-		axios.post('/api/user/login', {
+		axios.post('/user/login', {
 			uname: uname,
 			pwd: pwd
 		})

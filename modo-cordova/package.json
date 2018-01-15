@@ -3,14 +3,16 @@
     "version": "1.0.0",
     "description": "Brand new cordova project with framework7 - vue - webpack!",
     "scripts": {
-        "default": "echo \"There is no scripts you can run with npm run command.\" && exit 1",
-        "lint": "./node_modules/.bin/eslint src --fix"
+        "lint": "./node_modules/.bin/eslint --ext .js,.vue src --fix"
     },
     "keywords": [
         "ecosystem:cordova"
     ],
     "license": "ISC",
     "devDependencies": {
+        "babel-core": "^6.22.1",
+        "babel-eslint": "^8.2.1",
+        "babel-helper-vue-jsx-merge-props": "^2.0.3",
         "cheerio": "^1.0.0-rc.2",
         "chokidar": "^1.6.1",
         "clean-webpack-plugin": "^0.1.15",
@@ -18,6 +20,14 @@
         "current-device": "^0.6.3",
         "epipebomb": "^1.0.0",
         "eslint": "^4.15.0",
+        "eslint-config-standard": "^10.2.1",
+        "eslint-friendly-formatter": "^3.0.0",
+        "eslint-loader": "^1.7.1",
+        "eslint-plugin-import": "^2.7.0",
+        "eslint-plugin-node": "^5.2.0",
+        "eslint-plugin-promise": "^3.4.0",
+        "eslint-plugin-standard": "^3.0.1",
+        "eslint-plugin-vue": "^4.2.0",
         "extract-text-webpack-plugin": "^3.0.0",
         "file-loader": "^1.1.5",
         "html-loader": "^0.5.1",

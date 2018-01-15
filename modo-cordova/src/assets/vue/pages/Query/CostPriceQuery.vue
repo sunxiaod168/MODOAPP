@@ -1,10 +1,5 @@
 <template>
-  <f7-page navTitle="成本价格查询">
-   
-   
-
-    
-  </f7-page>
+  <f7-page nav-title="成本价格查询"/>
 </template>
 <style scoped>
 

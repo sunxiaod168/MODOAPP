@@ -1,10 +1,5 @@
 <template>
-   <f7-page navTitle="收支统计分析">
-   
-   
-
-   
-  </f7-page>
+  <f7-page nav-title="收支统计分析"/>
 </template>
 <style scoped>
 
