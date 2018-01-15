@@ -10,7 +10,7 @@ export function setNavBack(store, page) {
 }
 
 export function setNavTitle(store, page) {
-	var title = page.container.getAttribute('navtitle')
+	var title = page.container.getAttribute('nav-title')
 	if (!title) {
 		if (page.name == 'tabbar') {
 			var tabID = $(page.container).find('.tab.active').attr('id')

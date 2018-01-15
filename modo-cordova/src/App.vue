@@ -8,6 +8,9 @@
           <f7-navbar>
             <f7-nav-left back-link="返回" v-if="$store.state.navBackVisiable"/>
             <f7-nav-center>{{ $store.state.navBarTitle }}</f7-nav-center>
+            <f7-nav-right v-if="$store.state.navRightVisiable">
+               <p><a href="#" data-panel="right" class="open-panel">Open Right Panel</a></p>
+            </f7-nav-right>
           </f7-navbar>
           <f7-page name="start">
 
