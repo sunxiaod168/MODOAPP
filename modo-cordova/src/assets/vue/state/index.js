@@ -12,7 +12,10 @@ const store = new Vuex.Store({
 		userPermissions: null,
 		navBackVisiable: false,
 		navRightVisiable: false,
-		navBarTitle: CONST.NAV_TITLE_DEFAULT
+		navBarTitle: CONST.NAV_TITLE_DEFAULT,
+		navRightTitle:'',
+		navRightIcon:'',
+		currentRightView: null
 	},
 	mutations: {
 		setUserInfo(state, userInfo) {

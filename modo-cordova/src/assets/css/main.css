@@ -28,3 +28,12 @@
 .list-block ul::after{
     display: none;
 }
+.right-navbar {
+    background-color: #007aff;
+    color:#fff;
+    margin: 0;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    font-size: 17px;
+}

@@ -8,7 +8,7 @@ import Framework7ThemeColors from 'framework7/dist/css/framework7.ios.colors.min
  import Framework7Theme from 'framework7/dist/css/framework7.material.min.css'
  import Framework7ThemeColors from 'framework7/dist/css/framework7.material.colors.min.css'
  */
-import F7Icons from './assets/css/framework7-icons.css'
+
 import FontAwsome from './assets/css/fontawesome-all.min.css'
 import AppStyles from './assets/css/main.css'
 import Mock from 'mock'

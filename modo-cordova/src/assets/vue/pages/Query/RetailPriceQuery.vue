@@ -1,25 +1,29 @@
 <template>
 
-  <f7-page nav-title="销售价格查询">
-    销售价格查询
-    <f7-panel right cover>
-        right panel
-    </f7-panel>
-
+  <f7-page nav-title="销售价格查询" @page:beforeinit="initHandle" @page:back="backHandler">
 
   </f7-page>
-  
+
 </template>
-<style scoped>
+<style>
 
 </style>
 <script>
+import OrgListSelect from "components/OrgListSelect";
+
 export default {
- mounted: function(){
-   var me = this;
-   console.log('me:' + me.$store.state.token)
- }
-}
+  methods: {
+    initHandle: function() {
+      this.$store.state.navRightVisiable = true;
+      this.$store.state.navRightTitle = '';
+      this.$store.state.navRightIcon = 'fas fa-filter';
+      this.$store.state.currentRightView = OrgListSelect;
+    },
+    backHandler: function() {
+      this.$store.state.navRightVisiable = false;
+    }
+  }
+};
 </script>
 
 

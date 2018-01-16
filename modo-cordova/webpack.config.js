@@ -99,7 +99,7 @@ let config = function (env) {
         path.resolve(__dirname, "webpack/dev_helpers/CordovaDeviceRouter.js")
       ]
       returner.output.publicPath = "/"
-      returner.devtool = "source-map"
+      returner.devtool = "eval-source-map"
       returner.devServer = {
         contentBase: path.join(__dirname, "www"),
         port: devServerPort,

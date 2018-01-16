@@ -1,5 +1,6 @@
 import CONST, {PermissionMap} from 'const'
 import $ from 'jquery'
+import Vue from 'vue'
 
 export function setNavBack(store, page) {
 	if (page.name == 'tabbar' || page.name == 'login') {
@@ -54,4 +55,7 @@ export function convertPermission(permissions) {
 	}
 	return userPermission
 }
+
+export const bus = new Vue()
+
 
