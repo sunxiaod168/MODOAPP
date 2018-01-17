@@ -31,7 +31,7 @@
 </style>
 
 <script>
-import api from 'api'
+import api from 'api/User'
 import CONST from 'const'
 
 export default {
@@ -45,7 +45,7 @@ export default {
   methods: {
     login() {
       var me = this
-      api.user.login(
+      api.login(
         this.uname,
         this.pwd,
         function(response) {

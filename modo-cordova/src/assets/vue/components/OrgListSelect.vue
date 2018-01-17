@@ -29,9 +29,18 @@ export default {
     }
   },
   mounted(){
+    var me = this
     bus.$on('rightPanelClosed', function(){
       var orgs = $$('input[name=org]:checked')
-      
+      var selected = []
+      me.orgList.forEach(org => {
+        orgs.forEach(element => {
+          if (org.zzid == element.value){
+            selected.push(org)
+          }
+        })
+      })
+      bus.$emit('orgSelected', selected)
       
     })
   }
