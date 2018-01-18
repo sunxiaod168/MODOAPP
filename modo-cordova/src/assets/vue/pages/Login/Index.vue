@@ -22,11 +22,30 @@
 
 </template>
 <style scoped>
+.page >>> .page-content{
+  display: table;
+  width:100%;
+  background-color: #fff;
+}
+.page >>> .page-content .list-block{
+  display: table-cell;
+  vertical-align:middle;
+}
+
 .btn-login {
   width: 100%;
 }
 .list-block {
   margin: 0;
+}
+.list-block >>> .item-inner::after {
+    display: none;
+}
+.list-block >>> ul::before{
+    display: none;
+}
+.list-block >>> ul::after{
+    display: none;
 }
 </style>
 

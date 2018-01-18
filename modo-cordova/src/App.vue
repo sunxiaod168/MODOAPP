@@ -14,7 +14,8 @@
           </f7-navbar>
           <f7-page name="start">
 
-            <f7-link href="/login">开始使用</f7-link>
+            <f7-link href="/login" class="go">开始使用</f7-link>
+
           </f7-page>
         </f7-pages>
 
@@ -28,20 +29,23 @@
   </div>
 </template>
 <style scoped>
-
+.go {
+  margin-top: 100px;
+  display: block;
+}
 </style>
 
 <script>
-import {bus} from 'common'
+import { bus } from "common";
 
 export default {
   date() {
-    return {}
+    return {};
   },
-  methods:{
-    onRightPanelClosed(){
-      bus.$emit('rightPanelClosed')
+  methods: {
+    onRightPanelClosed() {
+      bus.$emit("rightPanelClosed");
     }
   }
-}
+};
 </script>
