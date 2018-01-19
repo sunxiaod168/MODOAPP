@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.modencloud.modoapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
@@ -7,12 +11,8 @@
     <hook src="hooks/hookers.js" type="before_prepare" />
     <hook src="hooks/beforedep.js" type="before_deploy" />
     <name>墨斗云</name>
-    <description>
-        Brand new cordova project!
-    </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
-    </author>
+    <description>        Brand new cordova project!    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">        Apache Cordova Team    </author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -29,5 +29,9 @@
     <icon density="xhdpi" src="src/assets/images/android/Icon-96.png" />
     <icon density="xxhdpi" src="src/assets/images/android/Icon-144.png" />
     <icon density="xxxhdpi" src="src/assets/images/android/Icon-192.png" />
+    <splash density="port-hdpi" src="src/assets/images/launch-480-800.png" />
+    <splash density="port-ldpi" src="src/assets/images/launch-200-320.png" />
+    <splash density="port-mdpi" src="src/assets/images/launch-320-480.png" />
+    <splash density="port-xhdpi" src="src/assets/images/launch-720-1280.png" />
     <preference name="loglevel" value="DEBUG" />
 </widget>

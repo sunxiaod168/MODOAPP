@@ -7,6 +7,9 @@
     "files": {}
   },
   "installed_plugins": {
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.modencloud.modoapp"
+    },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.modencloud.modoapp"
     }
