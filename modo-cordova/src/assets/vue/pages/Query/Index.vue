@@ -2,7 +2,7 @@
 
   <f7-list>
     <f7-list-item v-permission="p1" media="<i class='fab fa-sellcast fa-lg'></i>" title="销售价格查询" link="/retail-price-query"/>
-    <f7-list-item v-permission="p2" media="<i class='fas fa-yen-sign'></i>" title="成本价格查询" link="/cost-price-query"/>
+    <f7-list-item class="no-bottom-border" v-permission="p2" media="<i class='fas fa-yen-sign'></i>" title="成本价格查询" link="/cost-price-query"/>
     <f7-list-item class="devider"/>
     <f7-list-item v-permission="p3" media="<i class='fas fa-yen-sign'></i>" title="实时库存查询" link="/inventory-query"/>
     <f7-list-item v-permission="p4" media="<i class='fas fa-yen-sign'></i>" title="订单进度查询" link="/order-progress-query"/>

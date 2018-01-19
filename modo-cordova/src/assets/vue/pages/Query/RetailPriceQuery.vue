@@ -19,23 +19,23 @@
           <div class="accordion-item-content">
             <div class="content-block">
               <p>
-                <label>组织名称</label>
+                <label>组织名称：</label>
                 <span>{{item.ZZName}}</span>
               </p>
               <p>
-                <label>物品编号</label>
+                <label>物品编号：</label>
                 <span>{{item.ProductCode}}</span>
               </p>
               <p>
-                <label>品牌</label>
+                <label>品牌：</label>
                 <span>{{item.BrandName}}</span>
               </p>
               <p>
-                <label>系列</label>
+                <label>系列：</label>
                 <span>{{item.CatenaName}}</span>
               </p>
               <p>
-                <label>类别</label>
+                <label>类别：</label>
                 <span>{{item.SortName}}</span>
               </p>
             </div>
@@ -54,8 +54,16 @@
 .content-block {
   text-align: left;
 }
-.content-block>>>label {
-  font-weight: bold;
+.content-block p {
+  border-bottom: 1px dashed;
+  margin: 0;
+  padding: 0.5em;
+  color: #6d6d72;
+}
+.content-block p label {
+  display: inline-block;
+  width: 80px;
+  text-align: right;
 }
 </style>
 
@@ -91,7 +99,7 @@ export default {
         return;
       }
       $$(".infinite-scroll-preloader").show();
-      me.notFoundDisplay = 'none'
+      me.notFoundDisplay = "none";
       me.priceList = [];
       me.query.pageNum = 1;
       me.query.zzids = payload.map(item => item.zzid);
@@ -196,7 +204,7 @@ export default {
     onEnableSearch() {},
     onDisableSearch() {
       this.query.keywords = null;
-      this.notFoundDisplay = 'none'
+      this.notFoundDisplay = "none";
     },
     onSubmitSearch() {
       if (this.isLoading) {

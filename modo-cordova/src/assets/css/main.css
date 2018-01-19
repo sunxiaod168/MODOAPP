@@ -2,7 +2,9 @@
     text-align: center;
     background: #efeff4;
 }
-
+.content-block{
+    color:#000;
+}
 .devider {
     height: 1em;
     background: #efeff4;
@@ -22,13 +24,16 @@
 }
 
 .tabbar {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .tabbar .icon {
-    font-size: 22px;
+    font-size: 20px;
+    line-height: 1.4;
 }
-
+.tabbar a{
+   
+}
 .right-navbar {
     background-color: #007aff;
     color: #fff;
@@ -49,6 +54,28 @@
 }
 
 .list-block {
-    color: #6d6d72;
+   
     font-size: 15px;
+}
+.list-block .item-content{
+    min-height: 55px;
+}
+
+.no-top-border .item-inner::before {
+    display: none;
+}
+.no-bottom-border .item-inner::after {
+    display: none;
+}
+
+.accordion-item-expanded>.item-content{
+    background:#007aff;
+    color:#fff;
+}
+.accordion-item-expanded>.accordion-item-content{
+   
+    
+}
+.accordion-item-expanded>.accordion-item-content>.content-block{
+   
 }

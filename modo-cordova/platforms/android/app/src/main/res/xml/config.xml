@@ -23,5 +23,11 @@
     <allow-intent href="geo:*" />
     <allow-navigation href="*" />
     <allow-intent href="market:*" />
+    <icon density="ldpi" src="src/assets/images/android/Icon-36.png" />
+    <icon density="mdpi" src="src/assets/images/android/Icon-48.png" />
+    <icon density="hdpi" src="src/assets/images/android/Icon-72.png" />
+    <icon density="xhdpi" src="src/assets/images/android/Icon-96.png" />
+    <icon density="xxhdpi" src="src/assets/images/android/Icon-144.png" />
+    <icon density="xxxhdpi" src="src/assets/images/android/Icon-192.png" />
     <preference name="loglevel" value="DEBUG" />
 </widget>
