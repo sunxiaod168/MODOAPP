@@ -1,27 +1,9 @@
-import axios from 'axios'
+import axios from 'api/base'
 
 const api = {
-	info: function (done, error) {
-		axios.get('/api/user/info')
-			.then(function (response) {
-				done(response)
-			})
-			.catch(function (err) {
-				error(err)
-			})
-	},
-	login: function (uname, pwd, done, error) {
-		axios.post('/api/user/login', {
-			uname: uname,
-			pwd: pwd
-		})
-			.then(function (response) {
-				done(response)
-			})
-			.catch(function (err) {
-				error(err)
-			})
-	}
+	orgList: function (params) {
+		return axios.post('/org/priceOrgs', params)
+	}	
 }
-  
+
 export default api

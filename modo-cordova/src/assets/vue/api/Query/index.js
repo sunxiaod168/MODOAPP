@@ -2,9 +2,16 @@ import axios from 'api/base'
 
 const api = {
 
-	retailPrice: function (queryParams) {
-		return axios.post('/query/retailPrice', queryParams)
+	retailPrice: function (params) {
+		return axios.post('/query/retailPrice', params)
+	},
+	costPrice: function (params) {
+		return axios.post('/query/costPrice', params)
+	},
+	inventory: function(params) {
+		return axios.post('/query/inventory', params)
 	}
+	
 }
 
 export default api

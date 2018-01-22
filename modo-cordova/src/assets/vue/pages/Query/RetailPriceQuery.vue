@@ -27,6 +27,14 @@
                 <span>{{item.ProductCode}}</span>
               </p>
               <p>
+                <label>型号：</label>
+                <span>{{item.XingHao}}</span>
+              </p>
+              <p>
+                <label>规格：</label>
+                <span>{{item.GuiGe}}</span>
+              </p>
+              <p>
                 <label>品牌：</label>
                 <span>{{item.BrandName}}</span>
               </p>
@@ -69,9 +77,8 @@
 
 <script>
 import { bus } from "common";
-import OrgListSelect from "components/OrgListSelect";
+import OrgList from "components/PriceQueryOrgList";
 import SearchbarNotFound from "components/SearchbarNotFound";
-
 import api from "api/Query";
 import CONST from "const";
 
@@ -91,7 +98,7 @@ export default {
       notFoundDisplay: "none"
     };
   },
-  components: { SearchbarNotFound },
+  components: { SearchbarNotFound, OrgList },
   mounted() {
     var me = this;
     bus.$on("orgSelected", function(payload) {
@@ -102,7 +109,7 @@ export default {
       me.notFoundDisplay = "none";
       me.priceList = [];
       me.query.pageNum = 1;
-      me.query.zzids = payload.map(item => item.zzid);
+      me.query.zzids = payload;
       me.loadData();
     });
   },
@@ -111,7 +118,8 @@ export default {
       this.$store.state.navRightVisiable = true;
       this.$store.state.navRightTitle = "";
       this.$store.state.navRightIcon = "fas fa-filter";
-      this.$store.state.currentRightView = OrgListSelect;
+      this.$store.state.currentRightView = OrgList;
+
       this.loadData();
     },
     backHandler() {

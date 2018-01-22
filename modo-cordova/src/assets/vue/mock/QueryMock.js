@@ -6,8 +6,8 @@ import CONST from 'const'
 Mock.mock('/api/query/retailPrice', 'post', function (options) {
     var params = JSON.parse(options.body)
 
-    var list = data;
-    if(params.keywords != null){
+    var list = priceData;
+    if (params.keywords != null) {
         list = [];
     }
     return {
@@ -18,7 +18,35 @@ Mock.mock('/api/query/retailPrice', 'post', function (options) {
 
 })
 
-var data = [
+Mock.mock('/api/query/costPrice', 'post', function (options) {
+    var params = JSON.parse(options.body)
+
+    var list = priceData;
+    if (params.keywords != null) {
+        list = [];
+    }
+    return {
+        status: CONST.STATUS_SUCCESS,
+        msg: '查询成功',
+        data: list
+    }
+})
+
+Mock.mock('/api/query/inventory', 'post', function (options) {
+    var params = JSON.parse(options.body)
+
+    var list = storageData;
+    if (params.keywords != null) {
+        list = [];
+    }
+    return {
+        status: CONST.STATUS_SUCCESS,
+        msg: '查询成功',
+        data: list
+    }
+})
+
+var priceData = [
     { 'ZZName': '河南旭虹家具公司', 'ID': 223, 'Name': '中式 01床头柜', 'ProductCode': 'H01[CTG]', 'BrandID': 0, 'BrandName': '华兰', 'CatenaName': '中式', 'SortName': '床头柜', 'XingHao': '01', 'GuiGe': '460*430*550', 'ZhuCaiName': '水曲柳', 'FuCaiName': null, 'ColorName': null, 'JiLiangDanWei': '件', 'CostPrice': 360.00, 'WholesalePrice': null, 'RetailPrice': 1470.00, 'BatchID': '省会城市价格[V4100008001]', 'EnableColorAuxiliaryColor': false, 'EnableSofa': false },
     { 'ZZName': '河南旭虹家具公司', 'ID': 224, 'Name': '中式 08床头柜', 'ProductCode': 'H08[CTG]', 'BrandID': 0, 'BrandName': '华兰', 'CatenaName': '中式', 'SortName': '床头柜', 'XingHao': '08', 'GuiGe': '', 'ZhuCaiName': '水曲柳', 'FuCaiName': null, 'ColorName': null, 'JiLiangDanWei': '件', 'CostPrice': 350.00, 'WholesalePrice': null, 'RetailPrice': 1430.00, 'BatchID': '省会城市价格[V4100008001]', 'EnableColorAuxiliaryColor': false, 'EnableSofa': false },
     { 'ZZName': '河南旭虹家具公司', 'ID': 225, 'Name': '中式 20床头柜', 'ProductCode': 'H20[CTG]', 'BrandID': 0, 'BrandName': '华兰', 'CatenaName': '中式', 'SortName': '床头柜', 'XingHao': '20', 'GuiGe': '', 'ZhuCaiName': '水曲柳', 'FuCaiName': null, 'ColorName': null, 'JiLiangDanWei': '件', 'CostPrice': 380.00, 'WholesalePrice': null, 'RetailPrice': 1640.00, 'BatchID': '省会城市价格[V4100008001]', 'EnableColorAuxiliaryColor': false, 'EnableSofa': false },
@@ -34,4 +62,22 @@ var data = [
     { 'ZZName': '河南旭虹家具公司', 'ID': 235, 'Name': '中式 34-1床头(180CM)', 'ProductCode': 'H34-1[CT]', 'BrandID': 0, 'BrandName': '华兰', 'CatenaName': '中式', 'SortName': '床头', 'XingHao': '34-1', 'GuiGe': '', 'ZhuCaiName': '水曲柳', 'FuCaiName': null, 'ColorName': null, 'JiLiangDanWei': '件', 'CostPrice': 1390.00, 'WholesalePrice': null, 'RetailPrice': 5840.00, 'BatchID': '省会城市价格[V4100008001]', 'EnableColorAuxiliaryColor': false, 'EnableSofa': false },
     { 'ZZName': '河南旭虹家具公司', 'ID': 236, 'Name': '中式 40-1床头(180CM)', 'ProductCode': 'H40-1[CT]', 'BrandID': 0, 'BrandName': '华兰', 'CatenaName': '中式', 'SortName': '床头', 'XingHao': '40-1', 'GuiGe': '', 'ZhuCaiName': '水曲柳', 'FuCaiName': null, 'ColorName': null, 'JiLiangDanWei': '件', 'CostPrice': 1350.00, 'WholesalePrice': null, 'RetailPrice': 5670.00, 'BatchID': '省会城市价格[V4100008001]', 'EnableColorAuxiliaryColor': false, 'EnableSofa': false },
     { 'ZZName': '河南旭虹家具公司', 'ID': 237, 'Name': '中式 41-1床头(180CM)', 'ProductCode': 'H41-1[CT]', 'BrandID': 0, 'BrandName': '华兰', 'CatenaName': '中式', 'SortName': '床头', 'XingHao': '41-1', 'GuiGe': '', 'ZhuCaiName': '水曲柳', 'FuCaiName': null, 'ColorName': null, 'JiLiangDanWei': '件', 'CostPrice': 1590.00, 'WholesalePrice': null, 'RetailPrice': 6680.00, 'BatchID': '省会城市价格[V4100008001]', 'EnableColorAuxiliaryColor': false, 'EnableSofa': false },
-   ]
+]
+
+var storageData = [
+    { "ID": 1597, "ZZID": "4100008001004", "ZZName": "郑州西四环仓库", "ProductID": 541, "Product": { "ZZName": null, "ID": 0, "Name": "简艺 308 双位沙发", "ProductCode": "J308[SF-2]", "BrandID": 0, "BrandName": "长实", "CatenaName": "简艺", "SortName": "-", "XingHao": "308", "GuiGe": " 1780*960*880H", "ZhuCaiName": null, "FuCaiName": null, "ColorName": null, "JiLiangDanWei": "件", "CostPrice": null, "WholesalePrice": null, "RetailPrice": null, "BatchID": null, "EnableColorAuxiliaryColor": false, "EnableSofa": false }, "ColorID": 24, "ColorName": "胡桃色", "AuxColorID": null, "AUXColorName": null, "LockAmount": 0, "CanUseAmount": 0, "StoreAmount": 0, "OrderListID": null, "OrderCode": "", "CustomerName": "" },
+    { "ID": 1598, "ZZID": "4100008001004", "ZZName": "郑州西四环仓库", "ProductID": 542, "Product": { "ZZName": null, "ID": 0, "Name": "简艺 308 三位沙发", "ProductCode": "J308[SF-3]", "BrandID": 0, "BrandName": "长实", "CatenaName": "简艺", "SortName": "-", "XingHao": "308", "GuiGe": " 2300*960*880H", "ZhuCaiName": null, "FuCaiName": null, "ColorName": null, "JiLiangDanWei": "件", "CostPrice": null, "WholesalePrice": null, "RetailPrice": null, "BatchID": null, "EnableColorAuxiliaryColor": false, "EnableSofa": false }, "ColorID": 24, "ColorName": "胡桃色", "AuxColorID": null, "AUXColorName": null, "LockAmount": 0, "CanUseAmount": 0, "StoreAmount": 0, "OrderListID": null, "OrderCode": "", "CustomerName": "" },
+    { "ID": 1599, "ZZID": "4100008001004", "ZZName": "郑州西四环仓库", "ProductID": 543, "Product": { "ZZName": null, "ID": 0, "Name": "简艺 308 脚踏", "ProductCode": "J308[JT]", "BrandID": 0, "BrandName": "长实", "CatenaName": "简艺", "SortName": "-", "XingHao": "308", "GuiGe": " 840*840*420H", "ZhuCaiName": null, "FuCaiName": null, "ColorName": null, "JiLiangDanWei": "件", "CostPrice": null, "WholesalePrice": null, "RetailPrice": null, "BatchID": null, "EnableColorAuxiliaryColor": false, "EnableSofa": false }, "ColorID": 24, "ColorName": "胡桃色", "AuxColorID": null, "AUXColorName": null, "LockAmount": 0, "CanUseAmount": 0, "StoreAmount": 0, "OrderListID": null, "OrderCode": "", "CustomerName": "" },
+    { "ID": 1600, "ZZID": "4100008001004", "ZZName": "郑州西四环仓库", "ProductID": 548, "Product": { "ZZName": null, "ID": 0, "Name": "简艺 308 餐椅", "ProductCode": "J308[CY]", "BrandID": 0, "BrandName": "长实", "CatenaName": "简艺", "SortName": "-", "XingHao": "308", "GuiGe": " 460*600*865H", "ZhuCaiName": null, "FuCaiName": null, "ColorName": null, "JiLiangDanWei": "件", "CostPrice": null, "WholesalePrice": null, "RetailPrice": null, "BatchID": null, "EnableColorAuxiliaryColor": false, "EnableSofa": false }, "ColorID": 24, "ColorName": "胡桃色", "AuxColorID": null, "AUXColorName": null, "LockAmount": 0, "CanUseAmount": 0, "StoreAmount": 0, "OrderListID": null, "OrderCode": "", "CustomerName": "" },
+    { "ID": 1601, "ZZID": "4100008001004", "ZZName": "郑州西四环仓库", "ProductID": 539, "Product": { "ZZName": null, "ID": 0, "Name": "简艺 307 餐台", "ProductCode": "J307[CT]", "BrandID": 0, "BrandName": "长实", "CatenaName": "简艺", "SortName": "-", "XingHao": "307", "GuiGe": " 1550*850*750H", "ZhuCaiName": null, "FuCaiName": null, "ColorName": null, "JiLiangDanWei": "件", "CostPrice": null, "WholesalePrice": null, "RetailPrice": null, "BatchID": null, "EnableColorAuxiliaryColor": false, "EnableSofa": false }, "ColorID": 24, "ColorName": "胡桃色", "AuxColorID": null, "AUXColorName": null, "LockAmount": 0, "CanUseAmount": 1, "StoreAmount": 1, "OrderListID": null, "OrderCode": "", "CustomerName": "" },
+    { "ID": 1602, "ZZID": "4100008001004", "ZZName": "郑州西四环仓库", "ProductID": 540, "Product": { "ZZName": null, "ID": 0, "Name": "简艺 307 餐椅", "ProductCode": "J307[CY]", "BrandID": 0, "BrandName": "长实", "CatenaName": "简艺", "SortName": "-", "XingHao": "307", "GuiGe": " 520*610*785H", "ZhuCaiName": null, "FuCaiName": null, "ColorName": null, "JiLiangDanWei": "件", "CostPrice": null, "WholesalePrice": null, "RetailPrice": null, "BatchID": null, "EnableColorAuxiliaryColor": false, "EnableSofa": false }, "ColorID": 24, "ColorName": "胡桃色", "AuxColorID": null, "AUXColorName": null, "LockAmount": 0, "CanUseAmount": 0, "StoreAmount": 0, "OrderListID": null, "OrderCode": "", "CustomerName": "" },
+    { "ID": 1603, "ZZID": "4100008001004", "ZZName": "郑州西四环仓库", "ProductID": 523, "Product": { "ZZName": null, "ID": 0, "Name": "简艺 306 单位沙发", "ProductCode": "J306[SF-1]", "BrandID": 0, "BrandName": "长实", "CatenaName": "简艺", "SortName": "-", "XingHao": "306", "GuiGe": " 1050*960*890H", "ZhuCaiName": null, "FuCaiName": null, "ColorName": null, "JiLiangDanWei": "件", "CostPrice": null, "WholesalePrice": null, "RetailPrice": null, "BatchID": null, "EnableColorAuxiliaryColor": false, "EnableSofa": false }, "ColorID": 24, "ColorName": "胡桃色", "AuxColorID": null, "AUXColorName": null, "LockAmount": 0, "CanUseAmount": 1, "StoreAmount": 1, "OrderListID": null, "OrderCode": "", "CustomerName": "" },
+    { "ID": 1604, "ZZID": "4100008001004", "ZZName": "郑州西四环仓库", "ProductID": 524, "Product": { "ZZName": null, "ID": 0, "Name": "简艺 306 双位沙发", "ProductCode": "J306[SF-2]", "BrandID": 0, "BrandName": "长实", "CatenaName": "简艺", "SortName": "-", "XingHao": "306", "GuiGe": " 1680*960*890H", "ZhuCaiName": null, "FuCaiName": null, "ColorName": null, "JiLiangDanWei": "件", "CostPrice": null, "WholesalePrice": null, "RetailPrice": null, "BatchID": null, "EnableColorAuxiliaryColor": false, "EnableSofa": false }, "ColorID": 24, "ColorName": "胡桃色", "AuxColorID": null, "AUXColorName": null, "LockAmount": 0, "CanUseAmount": 3, "StoreAmount": 3, "OrderListID": null, "OrderCode": "", "CustomerName": "" },
+    { "ID": 1605, "ZZID": "4100008001004", "ZZName": "郑州西四环仓库", "ProductID": 525, "Product": { "ZZName": null, "ID": 0, "Name": "简艺 306 三位沙发", "ProductCode": "J306[SF-3]", "BrandID": 0, "BrandName": "长实", "CatenaName": "简艺", "SortName": "-", "XingHao": "306", "GuiGe": " 2180*960*890H", "ZhuCaiName": null, "FuCaiName": null, "ColorName": null, "JiLiangDanWei": "件", "CostPrice": null, "WholesalePrice": null, "RetailPrice": null, "BatchID": null, "EnableColorAuxiliaryColor": false, "EnableSofa": false }, "ColorID": 24, "ColorName": "胡桃色", "AuxColorID": null, "AUXColorName": null, "LockAmount": 0, "CanUseAmount": 1, "StoreAmount": 1, "OrderListID": null, "OrderCode": "", "CustomerName": "" },
+    { "ID": 1606, "ZZID": "4100008001004", "ZZName": "郑州西四环仓库", "ProductID": 526, "Product": { "ZZName": null, "ID": 0, "Name": "简艺 306 椭圆茶几", "ProductCode": "J306[TYCJ]", "BrandID": 0, "BrandName": "长实", "CatenaName": "简艺", "SortName": "-", "XingHao": "306", "GuiGe": " 1200*800*420H", "ZhuCaiName": null, "FuCaiName": null, "ColorName": null, "JiLiangDanWei": "件", "CostPrice": null, "WholesalePrice": null, "RetailPrice": null, "BatchID": null, "EnableColorAuxiliaryColor": false, "EnableSofa": false }, "ColorID": 24, "ColorName": "胡桃色", "AuxColorID": null, "AUXColorName": null, "LockAmount": 0, "CanUseAmount": 2, "StoreAmount": 2, "OrderListID": null, "OrderCode": "", "CustomerName": "" },
+    { "ID": 1607, "ZZID": "4100008001004", "ZZName": "郑州西四环仓库", "ProductID": 528, "Product": { "ZZName": null, "ID": 0, "Name": "简艺 306 小茶几", "ProductCode": "J306[XCJ]", "BrandID": 0, "BrandName": "长实", "CatenaName": "简艺", "SortName": "-", "XingHao": "306", "GuiGe": " Ø530*550H", "ZhuCaiName": null, "FuCaiName": null, "ColorName": null, "JiLiangDanWei": "件", "CostPrice": null, "WholesalePrice": null, "RetailPrice": null, "BatchID": null, "EnableColorAuxiliaryColor": false, "EnableSofa": false }, "ColorID": 24, "ColorName": "胡桃色", "AuxColorID": null, "AUXColorName": null, "LockAmount": 0, "CanUseAmount": 1, "StoreAmount": 1, "OrderListID": null, "OrderCode": "", "CustomerName": "" },
+    { "ID": 1608, "ZZID": "4100008001004", "ZZName": "郑州西四环仓库", "ProductID": 531, "Product": { "ZZName": null, "ID": 0, "Name": "简艺 306 餐椅", "ProductCode": "J306[CY]", "BrandID": 0, "BrandName": "长实", "CatenaName": "简艺", "SortName": "-", "XingHao": "306", "GuiGe": " 582*573*787H", "ZhuCaiName": null, "FuCaiName": null, "ColorName": null, "JiLiangDanWei": "件", "CostPrice": null, "WholesalePrice": null, "RetailPrice": null, "BatchID": null, "EnableColorAuxiliaryColor": false, "EnableSofa": false }, "ColorID": 24, "ColorName": "胡桃色", "AuxColorID": null, "AUXColorName": null, "LockAmount": 0, "CanUseAmount": 4, "StoreAmount": 4, "OrderListID": null, "OrderCode": "", "CustomerName": "" },
+    { "ID": 1609, "ZZID": "4100008001004", "ZZName": "郑州西四环仓库", "ProductID": 512, "Product": { "ZZName": null, "ID": 0, "Name": "简艺 305 单位沙发", "ProductCode": "J305[SF-1]", "BrandID": 0, "BrandName": "长实", "CatenaName": "简艺", "SortName": "-", "XingHao": "305", "GuiGe": " 780*950*880H", "ZhuCaiName": null, "FuCaiName": null, "ColorName": null, "JiLiangDanWei": "件", "CostPrice": null, "WholesalePrice": null, "RetailPrice": null, "BatchID": null, "EnableColorAuxiliaryColor": false, "EnableSofa": false }, "ColorID": 24, "ColorName": "胡桃色", "AuxColorID": null, "AUXColorName": null, "LockAmount": 0, "CanUseAmount": 0, "StoreAmount": 0, "OrderListID": null, "OrderCode": "", "CustomerName": "" },
+    { "ID": 1610, "ZZID": "4100008001004", "ZZName": "郑州西四环仓库", "ProductID": 513, "Product": { "ZZName": null, "ID": 0, "Name": "简艺 305 双位沙发", "ProductCode": "J305[SF-2]", "BrandID": 0, "BrandName": "长实", "CatenaName": "简艺", "SortName": "-", "XingHao": "305", "GuiGe": " 1430*950*880H", "ZhuCaiName": null, "FuCaiName": null, "ColorName": null, "JiLiangDanWei": "件", "CostPrice": null, "WholesalePrice": null, "RetailPrice": null, "BatchID": null, "EnableColorAuxiliaryColor": false, "EnableSofa": false }, "ColorID": 24, "ColorName": "胡桃色", "AuxColorID": null, "AUXColorName": null, "LockAmount": 0, "CanUseAmount": 0, "StoreAmount": 0, "OrderListID": null, "OrderCode": "", "CustomerName": "" },
+]
+

@@ -1,4 +1,6 @@
-import 'mock/UserMock.js'
-import 'mock/QueryMock.js'
+import 'mock/UserMock'
+import 'mock/QueryMock'
+import 'mock/OrgMock'
+
 
 
