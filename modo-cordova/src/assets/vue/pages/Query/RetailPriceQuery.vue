@@ -77,7 +77,7 @@
 
 <script>
 import { bus } from "common";
-import OrgList from "components/PriceQueryOrgList";
+import Right from "./components/RetailPriceQueryRight";
 import SearchbarNotFound from "components/SearchbarNotFound";
 import api from "api/Query";
 import CONST from "const";
@@ -98,27 +98,19 @@ export default {
       notFoundDisplay: "none"
     };
   },
-  components: { SearchbarNotFound, OrgList },
-  mounted() {
-    var me = this;
-    bus.$on("orgSelected", function(payload) {
-      if (me.isLoading) {
-        return;
-      }
-      $$(".infinite-scroll-preloader").show();
-      me.notFoundDisplay = "none";
-      me.priceList = [];
-      me.query.pageNum = 1;
-      me.query.zzids = payload;
-      me.loadData();
-    });
+  components: { SearchbarNotFound },
+  mounted() {    
+    bus.$on("rightDone", this.rightDone);
+  },
+  beforeDestroy() {
+    bus.$off("rightDone", this.rightDone);
   },
   methods: {
     initHandle() {
       this.$store.state.navRightVisiable = true;
       this.$store.state.navRightTitle = "";
       this.$store.state.navRightIcon = "fas fa-filter";
-      this.$store.state.currentRightView = OrgList;
+      this.$store.state.currentRightView = Right;
 
       this.loadData();
     },
@@ -242,6 +234,17 @@ export default {
           me.notFoundDisplay = "block";
         }
       );
+    },
+    rightDone(payload) {
+      if (this.isLoading) {
+        return;
+      }
+      $$(".infinite-scroll-preloader").show();
+      this.notFoundDisplay = "none";
+      this.priceList = [];
+      this.query.pageNum = 1;
+      this.query.zzids = payload;
+      this.loadData();
     }
   }
 };

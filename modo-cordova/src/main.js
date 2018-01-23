@@ -4,10 +4,6 @@ import Framework7Vue from 'framework7-vue'
 
 import Framework7Theme from 'framework7/dist/css/framework7.ios.min.css'
 import Framework7ThemeColors from 'framework7/dist/css/framework7.ios.colors.min.css'
-/* OR for Material Theme:
- import Framework7Theme from 'framework7/dist/css/framework7.material.min.css'
- import Framework7ThemeColors from 'framework7/dist/css/framework7.material.colors.min.css'
- */
 
 import FontAwsome from './assets/css/fontawesome-all.min.css'
 import AppStyles from './assets/css/main.css'

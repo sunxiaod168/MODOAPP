@@ -22,7 +22,7 @@
       </f7-view>
     </f7-views>
     <f7-panel right cover theme="blue" layout="white" @panel:closed="onRightPanelClosed">
-      <component :is="$store.state.currentRightView">
+      <component :is="$store.state.currentRightView" ref="right-panel">
 
       </component>
     </f7-panel>

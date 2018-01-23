@@ -77,7 +77,7 @@
 
 <script>
 import { bus } from "common";
-import InventoryQuery from "components/InventoryQuery";
+import Right from "./components/InventoryQueryRight";
 import SearchbarNotFound from "components/SearchbarNotFound";
 
 import api from "api/Query";
@@ -101,20 +101,11 @@ export default {
     };
   },
   components: { SearchbarNotFound },
-  mounted() {
-    var me = this;
-    bus.$on("orgSelected", function(payload) {
-      if (me.isLoading) {
-        return;
-      }
-      $$(".infinite-scroll-preloader").show();
-      me.notFoundDisplay = "none";
-      me.list = [];
-      me.query.pageNum = 1;
-      me.query.zzids = payload.zzids;
-      me.query.canUseType = payload.canUseType;
-      me.loadData();
-    });
+  mounted() {    
+    bus.$on("rightDone", this.rightDone);
+  },
+  beforeDestroy(){
+    bus.$off("rightDone", this.rightDone);
   },
   methods: {
     initHandle() {
@@ -122,9 +113,7 @@ export default {
       this.$store.state.navRightTitle = "";
       this.$store.state.navRightIcon = "fas fa-filter"; 
 
-      this.$store.state.currentRightView = InventoryQuery;
-      this.$store.state.currentRightView.props.zzid = this.$store.state.userInfo.zzid;
-      this.$store.state.currentRightView.props.type = 'inventory';
+      this.$store.state.currentRightView = Right;     
       this.loadData();
     },
     backHandler() {
@@ -247,6 +236,18 @@ export default {
           me.notFoundDisplay = "block";
         }
       );
+    },
+    rightDone(payload){
+      if (this.isLoading) {
+        return;
+      }
+      $$(".infinite-scroll-preloader").show();
+      this.notFoundDisplay = "none";
+      this.list = [];
+      this.query.pageNum = 1;
+      this.query.zzids = payload.zzids;
+      this.query.canUseType = payload.canUseType;
+      this.loadData();
     }
   }
 };
