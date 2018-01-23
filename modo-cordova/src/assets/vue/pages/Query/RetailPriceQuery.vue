@@ -18,31 +18,31 @@
           </a>
           <div class="accordion-item-content">
             <div class="content-block">
-              <p>
+              <p class="dash-line">
                 <label>组织名称：</label>
                 <span>{{item.ZZName}}</span>
               </p>
-              <p>
+              <p class="dash-line">
                 <label>物品编号：</label>
                 <span>{{item.ProductCode}}</span>
               </p>
-              <p>
+              <p class="dash-line">
                 <label>型号：</label>
                 <span>{{item.XingHao}}</span>
               </p>
-              <p>
+              <p class="dash-line">
                 <label>规格：</label>
                 <span>{{item.GuiGe}}</span>
               </p>
-              <p>
+              <p class="dash-line">
                 <label>品牌：</label>
                 <span>{{item.BrandName}}</span>
               </p>
-              <p>
+              <p class="dash-line">
                 <label>系列：</label>
                 <span>{{item.CatenaName}}</span>
               </p>
-              <p>
+              <p class="dash-line">
                 <label>类别：</label>
                 <span>{{item.SortName}}</span>
               </p>
@@ -63,9 +63,9 @@
   text-align: left;
 }
 .content-block p {
-  border-bottom: 1px dashed;
+  
   margin: 0;
-  padding: 0.5em;
+  padding: .7em;
   color: #6d6d72;
 }
 .content-block p label {
@@ -77,7 +77,7 @@
 
 <script>
 import { bus } from "common";
-import Right from "./components/RetailPriceQueryRight";
+import Right from "./components/RetailPriceRight";
 import SearchbarNotFound from "components/SearchbarNotFound";
 import api from "api/Query";
 import CONST from "const";

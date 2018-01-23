@@ -26,19 +26,18 @@ export default {
       zzids: []
     };
   },
-  mounted() {
-    var me = this;
-    bus.$on("rightPanelClosed", function() {
-      bus.$emit("orgSelected", me.zzids);
-    });
+   mounted() {    
+    bus.$on("rightPanelClosed", this.rightDone);
     this.loadData();
   },
+  beforeDestroy(){
+    bus.$off('rightPanelClosed', this.rightDone)
+  }, 
   methods: {
     loadData() {
-
       var me = this;
       api
-        .orgList({ zzid: me.$store.state.userInfo.zzid, type: 'price' })
+        .orgList({ zzid: me.$store.state.userInfo.zzid, type: 'retail-price' })
         .then(function(response) {
           var data = response.data;
            if (data.status === CONST.STATUS_SUCCESS) {
@@ -58,6 +57,9 @@ export default {
       } else {
         this.zzids = [];
       }
+    },
+    rightDone(){
+       bus.$emit('rightDone', this.zzids);
     }
   }
 };

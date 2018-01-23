@@ -2,6 +2,8 @@ import CONST, {PermissionMap} from 'const'
 import $ from 'jquery'
 import Vue from 'vue'
 
+export const bus = new Vue()
+
 export function setNavBack(store, page) {
 	if (page.name == 'tabbar' || page.name == 'login') {
 		store.commit('hideNavBack')
@@ -56,6 +58,18 @@ export function convertPermission(permissions) {
 	return userPermission
 }
 
-export const bus = new Vue()
+export function convertJsonDate(value){
+
+	var regex = /\/Date\((\d+)\)\//ig
+    var result = regex.exec(value)
+    if(result.length == 2){
+		var numValue = parseInt(result[1])
+		return new Date(numValue)
+    } else {
+        return null
+    }
+}
+
+
 
 

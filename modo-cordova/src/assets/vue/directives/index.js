@@ -16,9 +16,6 @@ Vue.directive('permission', {
 			if (!hasPermission){
 				$(el).remove()
 			}
-		}
-
-       
+		}       
 	}
-
 })

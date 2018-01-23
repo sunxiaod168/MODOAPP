@@ -148,9 +148,16 @@
 }
 
 .icon-about {
-    background-image: url(../images/mine/about-blue.png)
+    background-image: url(../images/mine/about-orange.png)
 }
 
 .icon-version {
-    background-image: url(../images/mine/version-blue.png)
+    background-image: url(../images/mine/version-orange.png)
+}
+
+.dash-line {
+    background-image: linear-gradient(to right, #6d6d72 33%, #fff 0%);
+    background-position: bottom;
+    background-size: 10px 1px;
+    background-repeat: repeat-x;
 }
