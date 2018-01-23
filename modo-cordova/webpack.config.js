@@ -23,6 +23,7 @@ let config = function (env) {
         'vue$': 'vue/dist/vue.common.js',
         'src': path.resolve(__dirname, 'src/'),
         'assets': path.resolve(__dirname, 'src/assets/'),
+        'images': path.resolve(__dirname, 'src/assets/images'),        
         'pages': path.resolve(__dirname, 'src/assets/vue/pages/'),
         'components': path.resolve(__dirname, 'src/assets/vue/components/'),
         'routes': path.resolve(__dirname, 'src/assets/vue/routes/'),

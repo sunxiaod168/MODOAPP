@@ -2,9 +2,11 @@
     text-align: center;
     background: #efeff4;
 }
-.content-block{
-    color:#000;
+
+.content-block {
+    color: #000;
 }
+
 .devider {
     height: 1em;
     background: #efeff4;
@@ -31,9 +33,9 @@
     font-size: 20px;
     line-height: 1.4;
 }
-.tabbar a{
-   
-}
+
+.tabbar a {}
+
 .right-navbar {
     background-color: #007aff;
     color: #fff;
@@ -54,28 +56,101 @@
 }
 
 .list-block {
-   
     font-size: 15px;
 }
-.list-block .item-content{
+
+.list-block .item-content {
     min-height: 55px;
 }
 
 .no-top-border .item-inner::before {
     display: none;
 }
+
 .no-bottom-border .item-inner::after {
     display: none;
 }
 
-.accordion-item-expanded>.item-content{
-    background:#007aff;
-    color:#fff;
+.accordion-item-expanded>.item-content {
+    background: #007aff;
+    color: #fff;
 }
-.accordion-item-expanded>.accordion-item-content{
-   
-    
+
+.accordion-item-expanded>.accordion-item-content {}
+
+.accordion-item-expanded>.accordion-item-content>.content-block {}
+
+.list-icon {
+    width: 35px;
+    height: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
-.accordion-item-expanded>.accordion-item-content>.content-block{
-   
+
+.icon-retail {
+    background-image: url(../images/query/retail-blue.png)
+}
+
+.icon-cost {
+    background-image: url(../images/query/cost-blue.png)
+}
+
+.icon-inventory {
+    background-image: url(../images/query/inventory-blue.png)
+}
+
+.icon-order-progress {
+    background-image: url(../images/query/order-progress-blue.png)
+}
+
+.icon-asset {
+    background-image: url(../images/stat/asset-blue.png)
+}
+
+.icon-profit {
+    background-image: url(../images/stat/profit-blue.png)
+}
+
+.icon-achievement {
+    background-image: url(../images/stat/achievement-blue.png)
+}
+
+.icon-unfinish-order {
+    background-image: url(../images/stat/unfinish-order-blue.png)
+}
+
+.icon-storage {
+    background-image: url(../images/stat/storage-orange.png)
+}
+
+.icon-income-expense {
+    background-image: url(../images/stat/income-expense-orange.png)
+}
+
+.icon-install-plan {
+    background-image: url(../images/delivery/install-plan-blue.png)
+}
+
+.icon-delivery-report {
+    background-image: url(../images/delivery/delivery-report-orange.png)
+}
+
+.icon-install-report {
+    background-image: url(../images/delivery/install-report-orange.png)
+}
+
+.icon-profile {
+    background-image: url(../images/mine/profile-blue.png)
+}
+
+.icon-modify-pwd {
+    background-image: url(../images/mine/modify-pwd-blue.png)
+}
+
+.icon-about {
+    background-image: url(../images/mine/about-blue.png)
+}
+
+.icon-version {
+    background-image: url(../images/mine/version-blue.png)
 }
