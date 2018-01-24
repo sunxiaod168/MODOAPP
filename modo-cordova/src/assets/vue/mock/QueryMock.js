@@ -35,7 +35,7 @@ Mock.mock('/api/query/costPrice', 'post', function (options) {
 Mock.mock('/api/query/inventory', 'post', function (options) {
     var params = JSON.parse(options.body)
 
-    var list = orderData;
+    var list = storageData;
     if (params.keywords != null) {
         list = [];
     }

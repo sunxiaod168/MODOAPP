@@ -9,14 +9,12 @@
 </template>
 <style>
 .date-picker {
-  margin-bottom: 1em;
+  margin: 20px 0;
 }
 .date-picker > label {
   margin-right: 1px;
 }
-.date-picker > i {
-  margin-right: 1em;
-}
+
 .date-picker > .item-input {
   display: inline-block;
 }
@@ -58,7 +56,7 @@ export default {
         monthNamesShort: MonthNames,
         dayNames: DayNames,
         dayNamesShort: DayNames,
-        firstDay: 7,
+        firstDay: 7,       
         onChange(p, values, displayValues) {
           me.$emit("input", values[0]);
         }

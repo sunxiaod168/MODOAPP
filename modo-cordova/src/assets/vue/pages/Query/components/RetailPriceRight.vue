@@ -1,71 +1,41 @@
 <template>
   <div>
-    <p class="right-navbar">过滤条件</p>
-    <f7-block-title>组织名称</f7-block-title>
-    <f7-list>
-      <f7-list-item checkbox v-model="checkAll" value="0" title="全选" key="0" @click="toggleAll"></f7-list-item>
-      <f7-list-item checkbox v-model="zzids" v-for="org in orgList" :value="org.zzid" :input-value="org.zzid" :title="org.zzname" :key="org.zzid"></f7-list-item>
-    </f7-list>
-    <p>{{msg}}</p>
+    <right-nav-bar title="过滤条件" button="清除" @rightNavBarClick="clear"></right-nav-bar>
+    <org-multi-selector :params="orgParams" v-model="zzids" title="组织名称"></org-multi-selector>
   </div>
 </template>
+<style>
 
+</style>
 <script>
 import { bus } from "common";
-import api from "api/Org";
-import CONST from "const";
-
-var $$ = window.Dom7;
+import OrgMultiSelector from "components/OrgMultiSelector";
+import RightNavBar from "components/RightNavBar";
 
 export default {
   data() {
     return {
-      msg:'',
-      checkAll: false,
-      orgList: [],
+      orgParams: {
+        zzid: this.$store.state.userInfo.zzid,
+        type: "retail-price"
+      },
       zzids: []
     };
   },
-   mounted() {    
+  components: { OrgMultiSelector, RightNavBar },
+  mounted() {
     bus.$on("rightPanelClosed", this.rightDone);
-    this.loadData();
   },
-  beforeDestroy(){
-    bus.$off('rightPanelClosed', this.rightDone)
-  }, 
+  beforeDestroy() {
+    bus.$off("rightPanelClosed", this.rightDone);
+  },
   methods: {
-    loadData() {
-      var me = this;
-      api
-        .orgList({ zzid: me.$store.state.userInfo.zzid, type: 'retail-price' })
-        .then(function(response) {
-          var data = response.data;
-           if (data.status === CONST.STATUS_SUCCESS) {
-             me.orgList = data.data;            
-            } else {
-              me.msg = data.msg;
-            }
-        })        
-        .catch(function(err) {
-           me.msg = data.msg;
-        });
+    rightDone() {
+      bus.$emit("rightDone", this.zzids);
     },
-    toggleAll() {
-      this.checkAll = !this.checkAll;
-      if (this.checkAll == true) {
-        this.zzids = this.orgList.map(org => org.zzid);
-      } else {
-        this.zzids = [];
-      }
-    },
-    rightDone(){
-       bus.$emit('rightDone', this.zzids);
+    clear() {
+      this.zzids = [];
     }
   }
 };
 </script>
-
-<style>
-
-</style>
-
