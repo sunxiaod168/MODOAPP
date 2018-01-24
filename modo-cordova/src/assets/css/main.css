@@ -45,6 +45,11 @@
     text-align: center;
     font-size: 17px;
 }
+.right-navbar .right-button{
+    color:#fff;
+    float: right;
+    padding: 0 15px;
+}
 
 .preloader {
     width: 34px;
