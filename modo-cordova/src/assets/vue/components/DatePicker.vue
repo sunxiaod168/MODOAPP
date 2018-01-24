@@ -1,8 +1,7 @@
 <template>
 
   <div class="date-picker">
-    <label>{{title}}</label>
-    <i class="far fa-calendar-alt"></i>
+    <label>{{title}}</label>    
     <f7-input type="text" :placeholder="placeholder" :id="id" />
   </div>
 
@@ -15,8 +14,8 @@
   margin-right: 1px;
 }
 
-.date-picker > .item-input {
-  display: inline-block;
+.date-picker > .item-input >input {
+  padding:5px;
 }
 </style>
 <script>
@@ -56,7 +55,7 @@ export default {
         monthNamesShort: MonthNames,
         dayNames: DayNames,
         dayNamesShort: DayNames,
-        firstDay: 7,       
+        firstDay: 7, 
         onChange(p, values, displayValues) {
           me.$emit("input", values[0]);
         }

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Jan 23 17:54:49 CST 2018
+#Wed Jan 24 16:27:08 CST 2018
 5.base=D\:\\Dev\\ModoAPP\\modo-cordova\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 42.base=D\:\\Dev\\ModoAPP\\modo-cordova\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 32.set=ASSET
@@ -157,7 +157,7 @@ count=55
 30.file=D\:\\Dev\\ModoAPP\\modo-cordova\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\cost-blue.png
 14.set=ASSET
 24.file=D\:\\Dev\\ModoAPP\\modo-cordova\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\fa-solid-900.eot
-34.file=D\:\\Dev\\ModoAPP\\modo-cordova\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\b6a509c0a0b38725d1eb.main.js
+34.file=D\:\\Dev\\ModoAPP\\modo-cordova\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\e6e4249b6bfb73dea01c.main.js
 18.file=D\:\\Dev\\ModoAPP\\modo-cordova\\platforms\\android\\app\\build\\intermediates\\assets\\debug\\www\\delivery-report-orange.png
 1.base=D\:\\Dev\\ModoAPP\\modo-cordova\\platforms\\android\\app\\build\\intermediates\\res\\debug\\resources-debug.ap_
 54.set=ASSET
