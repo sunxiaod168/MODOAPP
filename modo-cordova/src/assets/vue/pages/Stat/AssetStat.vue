@@ -94,7 +94,7 @@ export default {
       }
       this.loadData();
     },
-    loadData(nextPage) {
+    loadData() {
       var me = this;
       me.isLoading = true;
       api

@@ -164,3 +164,6 @@
     background-size: 10px 1px;
     background-repeat: repeat-x;
 }
+.card {    
+    box-shadow: 1px 1px 5px rgba(0,0,0,.3);
+}

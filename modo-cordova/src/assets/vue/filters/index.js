@@ -22,9 +22,9 @@ Vue.filter('datetime', function (value) {
 })
 Vue.filter('money', function (value) {
         
-    if (value) {
-        return CurrencyFormatter.format(value, { code: 'CNY' });
-    } else {
+    if (value === null) {
         return ''
+    } else {        
+        return CurrencyFormatter.format(value, { code: 'CNY' });
     }
 })
