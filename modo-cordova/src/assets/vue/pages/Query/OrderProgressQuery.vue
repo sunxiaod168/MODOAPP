@@ -31,11 +31,11 @@
               </p>
               <p class="dash-line">
                 <label>成效金额：</label>
-                <span>{{item.DealAmount}}</span>
+                <span>{{item.DealAmount |money}}</span>
               </p>
               <p class="dash-line">
                 <label>已收款：</label>
-                <span>{{item.ReceivedAmonut}}</span>
+                <span>{{item.ReceivedAmonut |money}}</span>
               </p>
               <p class="dash-line">
                 <label>预计送货日期：</label>
@@ -83,7 +83,6 @@ import Right from "./components/OrderProgressRight";
 import SearchbarNotFound from "components/SearchbarNotFound";
 import api from "api/Query";
 import CONST from "const";
-import Filters from 'filters'
 
 var $$ = window.Dom7;
 export default {

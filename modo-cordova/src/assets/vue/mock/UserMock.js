@@ -16,7 +16,7 @@ Mock.mock('/api/user/login', 'post', function (options) {
 			uname: 'admin',
 			zzid: '40008001',
 			token:'597235720sfsf',
-			permission: [1, 2, 3, 4]
+			permission: [1, 2, 3,4]
 		}
 	}
 

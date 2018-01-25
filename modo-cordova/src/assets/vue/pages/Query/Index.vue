@@ -14,7 +14,7 @@
 </style>
 <script>
 import {Permissions} from 'const'
-import Directives from 'directives'
+
 
 export default {
   data(){

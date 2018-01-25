@@ -4,6 +4,9 @@ import Framework7Vue from 'framework7-vue'
 
 import Framework7Theme from 'framework7/dist/css/framework7.ios.min.css'
 import Framework7ThemeColors from 'framework7/dist/css/framework7.ios.colors.min.css'
+import  'common/chart-walden.js'	
+
+import ECharts from "vue-echarts/components/ECharts.vue";
 
 import FontAwsome from './assets/css/fontawesome-all.min.css'
 import AppStyles from './assets/css/main.css'
@@ -13,8 +16,12 @@ import { setNavBack, setNavTitle } from 'common'
 import routes from 'routes'
 import store from 'state'
 import app from './App'
+import Filters from 'filters'
+import Directives from 'directives'
+
 
 Vue.use(Framework7Vue)
+Vue.component("chart", ECharts);
 
 
 new Vue({
@@ -25,9 +32,7 @@ new Vue({
 	template: '<app/>',
 	store,
 	framework7: {
-		root: '#app',
-		/* Uncomment to enable Material theme: */
-		// material: true,
+		root: '#app',		
 		routes,
 		preroute: function (view, options) {
 			var url = options.url

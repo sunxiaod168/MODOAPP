@@ -13,7 +13,7 @@
               <div class="item-title">{{item.Name }}
               </div>
               <span>
-                <i class="fas fa-yen-sign"></i>{{item.RetailPrice}}</span>
+                {{item.RetailPrice |money}}</span>
             </div>
           </a>
           <div class="accordion-item-content">

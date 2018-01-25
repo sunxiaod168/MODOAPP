@@ -1,81 +1,161 @@
 <template>
-  <f7-page nav-title="资产统计分析">
+  <f7-page nav-title="资产统计分析" pull-to-refresh @page:beforeinit="initHandle" @page:back="backHandler" @ptr:refresh="onRefresh">
+    <f7-grid class="asset-total">
+      <f7-col>
+        <label>总资产</label>
+        <span>{{assetData.AssetTotal | money}}</span>
+      </f7-col>
+    </f7-grid>
+    <f7-grid class="asset-detail">
+      <f7-col>
+        <label>存货总额</label>
+        <span>{{assetData.GoodsTotal | money}}</span>
+      </f7-col>
+      <f7-col>
+        <label>现金余额</label>
+        <span>{{assetData.MoneyTotal | money}}</span>
+      </f7-col>
+      <f7-col>
+        <label>应收款总额</label>
+        <span>{{assetData.ReceiveTotal | money}}</span>
+      </f7-col>
+    </f7-grid>
 
-    <f7-card>
-      <f7-card-header>总资产 ¥2,206,044.44</f7-card-header>
-      <f7-card-content>存货总额 ¥936,105.00</f7-card-content>
-      <f7-card-content>现金余额 ¥977,697.44</f7-card-content>
-      <f7-card-content>应收款总额 ¥292,242.00</f7-card-content>
-    </f7-card>
-    <f7-card>
+    <chart :options="option" :auto-resize="true" :style="{width: '100%'}" theme="walden"></chart>
 
-      <f7-card-content>
-        <chart :options="polar" :auto-resize="true" :style="{width: '100%'}"></chart>
-      </f7-card-content>
-
-    </f7-card>
   </f7-page>
 </template>
+<style scoped>
+.page>>>.page-content {
+  background-color: #fff;
+}
+</style>
+
 <style>
 .echarts {
-  height: 300px;
+}
+.asset-total {
+  font-size: 20px;
+  padding: 20px 15px 10px;
+  font-weight: bold;
+  background-color: #007aff;
+  color: #fff;
+}
+.asset-detail {
+  padding: 10px 15px;
+  background-color: #007aff;
+  color: #fff;
+}
+.asset-detail .col-auto {
+  word-break: break-word;
 }
 </style>
 <script>
-import Vue from "vue";
-import ECharts from "vue-echarts/components/ECharts.vue";
-import "echarts/lib/chart/line";
-import "echarts/lib/component/tooltip";
-import 'echarts/lib/component/polar'
 
-Vue.component("chart", ECharts);
+import "echarts/lib/chart/pie";
+import "echarts/lib/component/tooltip";
+import { bus } from "common";
+import Right from "./components/AssetRight";
+import api from "api/Stat";
+import CONST from "const";
 
 export default {
-  data: function() {
-    let data = [];
-
-    for (let i = 0; i <= 360; i++) {
-      let t = i / 180 * Math.PI;
-      let r = Math.sin(2 * t) * Math.cos(2 * t);
-      data.push([r, i]);
-    }
-
+  data() {
     return {
-      polar: {
-        title: {
-          text: "极坐标双数值轴"
-        },
-        legend: {
-          data: ["line"]
-        },
-        polar: {
-          center: ["50%", "54%"]
-        },
-        tooltip: {
-          trigger: "axis",
-          axisPointer: {
-            type: "cross"
+      msg: "",
+      query: {
+        zzid: null
+      },
+      isLoading: false,
+      assetData: {},
+      option: {}
+    };
+  },
+  mounted() {
+    bus.$on("rightDone", this.rightDone);
+  },
+  beforeDestroy() {
+    bus.$off("rightDone", this.rightDone);
+  },
+  methods: {
+    initHandle() {
+      this.$store.state.navRightVisiable = true;
+      this.$store.state.navRightTitle = "";
+      this.$store.state.navRightIcon = "fas fa-filter";
+      this.$store.state.currentRightView = Right;
+      this.loadData();
+    },
+    backHandler() {
+      this.$store.state.navRightVisiable = false;
+    },
+    onRefresh() {
+      if (this.isLoading) {
+        return;
+      }
+      this.loadData();
+    },
+    loadData(nextPage) {
+      var me = this;
+      me.isLoading = true;
+      api
+        .asset(this.query)
+        .then(function(response) {
+          var data = response.data;
+          if (data.status === CONST.STATUS_SUCCESS) {
+            me.assetData = data.data;
+            me.refreshChart();
+          } else {
+            me.msg = data.msg;
           }
-        },
-        angleAxis: {
-          type: "value",
-          startAngle: 0
-        },
-        radiusAxis: {
-          min: 0
+          me.$f7.pullToRefreshDone();
+          me.isLoading = false;
+        })
+        .catch(function(err) {
+          me.$f7.pullToRefreshDone();
+          me.msg = err;
+          me.isLoading = false;
+        });
+    },
+    refreshChart() {
+      this.option = {
+        tooltip: {
+          trigger: "item",
+          confine: true,
+          formatter: "{b}：{d}%"
         },
         series: [
           {
-            coordinateSystem: "polar",
-            name: "line",
-            type: "line",
-            showSymbol: false,
-            data: data
+            type: "pie",
+            radius: "90%",
+            center: ["50%", "50%"],
+            label: {
+              normal: {
+                position: "inner"
+              }
+            },
+            labelLine: {
+              normal: {
+                show: false
+              }
+            },           
+            data: [
+              { value: this.assetData.GoodsTotal, name: "存货总额" },
+              { value: this.assetData.MoneyTotal, name: "现金余额" },
+              { value: this.assetData.ReceiveTotal, name: "应收款总额" }
+            ].sort(function(a, b) {
+              return a.value - b.value;
+            })
           }
-        ],
-        animationDuration: 2000
-      }
-    };
+        ]
+      };
+    },
+    rightDone(payload) {
+      if (this.isLoading) {
+        return;
+      }          
+      this.query.zzid = payload;
+      this.loadData();
+    }
   }
 };
 </script>
