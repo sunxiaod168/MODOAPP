@@ -8,7 +8,7 @@ import OrderProgressQuery from 'pages/Query/OrderProgressQuery'
 import RetailPriceQuery from 'pages/Query/RetailPriceQuery'
 
 import Stat from 'pages/Stat/Index'
-import AchievementStat from 'pages/Stat/AchievementStat'
+import OrderStat from 'pages/Stat/OrderStat'
 import AssetStat from 'pages/Stat/AssetStat'
 import IncomeExpensesStat from 'pages/Stat/IncomeExpensesStat'
 import InventoryDailyStat from 'pages/Stat/InventoryDailyStat'
@@ -76,8 +76,8 @@ const routes = [
 		component: RetailPriceQuery
 	},
 	{
-		path: '/achievement-stat',
-		component: AchievementStat
+		path: '/order-stat',
+		component: OrderStat
 	},
 	{
 		path: '/asset-stat',

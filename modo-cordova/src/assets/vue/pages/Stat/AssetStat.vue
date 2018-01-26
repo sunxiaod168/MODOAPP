@@ -20,9 +20,7 @@
         <span>{{assetData.ReceiveTotal | money}}</span>
       </f7-col>
     </f7-grid>
-
-    <chart :options="option" :auto-resize="true" :style="{width: '100%'}" theme="walden"></chart>
-
+    <pie-chart :sdata="pieData"></pie-chart>
   </f7-page>
 </template>
 <style scoped>
@@ -32,8 +30,6 @@
 </style>
 
 <style>
-.echarts {
-}
 .asset-total {
   font-size: 20px;
   padding: 20px 15px 10px;
@@ -51,13 +47,11 @@
 }
 </style>
 <script>
-
-import "echarts/lib/chart/pie";
-import "echarts/lib/component/tooltip";
 import { bus } from "common";
 import Right from "./components/AssetRight";
 import api from "api/Stat";
 import CONST from "const";
+import PieChart from "components/PieChart";
 
 export default {
   data() {
@@ -68,9 +62,10 @@ export default {
       },
       isLoading: false,
       assetData: {},
-      option: {}
+      pieData: []
     };
   },
+  components: { PieChart },
   mounted() {
     bus.$on("rightDone", this.rightDone);
   },
@@ -117,46 +112,19 @@ export default {
         });
     },
     refreshChart() {
-      this.option = {
-        tooltip: {
-          trigger: "item",
-          confine: true,
-          formatter: "{b}：{d}%"
-        },
-        series: [
-          {
-            type: "pie",
-            radius: "90%",
-            center: ["50%", "50%"],
-            label: {
-              normal: {
-                position: "inner"
-              }
-            },
-            labelLine: {
-              normal: {
-                show: false
-              }
-            },           
-            data: [
-              { value: this.assetData.GoodsTotal, name: "存货总额" },
-              { value: this.assetData.MoneyTotal, name: "现金余额" },
-              { value: this.assetData.ReceiveTotal, name: "应收款总额" }
-            ].sort(function(a, b) {
-              return a.value - b.value;
-            })
-          }
-        ]
-      };
+      this.pieData = [
+        { value: this.assetData.GoodsTotal, name: "存货总额" },
+        { value: this.assetData.MoneyTotal, name: "现金余额" },
+        { value: this.assetData.ReceiveTotal, name: "应收款总额" }
+      ];
     },
     rightDone(payload) {
       if (this.isLoading) {
         return;
-      }          
+      }
       this.query.zzid = payload;
       this.loadData();
     }
   }
 };
 </script>
-
