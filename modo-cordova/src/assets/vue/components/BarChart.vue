@@ -11,7 +11,7 @@ import "echarts/lib/chart/bar";
 import "echarts/lib/component/tooltip";
 
 export default {
-  props: ["sdata", "vertical","seriesLabelFormatter"],
+  props: ["sdata", "vertical","seriesLabelFormatter", "category"],
   data() {
     return {
       option: {
@@ -22,11 +22,12 @@ export default {
         legend: {
           bottom: 0
         },
-        grid:{containLabel:true, top:20, left:20, right:20},
+        grid:{containLabel:true, top:20, left:0, right:0},
         xAxis: [
           {
             type: "category",
-            axisTick: { show: false }
+            data: this.category,
+            axisTick: { show: false },
           }
         ],
         yAxis: [
@@ -70,7 +71,10 @@ export default {
       ];
       this.option.xAxis[0].position = "top";
       this.labelOption.normal.rotate = 0;
-      this.labelOption.normal.position = "insideLeft";      
+      this.labelOption.normal.position = "insideLeft";    
+      this.option.grid.left = 10;
+      this.option.grid.right = 10;
+        
     }
     var me = this;
     this.unwatch = this.$watch("sdata", function(newVal, oldVal) {

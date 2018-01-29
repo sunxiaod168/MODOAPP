@@ -10,7 +10,7 @@ import "echarts/lib/chart/pie";
 import "echarts/lib/component/tooltip";
 
 export default {
-  props: ["sdata"],
+  props: ["sdata","refreshTick"],
   data() {
     return {
       option: {
@@ -21,11 +21,10 @@ export default {
         },
         series: []
       },
-      unwatch: null
+      unwatch: []
     };
   },
-  mounted() {
-    var me = this;
+  mounted() {   
     var series = [
       {
         type: "pie",
@@ -43,13 +42,24 @@ export default {
         }
       }
     ];
-    this.unwatch = this.$watch("sdata", function(newVal, oldVal) {
+     var sdataUnwatch= this.$watch("sdata", function(newVal, oldVal) {
       series[0].data = newVal;
-      me.option.series = series;
-    });
+      this.option.series = series;
+    });   
+    this.unwatch.push(sdataUnwatch);
+
+    var refreshUnwatch= this.$watch("refreshTick", function(newVal, oldVal) {
+      if(newVal !== null){
+        this.$children[0].resize()
+      }      
+    });   
+    this.unwatch.push(refreshUnwatch);
+   
   },
   beforeDestroy() {
-    this.unwatch();
+    this.unwatch.forEach(unwatch => {
+      unwatch();
+    });   
   }
 };
 </script>

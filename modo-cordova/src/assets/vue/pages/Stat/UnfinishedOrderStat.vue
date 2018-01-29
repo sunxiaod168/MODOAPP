@@ -1,9 +1,7 @@
-
 <template>
 
-  <f7-page nav-title="订单进度查询" pull-to-refresh infinite-scroll @page:beforeinit="initHandle" @page:back="backHandler" @ptr:refresh="onRefresh" @infinite="onInfiniteScroll">
-
-    <!-- Search bar -->
+  <f7-page nav-title="未完成订单统计" pull-to-refresh infinite-scroll @page:beforeinit="initHandle" @page:back="backHandler" @ptr:refresh="onRefresh" @infinite="onInfiniteScroll">
+    
     <f7-searchbar cancel-link="取消" search-list="#price-list" placeholder="客户姓名 客户电话" :custom-search="true" :clear-button="true" @searchbar:enable="onEnableSearch" @searchbar:disable="onDisableSearch" @submit="onSubmitSearch"></f7-searchbar>
 
     <div class="list-block">
@@ -79,9 +77,9 @@
 
 <script>
 import { bus } from "common";
-import Right from "./components/OrderProgressRight";
+import Right from "./components/UnfinishedOrderRight";
 import SearchbarNotFound from "components/SearchbarNotFound";
-import api from "api/Query";
+import api from "api/Stat";
 import CONST from "const";
 
 var $$ = window.Dom7;
@@ -95,7 +93,7 @@ export default {
         zzids: [],
         keywords: null,
         startDate: null,
-        endDate: null        
+        endDate: null      
       },
       isLoading: false,
       orderList: [],
@@ -159,7 +157,7 @@ export default {
       return new Promise((resolve, reject) => {
         me.isLoading = true;
         api
-          .orderProgress(this.query)
+          .unfinishedOrder(this.query)
           .then(function(response) {
             var data = response.data;
             if (data.status === CONST.STATUS_SUCCESS) {
@@ -249,8 +247,7 @@ export default {
       this.query.pageNum = 1;
       this.query.zzids = payload.zzids;
       this.query.startDate = payload.startDate;
-      this.query.endDate = payload.endDate;
-     
+      this.query.endDate = payload.endDate;     
       this.loadData();
     }
   }

@@ -11,9 +11,9 @@ import Stat from 'pages/Stat/Index'
 import OrderStat from 'pages/Stat/OrderStat'
 import AssetStat from 'pages/Stat/AssetStat'
 import IncomeExpensesStat from 'pages/Stat/IncomeExpensesStat'
-import InventoryDailyStat from 'pages/Stat/InventoryDailyStat'
+import InventoryStat from 'pages/Stat/InventoryStat'
 import ProfitAccounting from 'pages/Stat/ProfitAccounting'
-import UnFinishOrderStat from 'pages/Stat/UnFinishOrderStat'
+import UnfinishedOrderStat from 'pages/Stat/UnfinishedOrderStat'
 
 import Delivery from 'pages/Delivery/Index'
 import DeliveryReport from 'pages/Delivery/DeliveryReport'
@@ -26,7 +26,6 @@ import About from 'pages/Mine/About'
 import ChangePassword from 'pages/Mine/ChangePassword'
 import FindPassword from 'pages/Mine/FindPassword'
 import Version from 'pages/Mine/Version'
-
 
 const routes = [
 	{
@@ -88,16 +87,16 @@ const routes = [
 		component: IncomeExpensesStat
 	},
 	{
-		path: '/inventory-daily-stat',
-		component: InventoryDailyStat
+		path: '/inventory-stat',
+		component: InventoryStat
 	},
 	{
 		path: '/profit-accounting',
 		component: ProfitAccounting
 	},
 	{
-		path: '/unfinish-order-stat',
-		component: UnFinishOrderStat
+		path: '/unfinished-order-stat',
+		component: UnfinishedOrderStat
 	},
 	{
 		path: '/delivery-report',

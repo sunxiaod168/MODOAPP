@@ -31,7 +31,7 @@
 
 <style>
 .asset-total {
-  font-size: 20px;
+  font-size: 25px;
   padding: 20px 15px 10px;
   font-weight: bold;
   background-color: #007aff;

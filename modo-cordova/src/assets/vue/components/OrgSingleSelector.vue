@@ -1,10 +1,10 @@
 <template>
-    <div class="org-select">
-        <f7-block-title>{{title}}</f7-block-title>
-        <f7-list>
-            <f7-list-item radio v-model="zzid" v-for="org in orgList" :value="org.zzid" :input-value="org.zzid" :title="org.zzname" :key="org.zzid"></f7-list-item>
-        </f7-list>
-    </div>
+  <div class="org-select">
+    <f7-block-title>{{title}}</f7-block-title>
+    <f7-list>
+      <f7-list-item radio v-model="zzid" v-for="org in orgList" :value="org.zzid" :input-value="org.zzid" :title="org.zzname" :key="org.zzid"></f7-list-item>
+    </f7-list>
+  </div>
 </template>
 
 <style>
@@ -25,6 +25,13 @@ import CONST from "const";
 
 export default {
   props: ["value", "params", "title"],
+  data() {
+    return {
+      orgList: [],
+      zzid: 0,
+      unwatch: []
+    };
+  },
   mounted() {
     var me = this;
 
@@ -34,7 +41,7 @@ export default {
     this.unwatch.push(zzidUnwatch);
 
     var valUnwatch = this.$watch("value", function(newVal, oldVal) {
-      me.zzid = newVal;     
+      me.zzid = newVal;
     });
     this.unwatch.push(valUnwatch);
 
@@ -44,13 +51,6 @@ export default {
     this.unwatch.forEach(unwatch => {
       unwatch();
     });
-  },
-  data() {
-    return {     
-      orgList: [],
-      zzid: 0,
-      unwatch: []
-    };
   },
   methods: {
     loadData() {
@@ -64,7 +64,7 @@ export default {
           }
         })
         .catch(function(err) {});
-    }   
+    }
   }
 };
 </script>

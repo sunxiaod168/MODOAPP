@@ -22,7 +22,7 @@ export default {
             return [pt[0], 130];
           }
         },
-        grid:{containLabel:true, left:0, right:20, bottom:0},
+        grid:{containLabel:true, left:0, right:20, bottom:50},
         xAxis: {
           type: "category"
         },

@@ -17,7 +17,7 @@ export default {
     return {
       orgParams: {
         zzid: this.$store.state.userInfo.zzid,
-        type: "asset"
+        type: "inventory"
       },
       zzid: null
     };

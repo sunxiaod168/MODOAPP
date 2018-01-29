@@ -26,7 +26,7 @@ export default {
     return {
       orgParams: {
         zzid: this.$store.state.userInfo.zzid,
-        type: "order-progress"
+        type: "unfinished-order"
       },
       zzids: [],
       startDate: null,
