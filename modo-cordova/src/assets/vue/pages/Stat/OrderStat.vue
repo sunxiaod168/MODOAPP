@@ -8,13 +8,13 @@
       </f7-buttons>
       <f7-tabs swipeable>
         <f7-tab id="order-stat-tab1" active>
-          <bar-chart :sdata="colData"></bar-chart>
+          <bar-chart :sdata="colData" :seriesLabelFormatter="moneyFormatter"></bar-chart>
         </f7-tab>
         <f7-tab id="order-stat-tab2">
           <line-chart :sdata="lineData"></line-chart>
         </f7-tab>
         <f7-tab id="order-stat-tab3">
-          <bar-chart :sdata="barData" :vertical="false"></bar-chart>
+          <bar-chart :sdata="barData" :vertical="false" :seriesLabelFormatter="moneyFormatter"></bar-chart>
         </f7-tab>
       </f7-tabs>
     </f7-block>
@@ -30,12 +30,13 @@
 
 </style>
 <script>
-import { bus } from "common";
+import { bus,localDateString,moneyString } from "common";
 import Right from "./components/OrderRight";
 import api from "api/Stat";
 import CONST from "const";
 import BarChart from "components/BarChart";
 import LineChart from "components/LineChart";
+
 
 export default {
   data() {
@@ -47,7 +48,6 @@ export default {
         endDate: null
       },
       isLoading: false,
-      pageData: {},
       colData: [],
       lineData: [],
       barData: []
@@ -81,12 +81,11 @@ export default {
       var me = this;
       me.isLoading = true;
       api
-        .achievement(this.query)
+        .order(this.query)
         .then(function(response) {
           var data = response.data;
           if (data.status === CONST.STATUS_SUCCESS) {
-            me.pageData = data.data;
-            me.refreshChart();
+            me.refreshChart(data.data);
           } else {
             me.msg = data.msg;
           }
@@ -99,52 +98,40 @@ export default {
           me.isLoading = false;
         });
     },
-    refreshChart() {
-      this.colData = [
-        {
-          name: "Forest",
-          data: [320]
-        },
-        {
-          name: "Steppe",
-          data: [220]
-        },
-        {
-          name: "Desert",
-          data: [150]
-        },
-        {
-          name: "Wetland",
-          data: [98]
+    refreshChart(data) {
+      this.convertColData(data.ColGrid);
+      this.convertLineData(data.DayLineGrid);
+      this.convertBarData(data.StaffBarGrid);
+    },
+    convertColData(data) {    
+      this.colData = data.map(item => {
+        return {
+          name:item.ZZName,
+          data:[item.Total]
         }
-      ];
-      this.lineData = [
-          {
-            name: "模拟数据1",          
-            data: [['2018-1-1', 100],['2018-1-2', 200],['2018-1-3', 300],['2018-1-4', 200],['2018-1-5', 100],]
-          },
-          {
-            name: "模拟数据2",         
-            data: [['2018-3-11',5100],['2018-3-12', 6200],['2018-3-13', 7300],['2018-3-14', 1200],['2018-3-15', 3100],]
-          }];
-      this.barData = [
-        {
-          name: "Forest",
-          data: [320]
-        },
-        {
-          name: "Steppe",
-          data: [220]
-        },
-        {
-          name: "Desert",
-          data: [150]
-        },
-        {
-          name: "Wetland",
-          data: [98]
+      })      
+    },
+    convertLineData(data) {
+      this.lineData = data.map(item => {
+        var lineItems = item.LineData.map(lineItem => {
+          return [localDateString(lineItem.AnchorDate), lineItem.Total]
+        })
+        return {
+          name:item.ZZName,
+          data:lineItems
         }
-      ];
+      })     
+    },
+    convertBarData(data) {
+      this.barData = data.map(item => {
+        return {
+          name: item.StaffName,
+          data:[item.Total]
+        }
+      })     
+    },
+    moneyFormatter(a){
+      return moneyString(a.value)
     },
     rightDone(payload) {
       if (this.isLoading) {

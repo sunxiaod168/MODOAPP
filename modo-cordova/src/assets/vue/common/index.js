@@ -1,6 +1,7 @@
 import CONST, {PermissionMap} from 'const'
 import $ from 'jquery'
 import Vue from 'vue'
+import CurrencyFormatter from 'currency-formatter'
 
 export const bus = new Vue()
 
@@ -67,6 +68,34 @@ export function convertJsonDate(value){
 		return new Date(numValue)
     } else {
         return null
+    }
+}
+
+export function localDateString(value){
+	var date = convertJsonDate(value);
+	if(date == null){
+		return null
+	}else {
+		return date.toLocaleDateString()
+	}	
+}
+
+
+export function localDateTimeString(value){
+	var date = convertJsonDate(value);
+	if(date == null){
+		return null
+	}else {
+		return date.toLocaleDateString() + ' ' +date.toLocaleTimeString()
+	}	
+}
+
+export function moneyString(value){
+
+	if (value === null) {
+        return ''
+    } else {        
+        return CurrencyFormatter.format(value, { code: 'CNY' });
     }
 }
 

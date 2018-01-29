@@ -20,12 +20,12 @@ Mock.mock('/api/stat/profit', 'post', function (options) {
         data: profitData
     }
 })
-Mock.mock('/api/stat/achievement', 'post', function (options) {
+Mock.mock('/api/stat/order', 'post', function (options) {
     var params = JSON.parse(options.body)
     return {
         status: CONST.STATUS_SUCCESS,
         msg: '查询成功',
-        data: achievementData
+        data: orderData
     }
 })
 Mock.mock('/api/stat/unfinishOrder', 'post', function (options) {
@@ -65,7 +65,7 @@ var profitData = {
         { "ZZName": "华兰家具欧凯龙北环店", "DeliveryAmount": 0.00, "CostAmount": 0, "OutAmount": 0.00, "ProfitAmount": 0.00, "ProfitRate": 0 },
         { "ZZName": "长实简艺", "DeliveryAmount": 0.00, "CostAmount": 0, "OutAmount": 0.00, "ProfitAmount": 0.00, "ProfitRate": 0 }]
 }
-var achievementData = {
+var orderData = {
     "ColGrid": [
         { "ZZID": "4100008001001", "ZZName": "华兰家具欧凯龙西环店", "Total": 530384 },
         { "ZZID": "4100008001002", "ZZName": "华兰家具欧凯龙北环店", "Total": 312806 },
@@ -117,7 +117,8 @@ var achievementData = {
                 { "AnchorDate": "\/Date(1512489600000)\/", "Total": 17994 }]
         },
         {
-            "ZZID": "4100008001002", "ZZName": "华兰家具欧凯龙北环店", "LineData": [
+            "ZZID": "4100008001002", "ZZName": "华兰家具欧凯龙北环店", 
+            "LineData": [
                 { "AnchorDate": "\/Date(1509033600000)\/", "Total": 221926 },
                 { "AnchorDate": "\/Date(1509120000000)\/", "Total": 0 },
                 { "AnchorDate": "\/Date(1509206400000)\/", "Total": 0 },
@@ -161,7 +162,8 @@ var achievementData = {
                 { "AnchorDate": "\/Date(1512489600000)\/", "Total": 0 }]
         },
         {
-            "ZZID": "4100008001003", "ZZName": "长实简艺", "LineData": [
+            "ZZID": "4100008001003", "ZZName": "长实简艺", 
+            "LineData": [
                 { "AnchorDate": "\/Date(1509033600000)\/", "Total": 157388 },
                 { "AnchorDate": "\/Date(1509120000000)\/", "Total": 0 },
                 { "AnchorDate": "\/Date(1509206400000)\/", "Total": 0 },

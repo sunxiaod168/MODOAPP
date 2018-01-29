@@ -8,8 +8,8 @@ const api = {
   profit(params) {
     return axios.post('/stat/profit', params)
   },
-  achievement(params) {
-    return axios.post('/stat/achievement', params)
+  order(params) {
+    return axios.post('/stat/order', params)
   },
   unfinishOrder(params) {
     return axios.post('/stat/unfinishOrder', params)

@@ -12,7 +12,8 @@ export default {
       option: {
         animation: true,
         legend: {
-          top: 20
+          top: 0,
+          padding: [10,0]
         },
         tooltip: {
           trigger: "item",
@@ -21,15 +22,15 @@ export default {
             return [pt[0], 130];
           }
         },
+        grid:{containLabel:true, left:0, right:20, bottom:0},
         xAxis: {
           type: "category"
         },
         yAxis: {
-          type: "value"
-        },
-        grid: {
-          bottom: 80
-        },
+          type: "value",
+          axisTick: {show:false},
+          axisLabel:{ show: true},
+        },       
         dataZoom: [
           {
             type: "inside",

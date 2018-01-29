@@ -5,7 +5,7 @@
         <f7-button tab-link="#profit-tab1" active>按送货额核算</f7-button>
         <f7-button tab-link="#profit-tab2">按订货额核算</f7-button>
       </f7-buttons>
-      <f7-tabs swipeable>
+      <f7-tabs>
         <f7-tab id="profit-tab1" active>
           <f7-card v-for="item in pageData.byDelivery" :key="item.ZZName">
             <f7-card-header>{{item.ZZName}}</f7-card-header>

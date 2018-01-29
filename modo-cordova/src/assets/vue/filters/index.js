@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { convertJsonDate } from 'common'
+import { convertJsonDate, moneyString} from 'common'
 import CurrencyFormatter from 'currency-formatter'
 
 Vue.filter('date', function (value) {
@@ -21,10 +21,5 @@ Vue.filter('datetime', function (value) {
     }
 })
 Vue.filter('money', function (value) {
-        
-    if (value === null) {
-        return ''
-    } else {        
-        return CurrencyFormatter.format(value, { code: 'CNY' });
-    }
+    return moneyString(value);   
 })
