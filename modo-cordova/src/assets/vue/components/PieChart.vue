@@ -60,7 +60,7 @@ export default {
     this.unwatch.forEach(unwatch => {
       unwatch();
     });   
-  }
+  } 
 };
 </script>
 

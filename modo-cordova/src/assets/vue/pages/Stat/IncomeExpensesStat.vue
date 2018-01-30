@@ -9,28 +9,27 @@
       <f7-tabs>
         <f7-tab id="income-expense-tab1" active>
           <bar-chart :sdata="totalData" :seriesLabelFormatter="moneyFormatter" :category="['收款总额','支出总额', '现金余额']"></bar-chart>
-          <div class="data-table card">
-            <table>
-              <thead>
-                <tr>
-                  <th class="label-cell">组织名称</th>
-                  <th class="numeric-cell">收款总额</th>
-                  <th class="numeric-cell">支出总额</th>
-                  <th class="numeric-cell">现金余额</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="item in totalData" :key="item.name">
-                  <td class="label-cell">{{item.name}}</td>
-                  <td class="numeric-cell">{{item.data[0] | money}}</td>
-                  <td class="numeric-cell">{{item.data[1] | money}}</td>
-                  <td class="numeric-cell">{{item.data[2] | money}}</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="data-list">
+            <ul>
+              <li v-for="item in totalData" :key="item.name">
+                <p class="cell-title">{{item.name}}</p>
+                <div class="cell-block">
+                  <label>收款总额</label>
+                  <span class="cell-money">{{item.data[0] | money}}</span>
+                </div>
+                <div class="cell-block">
+                  <label>支出总额</label>
+                  <span class="cell-money">{{item.data[1] | money}}</span>
+                </div>
+                <div class="cell-block">
+                  <label>现金余额</label>
+                  <span class="cell-money">{{item.data[2] | money}}</span>
+                </div>
+              </li>
+            </ul>
           </div>
         </f7-tab>
-        <f7-tab id="income-expense-tab2"  @tab:show="changeTab()">
+        <f7-tab id="income-expense-tab2" @tab:show="resizeChart()">
           <pie-chart :sdata="incomeData" :refreshTick="refreshTick"></pie-chart>
           <div class="data-table card">
             <table>
@@ -49,8 +48,8 @@
             </table>
           </div>
         </f7-tab>
-        <f7-tab id="income-expense-tab3"  @tab:show="changeTab()">
-          <pie-chart :sdata="expenseData" :refreshTick="refreshTick"></pie-chart>
+        <f7-tab id="income-expense-tab3" @tab:show="resizeChart()">
+          <pie-chart :sdata="expenseChartData" :refreshTick="refreshTick"></pie-chart>
           <div class="data-table card">
             <table>
               <thead>
@@ -75,6 +74,12 @@
 <style scoped>
 .page>>>.page-content {
   background-color: #fff;
+}
+.data-list {
+  margin-top: 15px;
+}
+.tabs .tab {
+  width: 290px;
 }
 </style>
 
@@ -102,12 +107,13 @@ export default {
       totalData: [],
       incomeData: [],
       expenseData: [],
+      expenseChartData: [],
       refreshTick: null
     };
   },
-  components: { PieChart, BarChart },
+  components: { PieChart, BarChart },  
   mounted() {
-    bus.$on("rightDone", this.rightDone);
+    bus.$on("rightDone", this.rightDone);   
   },
   beforeDestroy() {
     bus.$off("rightDone", this.rightDone);
@@ -178,6 +184,30 @@ export default {
           value: item.Amount
         };
       });
+
+      var total = 0;
+      data.forEach(item => {
+        total += item.Amount;
+      });
+      var other = 0;
+      var chartData = data.filter(item => {
+        if (item.Amount / total < 0.01) {
+          other += item.Amount;
+          return false;
+        } else {
+          return true;
+        }
+      });
+      if (other > 0) {
+        chartData.push({ Subject: "其他", Amount: other });
+      }
+
+      this.expenseChartData = chartData.map(item => {
+        return {
+          name: item.Subject,
+          value: item.Amount
+        };
+      });
     },
     moneyFormatter(a) {
       return moneyString(a.value);
@@ -189,8 +219,8 @@ export default {
       this.query = payload;
       this.loadData();
     },
-    changeTab(){
-      this.refreshTick = +new Date();     
+    resizeChart() {
+      this.refreshTick = +new Date();
     }
   }
 };

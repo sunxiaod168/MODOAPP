@@ -43,8 +43,9 @@
     text-align: center;
     font-size: 17px;
 }
-.right-navbar .right-button{
-    color:#fff;
+
+.right-navbar .right-button {
+    color: #fff;
     float: right;
     padding: 0 15px;
 }
@@ -164,9 +165,45 @@
     background-size: 10px 1px;
     background-repeat: repeat-x;
 }
-.card {    
-    box-shadow: 1px 1px 5px rgba(0,0,0,.3);
+
+.card {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .3);
 }
+
 .md-block-title {
     margin: 20px 15px 0;
-  }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.data-list {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+.data-list ul {
+    padding-top: 15px;
+}
+
+.data-list li {
+    padding: 0 15px 5px;
+    border-bottom: 1px solid #c8c7cc;
+    margin-bottom: 10px;
+}
+
+.data-list .cell-title {
+    margin: 0;
+    font-weight: bold;
+}
+
+.data-list .cell-block {
+    margin-top: 10px;
+}
+
+.data-list .cell-block>span {
+    float: right;
+}
