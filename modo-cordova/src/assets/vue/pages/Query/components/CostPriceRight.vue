@@ -31,7 +31,8 @@ export default {
   },
   methods: {
     rightDone() {
-      bus.$emit("rightDone", this.zzids);
+      var query = {zzids: this.zzids}
+      bus.$emit("rightDone", query);     
     },
     clear() {
       this.zzids = [];

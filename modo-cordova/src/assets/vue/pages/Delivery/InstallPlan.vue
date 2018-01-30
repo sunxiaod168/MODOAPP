@@ -69,7 +69,6 @@ import DataListPage from "components/DataListPage";
 import Right from "./components/InstallPlanRight";
 import api from "api/Delivery";
 
-var $$ = window.Dom7;
 export default {
   data() {
     return {
@@ -78,8 +77,5 @@ export default {
     };
   },
   components: { DataListPage },
-  mounted() {},
-  beforeDestroy() {},
-  methods: {}
 };
 </script>
