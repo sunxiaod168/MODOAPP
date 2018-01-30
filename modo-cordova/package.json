@@ -60,6 +60,7 @@
         "framework7-vue": "^0.9.2",
         "jquery": "^3.2.1",
         "js-cookie": "^2.2.0",
+        "lodash.merge": "^4.6.0",
         "loglevel": "^1.4.1",
         "mockjs": "^1.0.1-beta3",
         "vue": "^2.2.4",

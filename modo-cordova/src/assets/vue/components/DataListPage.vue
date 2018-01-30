@@ -1,102 +1,29 @@
 <template>
-
-  <f7-page nav-title="未完成订单统计" pull-to-refresh infinite-scroll @page:beforeinit="initHandle" @page:back="backHandler" @ptr:refresh="onRefresh" @infinite="onInfiniteScroll">
-    
-    <f7-searchbar cancel-link="取消" search-list="#price-list" placeholder="客户姓名 客户电话" :custom-search="true" :clear-button="true" @searchbar:enable="onEnableSearch" @searchbar:disable="onDisableSearch" @submit="onSubmitSearch"></f7-searchbar>
-
-    <div class="list-block">
-      <ul>
-        <li class="accordion-item" v-for="item in orderList">
-          <a href="#" class="item-content item-link">
-            <div class="item-inner">
-              <div class="item-title">{{item.CustomerName }}
-              </div>
-              <span>
-                {{item.OrderStatusName}}</span>
-              <span>
-               <i class="fas fa-phone-square"></i>{{item.Phone}} </span>
-            </div>
-          </a>
-          <div class="accordion-item-content">
-            <div class="content-block">
-              <p class="dash-line">
-                <label>组织名称：</label>
-                <span>{{item.ZZName}}</span>
-              </p>
-              <p class="dash-line">
-                <label>订单编号：</label>
-                <span>{{item.OrderID}}</span>
-              </p>
-              <p class="dash-line">
-                <label>成效金额：</label>
-                <span>{{item.DealAmount |money}}</span>
-              </p>
-              <p class="dash-line">
-                <label>已收款：</label>
-                <span>{{item.ReceivedAmonut |money}}</span>
-              </p>
-              <p class="dash-line">
-                <label>预计送货日期：</label>
-                <span>{{item.PlanDeliveryTime | date}}</span>
-              </p>
-              <p class="dash-line">
-                <label>审核状态：</label>
-                <span>{{item.ExamineStatusName}}</span>
-              </p>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
+  <f7-page :nav-title="title" pull-to-refresh infinite-scroll @page:beforeinit="initHandle" @page:back="backHandler" @ptr:refresh="onRefresh" @infinite="onInfiniteScroll">
+    <f7-searchbar cancel-link="取消" search-list="#price-list" :placeholder="searchPlaceholder" :custom-search="true" :clear-button="true" @searchbar:enable="onEnableSearch" @searchbar:disable="onDisableSearch" @submit="onSubmitSearch"></f7-searchbar>
+    <slot :data="dataList"></slot>
     <searchbar-not-found :display="notFoundDisplay"></searchbar-not-found>
   </f7-page>
-
 </template>
-<style scoped>
-.list-block {
-  margin: 0;
-}
-.content-block {
-  text-align: left;
-}
-.content-block p {
-  
-  margin: 0;
-  padding: .7em;
-  color: #6d6d72;
-}
-.content-block p label {
-  display: inline-block;
-  width: 100px;
-  text-align: right;
-}
-.fa-phone-square{
-  margin-right: 5px;
-}
-</style>
 
 <script>
 import { bus } from "common";
-import Right from "./components/UnfinishedOrderRight";
 import SearchbarNotFound from "components/SearchbarNotFound";
-import api from "api/Stat";
 import CONST from "const";
 
 var $$ = window.Dom7;
 export default {
+  props:['request', 'rightPanel', 'title','searchPlaceholder'],
   data() {
     return {
       msg: "",
       query: {
         pageNum: 1,
-        pageSize: 15,
-        zzids: [],
-        keywords: null,
-        startDate: null,
-        endDate: null      
+        pageSize: 15,       
+        keywords: null       
       },
       isLoading: false,
-      orderList: [],
+      dataList: [],
       notFoundDisplay: "none"
     };
   },
@@ -112,7 +39,7 @@ export default {
       this.$store.state.navRightVisiable = true;
       this.$store.state.navRightTitle = "";
       this.$store.state.navRightIcon = "fas fa-filter";
-      this.$store.state.currentRightView = Right;
+      this.$store.state.currentRightView = this.rightPanel;
 
       this.loadData();
     },
@@ -138,8 +65,8 @@ export default {
         function(response) {
           var data = response.data;
           if (data.status === CONST.STATUS_SUCCESS) {
-            var orderList = data.data;
-            if (!orderList || orderList.length == 0) {
+            var dataList = data.data;
+            if (!dataList || dataList.length == 0) {
               me.query.pageNum--;
             }
           } else {
@@ -156,17 +83,16 @@ export default {
 
       return new Promise((resolve, reject) => {
         me.isLoading = true;
-        api
-          .unfinishedOrder(this.query)
+        me.request(this.query)
           .then(function(response) {
             var data = response.data;
             if (data.status === CONST.STATUS_SUCCESS) {
-              var orderList = data.data;
-              if (orderList && orderList.length > 0) {
+              var dataList = data.data;
+              if (dataList && dataList.length > 0) {
                 if (!nextPage) {
-                  me.orderList = [];
+                  me.dataList = [];
                 }
-                me.orderList = me.orderList.concat(orderList);
+                me.dataList = me.dataList.concat(dataList);
               }
             } else {
               me.msg = data.msg;
@@ -195,8 +121,8 @@ export default {
 
       var data = response.data;
       if (data.status === CONST.STATUS_SUCCESS) {
-        var orderList = data.data;
-        if (!orderList || orderList.length < this.query.pageSize) {
+        var dataList = data.data;
+        if (!dataList || dataList.length < this.query.pageSize) {
           preloader.hide();
         }
       } else {
@@ -215,7 +141,7 @@ export default {
       $$(".infinite-scroll-preloader").show();
       var mySearchbar = $$(".searchbar")[0].f7Searchbar;
       var keywords = mySearchbar.query;
-      this.orderList = [];
+      this.dataList = [];
       this.query.keywords = keywords;
       this.query.pageNum = 1;
 
@@ -224,8 +150,8 @@ export default {
         function(response) {
           var data = response.data;
           if (data.status === CONST.STATUS_SUCCESS) {
-            var orderList = data.data;
-            if (!orderList || orderList.length == 0) {
+            var dataList = data.data;
+            if (!dataList || dataList.length == 0) {
               me.notFoundDisplay = "block";
             }
           } else {
@@ -243,15 +169,19 @@ export default {
       }
       $$(".infinite-scroll-preloader").show();
       this.notFoundDisplay = "none";
-      this.orderList = [];
+      this.dataList = [];
       this.query.pageNum = 1;
-      this.query.zzids = payload.zzids;
-      this.query.startDate = payload.startDate;
-      this.query.endDate = payload.endDate;     
+      for (const key in payload) {
+        if (payload.hasOwnProperty(key)) {          
+          this.query[key] = payload[key];          
+        }
+      }
+      
       this.loadData();
     }
   }
 };
 </script>
+
 
 

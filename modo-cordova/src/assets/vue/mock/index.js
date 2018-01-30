@@ -1,7 +1,8 @@
-import 'mock/UserMock'
-import 'mock/QueryMock'
-import 'mock/OrgMock'
-import 'mock/StatMock'
+import './UserMock'
+import './QueryMock'
+import './OrgMock'
+import './StatMock'
+import './DeliveryMock'
 
 
 

@@ -1,4 +1,5 @@
 <template>
+
   <f7-page nav-title="收支统计分析" pull-to-refresh @page:beforeinit="initHandle" @page:back="backHandler" @ptr:refresh="onRefresh">
     <f7-block>
       <f7-buttons>

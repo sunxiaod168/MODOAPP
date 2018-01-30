@@ -1,7 +1,5 @@
 import Mock from 'mockjs'
-// import Cookie from 'js-cookie'
 import CONST from 'const'
-
 
 Mock.mock('/api/stat/asset', 'post', function (options) {
     var params = JSON.parse(options.body)
