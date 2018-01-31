@@ -15,8 +15,8 @@
               </div>
             </a>
             <div class="swipeout-actions-left">
-              <a class="edit-action" href="#" @click="makePlan($event,item)" v-if="item.DeliveryDispatch.ID > 0 || item.InstallDispatch.ID">编辑计划</a>
-              <a class="edit-action" href="#" @click="makePlan($event,item)" v-else>新增计划</a>
+              <a class="edit-action" href="#" @click="editPlan($event,item)" v-if="item.DeliveryDispatch.ID > 0 || item.InstallDispatch.ID">编辑计划</a>
+              <a class="edit-action" href="#" @click="addPlan($event,item)" v-else>新增计划</a>
               <a class="view-action" href="#" @click="viewPlan($event,item)" v-if="item.DeliveryDispatch.ID > 0 || item.InstallDispatch.ID">查看计划</a>
             </div>
             <div class="accordion-item-content">
@@ -90,11 +90,19 @@ export default {
         this.$f7.accordionClose(e.target);
       }
     },
-    makePlan(e, item) {
-      this.$f7.swipeoutClose(Dom7(e.target).parents("li")[0]);
+    addPlan(e, item) {
+      this.toEdit(e, item, true, "新增配送计划");
     },
-    viewPlan(e, item){
+    editPlan(e, item) {
+      this.toEdit(e, item, true, "编辑配送计划");
+    },
+    viewPlan(e, item) {
+      this.toEdit(e, item, false, "查看配送计划");
+    },
+    toEdit(e, item, editable, title) {
       this.$f7.swipeoutClose(Dom7(e.target).parents("li")[0]);
+      var query = { data: item, editable: editable, title: title };
+      this.$router.load({ url: "/delivery-install-plan-edit", query: query });
     }
   }
 };

@@ -18,6 +18,7 @@ import UnfinishedOrderStat from 'pages/Stat/UnfinishedOrderStat'
 import Delivery from 'pages/Delivery/Index'
 import DeliveryReport from 'pages/Delivery/DeliveryReport'
 import DeliveryInstallPlan from 'pages/Delivery/DeliveryInstallPlan'
+import DeliveryInstallPlanEdit from 'pages/Delivery/DeliveryInstallPlanEdit'
 import InstallReport from 'pages/Delivery/InstallReport'
 
 import Mine from 'pages/Mine/Index'
@@ -106,6 +107,10 @@ const routes = [
 		path: '/delivery-install-plan',
 		component: DeliveryInstallPlan
 	},
+	{
+		path: '/delivery-install-plan-edit',
+		component: DeliveryInstallPlanEdit
+	},	
 	{
 		path: '/install-report',
 		component: InstallReport

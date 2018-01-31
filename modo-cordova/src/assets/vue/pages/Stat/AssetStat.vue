@@ -75,6 +75,7 @@ export default {
   methods: {
     initHandle() {
       this.$store.state.navRightVisiable = true;
+      this.$store.state.navRightPanelEnabled = true;
       this.$store.state.navRightTitle = "";
       this.$store.state.navRightIcon = "fas fa-filter";
       this.$store.state.currentRightView = Right;
