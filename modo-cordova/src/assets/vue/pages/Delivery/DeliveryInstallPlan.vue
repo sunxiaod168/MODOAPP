@@ -3,8 +3,8 @@
     <template slot-scope="props">
       <div class="list-block">
         <ul>
-          <li class="accordion-item" v-for="item in props.data" :key="item.ID">
-            <a href="#" class="item-content item-link">
+          <li class="accordion-item swipeout" v-for="item in props.data" :key="item.ID" @accordion:open="itemOpen" @swipeout:open="itemSwipe">
+            <a href="#" class="item-content item-link swipeout-content">
               <div class="item-inner">
                 <div class="item-title cname">{{item.Customer.Name }}
                 </div>
@@ -14,6 +14,11 @@
                   {{item.SongHuoDanJinE | money}} </span>
               </div>
             </a>
+            <div class="swipeout-actions-left">
+              <a class="edit-action" href="#" @click="makePlan($event,item)" v-if="item.DeliveryDispatch.ID > 0 || item.InstallDispatch.ID">编辑计划</a>
+              <a class="edit-action" href="#" @click="makePlan($event,item)" v-else>新增计划</a>
+              <a class="view-action" href="#" @click="viewPlan($event,item)" v-if="item.DeliveryDispatch.ID > 0 || item.InstallDispatch.ID">查看计划</a>
+            </div>
             <div class="accordion-item-content">
               <div class="content-block">
                 <p class="dash-line">
@@ -61,7 +66,6 @@
 .fa-phone-square {
   margin-right: 5px;
 }
-
 </style>
 
 <script>
@@ -77,5 +81,21 @@ export default {
     };
   },
   components: { DataListPage },
+  methods: {
+    itemOpen(e) {
+      this.$f7.swipeoutClose(e.target);
+    },
+    itemSwipe(e) {
+      if (Dom7(e.target).hasClass("accordion-item-expanded")) {
+        this.$f7.accordionClose(e.target);
+      }
+    },
+    makePlan(e, item) {
+      this.$f7.swipeoutClose(Dom7(e.target).parents("li")[0]);
+    },
+    viewPlan(e, item){
+      this.$f7.swipeoutClose(Dom7(e.target).parents("li")[0]);
+    }
+  }
 };
 </script>

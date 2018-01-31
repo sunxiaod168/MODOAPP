@@ -1,7 +1,7 @@
 <template>
 
   <f7-list>
-    <f7-list-item  class="no-bottom-border" media="<i class='list-icon icon-install-plan'></i>" title="配送安装计划" link="/install-plan"/>
+    <f7-list-item  class="no-bottom-border" media="<i class='list-icon icon-install-plan'></i>" title="配送安装计划" link="/delivery-install-plan"/>
     <f7-list-item class="devider"/>
     <f7-list-item media="<i class='list-icon icon-delivery-report'></i>" title="送货完工汇报" link="/delivery-report"/>
     <f7-list-item media="<i class='list-icon icon-install-report'></i>" title="安装完工汇报" link="/install-report"/>

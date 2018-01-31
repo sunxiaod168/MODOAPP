@@ -207,3 +207,10 @@ ul {
 .data-list .cell-block>span {
     float: right;
 }
+
+.list-block .swipeout-actions-left .edit-action, .list-block .swipeout-actions-right .edit-action{
+    background: #007aff
+}
+.list-block .swipeout-actions-left .view-action, .list-block .swipeout-actions-right .view-action{
+    background: #ff9500
+}
