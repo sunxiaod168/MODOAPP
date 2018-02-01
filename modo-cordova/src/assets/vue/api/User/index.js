@@ -1,11 +1,14 @@
 import axios from 'api/base'
 
 const api = {
-	info: function (params) {
+	info(params) {
 		return axios.post('/user/info', params)
 	},
-	login: function (params) {
+	login(params) {
 		return axios.post('/user/login', params)
+	},
+	staffList(params) {
+		return axios.post('/user/staffList', params)
 	}
 }
 

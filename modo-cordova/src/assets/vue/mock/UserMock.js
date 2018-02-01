@@ -21,3 +21,13 @@ Mock.mock('/api/user/login', 'post', function (options) {
 	}
 
 })
+
+Mock.mock('/api/user/staffList', 'post', function (options) {
+	var params = JSON.parse(options.body)
+	return {
+		status: CONST.STATUS_SUCCESS,
+		msg: '成功',
+		data: [{ ID: 1, Name: "AAA" }, { ID: 2, Name: "BBB" }]
+	}
+
+})

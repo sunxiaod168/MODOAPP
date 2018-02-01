@@ -63,7 +63,7 @@ export function convertJsonDate(value){
 
 	var regex = /\/Date\((\d+)\)\//ig
     var result = regex.exec(value)
-    if(result.length == 2){
+    if(result && result.length == 2){
 		var numValue = parseInt(result[1])
 		return new Date(numValue)
     } else {

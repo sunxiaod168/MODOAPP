@@ -4,8 +4,8 @@
     <org-multi-selector :params="orgParams" v-model="zzids" title="组织名称"></org-multi-selector>
     <f7-block-title class="md-block-title">单据保存日期</f7-block-title>
     <f7-block>
-      <date-picker title="开始日期" placeholder="请选择开始日期" id="start-date" v-model="startDate"></date-picker>
-      <date-picker title="结束日期" placeholder="请选择结束日期" id="end-date" v-model="endDate"></date-picker>
+       <label>开始日期</label><date-picker  v-model="startDate" placeholder="开始日期"></date-picker>
+      <label>结束日期</label><date-picker  v-model="endDate" placeholder="结束日期"></date-picker>  
     </f7-block>
   </div>
 </template>
@@ -17,7 +17,7 @@
 
 <script>
 import { bus } from "common";
-import DatePicker from "components/DatePicker";
+import DatePicker from "components/DateTimePicker";
 import OrgMultiSelector from "components/OrgMultiSelector";
 import RightNavBar from "components/RightNavBar";
 

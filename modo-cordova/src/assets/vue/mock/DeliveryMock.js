@@ -12,6 +12,17 @@ Mock.mock('/api/delivery/list',
     }
 })
 
+Mock.mock('/api/delivery/createDeliveryPlan',
+ 'post',
+ function (options) {
+    var params = JSON.parse(options.body)
+    return {
+        status: CONST.STATUS_SUCCESS,
+        msg: '查询成功',
+        data: null
+    }
+})
+
 var listData = [
     { 
     "ID": 1181,
@@ -30,10 +41,10 @@ var listData = [
             "ID": 1,
             "ZZID": null,
             "DeliveryID": 0,
-            "DeliveryDate": null,
+            "DeliveryDate": "\/Date(1512652250313)\/",
             "FinishDate": null,
             "IsFinished": false,
-            "CreateTime": "\/Date(-62135596800000)\/",
+            "CreateTime": "\/Date(1512652250313)\/",
             "CreateStaff": 0,
             "Memo": null,
             "Reporter": null,
@@ -41,19 +52,20 @@ var listData = [
             "ReportTime": null,
             "ReportContent": null,
             "DispatchList": null,
-            "DeliveryStaffs": null
+            "DeliveryStaffs": [1,2],
+            "DeliveryStaffsName": "AAA,BBB",            
         },
         "InstallDispatch": {
-            "ID": 0,
+            "ID": 1,
             "ZZID": null,
             "DeliveryID": 0,
-            "PlanInstallDate": null,
-            "PlanFinishDate": null,
+            "PlanInstallDate": "\/Date(1512652250313)\/",
+            "PlanFinishDate": "\/Date(1512652250313)\/",
             "InstallDate": null,
             "FinishDate": null,
             "IsFinished": false,
-            "Leader": null,
-            "LeaderName": null,
+            "Leader": 1,
+            "LeaderName": "AAA",
             "CreateTime": "\/Date(-62135596800000)\/",
             "CreateStaff": 0,
             "Memo": null,
@@ -62,7 +74,8 @@ var listData = [
             "ReportTime": null,
             "ReportContent": null,
             "DispatchList": null,
-            "InstallStaffs": null
+            "InstallStaffs": [1,2],
+            "InstallStaffsName": "AAA,BBB",            
         }
      
 
