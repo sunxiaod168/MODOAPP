@@ -1,5 +1,5 @@
 <template>
-  <f7-page :nav-title="title" pull-to-refresh infinite-scroll @page:beforeinit="initHandle" @page:back="backHandler" @ptr:refresh="onRefresh" @infinite="onInfiniteScroll">
+  <f7-page :nav-title="title" @page:beforeinit="initHandle" @page:back="backHandler" @page:afteranimation="onRefresh" pull-to-refresh infinite-scroll @ptr:refresh="onRefresh" @infinite="onInfiniteScroll">
     <f7-searchbar cancel-link="取消" search-list="#price-list" :placeholder="searchPlaceholder" :custom-search="true" :clear-button="true" @searchbar:enable="onEnableSearch" @searchbar:disable="onDisableSearch" @submit="onSubmitSearch"></f7-searchbar>
     <slot :data="dataList"></slot>
     <searchbar-not-found :display="notFoundDisplay"></searchbar-not-found>
@@ -41,8 +41,6 @@ export default {
       this.$store.state.navRightTitle = "";
       this.$store.state.navRightIcon = "fas fa-filter";
       this.$store.state.currentRightView = this.rightPanel;
-
-      this.loadData();
     },
     backHandler() {
       this.$store.state.navRightVisiable = false;

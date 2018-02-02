@@ -111,7 +111,7 @@ export default {
         );
       }
     },
-    backHandler() {
+    backHandler(e) {
       this.$store.state.navRightPanelEnabled = true;
       this.$store.state.navRightTitle = "";
       this.$store.state.navRightIcon = "fas fa-filter";

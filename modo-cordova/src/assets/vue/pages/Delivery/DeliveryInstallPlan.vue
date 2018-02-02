@@ -3,7 +3,7 @@
     <template slot-scope="props">
       <div class="list-block">
         <ul>
-          <li class="accordion-item swipeout" v-for="item in props.data" :key="item.ID" @accordion:open="itemOpen" @swipeout:open="itemSwipe">
+          <li class="accordion-item swipeout" v-for="item in props.data" :key="item.ID" @accordion:open="accordionOpen" @accordion:opened="accordionOpened" @swipeout:open="swipeoutOpen" @swipeout:opened="swipeoutOpened">
             <a href="#" class="item-content item-link swipeout-content">
               <div class="item-inner">
                 <div class="item-title cname">{{item.Customer.Name }}
@@ -72,6 +72,7 @@
 import DataListPage from "components/DataListPage";
 import Right from "./components/InstallPlanRight";
 import api from "api/Delivery";
+import clone from "clone";
 
 export default {
   data() {
@@ -82,13 +83,33 @@ export default {
   },
   components: { DataListPage },
   methods: {
-    itemOpen(e) {
-      this.$f7.swipeoutClose(e.target);
+    itemClicked(e) {},
+    accordionOpen(e) {
+      var swipeout = e.target;
+      var actions = Dom7(".edit-action, .view-action", swipeout);
+      actions.transition(0);
+      this.$f7.swipeoutClose(swipeout);
     },
-    itemSwipe(e) {
-      if (Dom7(e.target).hasClass("accordion-item-expanded")) {
-        this.$f7.accordionClose(e.target);
+    accordionOpened(e) {
+      var swipeout = e.target;
+      var actions = Dom7(".edit-action, .view-action", swipeout);
+      actions.transition(".3s");
+    },
+    swipeoutOpen(e) {
+      var accordionItem = e.target;
+      if (Dom7(accordionItem).hasClass("accordion-item-expanded")) {
+        var accordionItemContent = Dom7(
+          ".accordion-item-content",
+          accordionItem
+        );
+        accordionItemContent.css('height',0);
+        Dom7(accordionItem).removeClass('accordion-item-expanded');       
       }
+    },
+    swipeoutOpened(e) {
+      var accordionItem = e.target;
+      var accordionItemContent = Dom7(".accordion-item-content", accordionItem);
+      accordionItemContent.transition(".3s");
     },
     addPlan(e, item) {
       this.toEdit(e, item, true, "新增配送计划");
@@ -101,7 +122,7 @@ export default {
     },
     toEdit(e, item, editable, title) {
       this.$f7.swipeoutClose(Dom7(e.target).parents("li")[0]);
-      var query = { data: item, editable: editable, title: title };
+      var query = { data: clone(item), editable: editable, title: title };
       this.$router.load({ url: "/delivery-install-plan-edit", query: query });
     }
   }
