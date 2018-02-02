@@ -1,32 +1,32 @@
 <template>
   <f7-page nav-title="" @page:init="initHandle" @page:beforeinit="beforeinitHandle" @page:back="backHandler">
-    <f7-list>
+    <f7-list :class="{disabled: editable == false}">
       <f7-list-item smart-select title="送货人" smart-select-open-in="popup" smart-select-searchbar smart-select-searchbar-cancel="取消" smart-select-searchbar-placeholder="查找" smart-select-back-text="关闭">
-        <select name="deliveryStaffs" multiple="multiple" v-model="delivery.DeliveryStaffs">
+        <select name="deliveryStaffs" multiple="multiple" v-model="delivery.DeliveryStaffs" :disabled="editable == false">
           <option v-for="staff in staffs" :value="staff.ID" :key="staff.ID" selected="">{{staff.Name}}</option>
         </select>
       </f7-list-item>
       <f7-list-item smart-select title="安装负责人" smart-select-open-in="popup" smart-select-searchbar smart-select-searchbar-cancel="取消" smart-select-searchbar-placeholder="查找" smart-select-back-text="关闭">
-        <select name="installMasterStaff" v-model="install.Leader">
+        <select name="installMasterStaff" v-model="install.Leader" :disabled="editable == false">
           <option v-for="staff in staffs" :value="staff.ID" :key="staff.ID">{{staff.Name}}</option>
         </select>
       </f7-list-item>
       <f7-list-item smart-select title="安装人" smart-select-open-in="popup" smart-select-searchbar smart-select-searchbar-cancel="取消" smart-select-searchbar-placeholder="查找" smart-select-back-text="关闭">
-        <select name="installStaffs" multiple="multiple" v-model="install.InstallStaffs">
+        <select name="installStaffs" multiple="multiple" v-model="install.InstallStaffs" :disabled="editable == false">
           <option v-for="staff in staffs" :value="staff.ID" :key="staff.ID">{{staff.Name}}</option>
         </select>
       </f7-list-item>
       <f7-list-item>
         <label>送货开始时间</label>
-        <date-picker v-model="delivery.DeliveryDate" placeholder="送货开始时间" type="datetime"></date-picker>
+        <date-picker v-model="delivery.DeliveryDate" placeholder="送货开始时间" type="datetime" :disabled="editable == false"></date-picker>
       </f7-list-item>
       <f7-list-item>
         <label>安装计划开始时间</label>
-        <date-picker v-model="install.PlanInstallDate" placeholder="安装计划开始时间" type="datetime"></date-picker>
+        <date-picker v-model="install.PlanInstallDate" placeholder="安装计划开始时间" type="datetime" :disabled="editable == false"></date-picker>
       </f7-list-item>
       <f7-list-item>
         <label>安装计划完成时间</label>
-        <date-picker v-model="install.PlanFinishDate" placeholder="安装计划完成时间" type="datetime"></date-picker>
+        <date-picker v-model="install.PlanFinishDate" placeholder="安装计划完成时间" type="datetime" :disabled="editable == false"></date-picker>
       </f7-list-item>
     </f7-list>
   </f7-page>
@@ -38,6 +38,9 @@
 .list-block>>>.item-inner {
   overflow: visible;
   flex-wrap: wrap;
+}
+.list-block.disabled >>> .item-link .item-inner{
+  background-image: none;
 }
 </style>
 <script>
@@ -60,7 +63,8 @@ export default {
         InstallStaffs: [],
         PlanInstallDate: null,
         PlanFinishDate: null
-      }
+      },
+      editable: true
     };
   },
   components: { DatePicker },
@@ -86,19 +90,26 @@ export default {
         });
     },
     initHandle(e) {
+      var page = e.detail.page;
+      var pageData = page.query.data;
+
       this.$store.state.navRightPanelEnabled = false;
       this.$store.state.navRightTitle = "保存";
       this.$store.state.navRightIcon = "";
-      var page = e.detail.page;
-      this.delivery = this.convertDeliveryData(
-        page.query.data.DeliveryDispatch
-      );
-      this.install = this.convertInstallData(page.query.data.InstallDispatch);
+
+      this.delivery = this.convertDeliveryData(pageData.DeliveryDispatch);
+      this.install = this.convertInstallData(pageData.InstallDispatch);
+      this.editable = page.query.editable;
       page.container.setAttribute("nav-title", page.query.title);
 
       this.initForm();
     },
     initForm() {
+      if (this.editable == false) {
+        this.$store.state.navRightTitle = "";
+        bus.$off("navRightButtonClicked", this.save);
+      }
+
       if (this.delivery.ID > 0) {
         Dom7('[name="deliveryStaffs"]+.item-after').text(
           this.delivery.DeliveryStaffsName
