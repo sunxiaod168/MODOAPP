@@ -17,9 +17,11 @@ import UnfinishedOrderStat from 'pages/Stat/UnfinishedOrderStat'
 
 import Delivery from 'pages/Delivery/Index'
 import DeliveryReport from 'pages/Delivery/DeliveryReport'
+import DeliveryReportEdit from 'pages/Delivery/DeliveryReportEdit'
 import DeliveryInstallPlan from 'pages/Delivery/DeliveryInstallPlan'
 import DeliveryInstallPlanEdit from 'pages/Delivery/DeliveryInstallPlanEdit'
 import InstallReport from 'pages/Delivery/InstallReport'
+import InstallReportEdit from 'pages/Delivery/InstallReportEdit'
 
 import Mine from 'pages/Mine/Index'
 import Profile from 'pages/Mine/Profile'
@@ -104,6 +106,10 @@ const routes = [
 		component: DeliveryReport
 	},
 	{
+		path: '/delivery-report-edit',
+		component: DeliveryReportEdit
+	},	
+	{
 		path: '/delivery-install-plan',
 		component: DeliveryInstallPlan
 	},
@@ -115,6 +121,10 @@ const routes = [
 		path: '/install-report',
 		component: InstallReport
 	},
+	{
+		path: '/install-report-edit',
+		component: InstallReportEdit
+	},	
 	{
 		path: '/profile',
 		component: Profile

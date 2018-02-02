@@ -32,14 +32,12 @@
   </f7-page>
 </template>
 <style scoped>
-.list-block {
-  margin-top: 0;
-}
+
 .list-block>>>.item-inner {
   overflow: visible;
   flex-wrap: wrap;
 }
-.list-block.disabled >>> .item-link .item-inner{
+.list-block.disabled>>>.item-link .item-inner {
   background-image: none;
 }
 </style>
@@ -150,16 +148,20 @@ export default {
       var params = { delivery: this.delivery, install: this.install };
       var me = this;
       deliveryApi
-        .createDeliveryPlan(params)
+        .deliveryInstallPlan(params)
         .then(function(response) {
           var data = response.data;
           if (data.status === CONST.STATUS_SUCCESS) {
             me.$f7.alert("", "保存成功", function() {
               me.$router.back();
             });
+          } else {
+            me.$f7.alert(data.msg, "保存失败");
           }
         })
-        .catch(function(err) {});
+        .catch(function(err) {
+          me.$f7.alert(err, "保存失败");
+        });
     }
   }
 };

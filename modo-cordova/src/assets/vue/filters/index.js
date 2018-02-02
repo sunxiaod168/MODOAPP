@@ -8,7 +8,7 @@ Vue.filter('date', function (value) {
     if (date != null) {
         return date.toLocaleDateString();
     } else {
-        return '无效的日期'
+        return ''
     }
 })
 Vue.filter('datetime', function (value) {
@@ -17,7 +17,7 @@ Vue.filter('datetime', function (value) {
     if (date != null) {
         return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
     } else {
-        return '无效的日期'
+        return ''
     }
 })
 Vue.filter('money', function (value) {

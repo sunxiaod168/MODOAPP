@@ -82,8 +82,7 @@ export default {
     };
   },
   components: { DataListPage },
-  methods: {
-    itemClicked(e) {},
+  methods: {   
     accordionOpen(e) {
       var swipeout = e.target;
       var actions = Dom7(".edit-action, .view-action", swipeout);

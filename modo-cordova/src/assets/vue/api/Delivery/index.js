@@ -5,9 +5,21 @@ const api = {
   list(params) {
     return axios.post('/delivery/list', params)
   },  
-  createDeliveryPlan(params) {
-    return axios.post('/delivery/createDeliveryPlan', params)
+  deliveryInstallPlan(params) {
+    return axios.post('/delivery/deliveryInstallPlan', params)
   },
+  deliveryDispatchList(params) {
+    return axios.post('/delivery/deliveryDispatchList', params)
+  },  
+  installDispatchList(params) {
+    return axios.post('/delivery/installDispatchList', params)
+  },  
+  deliveryReport(params) {
+    return axios.post('/delivery/deliveryReport', params)
+  },
+  installReport(params) {
+    return axios.post('/delivery/installReport', params)
+  }  
 }
 
 export default api
