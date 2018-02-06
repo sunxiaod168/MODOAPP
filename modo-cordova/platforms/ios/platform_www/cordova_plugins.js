@@ -7,13 +7,22 @@ module.exports = [
     "clobbers": [
       "navigator.splashscreen"
     ]
+  },
+  {
+    "id": "cordova-plugin-device.device",
+    "file": "plugins/cordova-plugin-device/www/device.js",
+    "pluginId": "cordova-plugin-device",
+    "clobbers": [
+      "device"
+    ]
   }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
   "cordova-plugin-splashscreen": "5.0.2-dev",
-  "cordova-plugin-whitelist": "1.3.3"
+  "cordova-plugin-whitelist": "1.3.3",
+  "cordova-plugin-device": "2.0.1"
 };
 // BOTTOM OF METADATA
 });

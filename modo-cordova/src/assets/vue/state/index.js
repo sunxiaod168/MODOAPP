@@ -16,7 +16,9 @@ const store = new Vuex.Store({
 		navBarTitle: CONST.NAV_TITLE_DEFAULT,
 		navRightTitle:'',
 		navRightIcon:'',
-		currentRightView: null
+		currentRightView: null,
+		uuid:null,
+		platform:null
 	},
 	mutations: {
 		setUserInfo(state, userInfo) {
@@ -28,6 +30,8 @@ const store = new Vuex.Store({
 			state.token = token
 			state.userInfo = userInfo      
 			state.userPermissions = convertPermission(permission)
+			state.uuid = device.uuid;
+			state.platform = device.platform;
 		},
 		hideNavBack(state) {
 			state.navBackVisiable = false

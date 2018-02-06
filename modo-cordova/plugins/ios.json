@@ -12,6 +12,9 @@
     },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.modencloud.modoapp"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.modencloud.modoapp"
     }
   },
   "dependent_plugins": {}

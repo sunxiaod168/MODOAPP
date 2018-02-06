@@ -158,6 +158,10 @@
 .icon-version {
     background-image: url(../images/mine/version-orange.png)
 }
+.icon-download {
+    background-image: url(../images/download.png)
+}
+
 
 .dash-line {
     background-image: linear-gradient(to right, #6d6d72 33%, #fff 0%);
