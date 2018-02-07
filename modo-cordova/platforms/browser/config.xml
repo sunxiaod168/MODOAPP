@@ -14,4 +14,5 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-navigation href="*" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
 </widget>

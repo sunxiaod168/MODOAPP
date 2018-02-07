@@ -10,13 +10,12 @@
             <f7-nav-center>{{$store.state.navBarTitle }}</f7-nav-center>
             <f7-nav-right v-if="$store.state.navRightVisiable">
               <f7-link v-if="$store.state.navRightPanelEnabled" :icon="$store.state.navRightIcon" open-panel="right">{{$store.state.navRightTitle}}</f7-link>
-              <f7-link v-else :icon="$store.state.navRightIcon" @click="navRightButtonClicked">{{$store.state.navRightTitle}}</f7-link>              
-            </f7-nav-right>           
+              <f7-link v-else :icon="$store.state.navRightIcon" @click="navRightButtonClicked">{{$store.state.navRightTitle}}</f7-link>
+            </f7-nav-right>
           </f7-navbar>
-          <f7-page name="start">
+          <f7-page name="start" class="start-bg">
 
-            <f7-link href="/login" class="go">开始使用</f7-link>
-
+            <f7-button href="/login" color="lightblue">开始使用</f7-button>
           </f7-page>
         </f7-pages>
 
@@ -30,11 +29,17 @@
   </div>
 </template>
 <style scoped>
-.go {
-  margin-top: 100px;
-  display: block;
+.start-bg >>> .page-content{
+  padding: 130% 10% 0
+}
+
+</style>
+<style>
+.navbar {
+  opacity: 0;
 }
 </style>
+
 
 <script>
 import { bus } from "common";
@@ -47,7 +52,7 @@ export default {
     onRightPanelClosed() {
       bus.$emit("rightPanelClosed");
     },
-    navRightButtonClicked(){
+    navRightButtonClicked() {
       bus.$emit("navRightButtonClicked");
     }
   }

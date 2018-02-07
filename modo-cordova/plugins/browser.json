@@ -15,6 +15,18 @@
     },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.modencloud.modoapp"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.modencloud.modoapp"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.modencloud.modoapp"
+    },
+    "cordova-plugin-file-opener2": {
+      "PACKAGE_NAME": "com.modencloud.modoapp"
+    },
+    "com.borismus.webintent": {
+      "PACKAGE_NAME": "com.modencloud.modoapp"
     }
   },
   "dependent_plugins": {}

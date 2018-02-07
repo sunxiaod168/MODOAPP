@@ -3,12 +3,17 @@
     <f7-block>
       <h1>当前版本：{{version}}</h1>
       <p>发布时间：{{publishDate}}</p>
-      <p v-if="hasNew">      
-        <f7-button fill big @click="checkVersion" :href="url" external>下载新版本：{{newVersion}}</f7-button>
-      </p>
+      <div v-if="hasNew" class="download">
+        <f7-button fill big @click="download" v-show="isDownloading == false">下载新版本：{{newVersion}}</f7-button>
+        <div class="progress-back" v-show="isDownloading">
+        </div>
+        <div class="progress-front" v-show="isDownloading" :style="{width:progressWidth}">
+          {{progressWidth}}
+        </div>
+      </div>
       <p v-else>
         <f7-button fill big @click="checkVersion">检查更新</f7-button>
-      </p>      
+      </p>
     </f7-block>
   </f7-page>
 </template>
@@ -16,14 +21,27 @@
 h1 {
   font-size: 18px;
 }
-.download-link {
-  font-size: 16px;
-  padding-bottom: 3px;
-  border-bottom: 2px solid;
+.download {
+  position: relative;
 }
-.icon-download {
-  display: inline-block;
-  vertical-align: middle;
+.progress-front,
+.progress-back {
+  position: absolute;
+  height: 20px;
+  left: 0;
+  top: 0;
+}
+.progress-back {
+  width: 100%;
+  border: 1px solid #007aff;
+  background-color: #fff;
+}
+.progress-front {
+  padding: 1px;
+  color:#fff;
+  line-height: 20px;
+  background-color: #007aff;
+  text-align: center;
 }
 </style>
 <script>
@@ -37,8 +55,15 @@ export default {
       publishDate: "2018-02-06",
       url: "",
       hasNew: false,
-      newVersion: ""
+      newVersion: "",
+      isDownloading: false,
+      progress: 0
     };
+  },
+  computed: {
+    progressWidth() {
+      return this.progress + "%";
+    }
   },
   methods: {
     checkVersion() {
@@ -63,7 +88,71 @@ export default {
         .catch(function(err) {
           me.$f7.alert(err, "版本检测失败");
         });
-    }
+    },
+    download() {
+      var platform = this.$store.state.platform;
+      if (platform == "Android") {
+        this.androidDownload();
+      } else if (platform == "iOS") {
+        this.iosDownload();
+      }
+    },
+    androidDownload() {
+      var fileName = "modo." + this.newVersion + ".apk";
+      var me = this;
+      window.requestFileSystem(
+        LocalFileSystem.PERSISTENT,
+        0,
+        function(fileSystem) {
+          fileSystem.root.getFile(
+            "download/" + fileName,
+            {
+              create: true,
+              exclusive: false
+            },
+            function(fileEntry) {
+              var localPath = fileEntry.toURL();
+              var apkURL = encodeURI(me.url);
+              var fileTransfer = new FileTransfer();
+              fileTransfer.onprogress = function(progressEvent) {
+                if (progressEvent.lengthComputable) {
+                  me.progress = Math.floor(progressEvent.loaded / progressEvent.total * 100);
+                }
+              };
+              me.isDownloading = true;
+              fileTransfer.download(
+                apkURL,
+                localPath,
+                function(entry) {
+                  me.isDownloading = false;
+                  cordova.plugins.fileOpener2.open(
+                    entry.toInternalURL(),
+                    "application/vnd.android.package-archive",
+                    {
+                      error: function(e) {
+                        me.$f7.alert("", "启动安装失败");
+                      },
+                      success: function() {}
+                    }
+                  );
+                },
+                function(error) {
+                  me.$f7.alert("", "下载失败");
+                  me.isDownloading = false;
+                }
+              );
+            },
+            function(error) {
+              me.$f7.alert("", "下载失败");
+            }
+          );
+        },
+        function(error) {
+          me.$f7.alert("", "下载失败");
+        }
+      );
+    },
+    iosDownload() {}
   }
 };
 </script>

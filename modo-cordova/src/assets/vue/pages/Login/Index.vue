@@ -1,6 +1,6 @@
 <template>
 
-  <f7-page login-scree name="login">
+  <f7-page login-scree name="login" class="start-bg">
 
     <f7-list>
       <f7-list-item>
@@ -35,11 +35,16 @@
 .btn-login {
   width: 100%;
 }
+
 .list-block {
   margin: 0;
 }
 .list-block>>>.item-inner::after {
   display: none;
+}
+.list-block >>> ul{
+  background: none;
+  color: #fff;
 }
 .list-block>>>ul::before {
   display: none;
@@ -68,6 +73,7 @@ export default {
         .login({ uname: this.uname, pwd: this.pwd })
         .then(function(response) {
           var data = response.data;
+         
           if (data.status === CONST.STATUS_SUCCESS) {
             me.$store.commit("setUserInfo", data.data);
             me.$router.load({ url: "/tabbar/", pushState: false });

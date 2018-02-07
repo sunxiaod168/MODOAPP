@@ -20,8 +20,10 @@
 
 </template>
 
-<style scoped>
-
+<style>
+.navbar{
+  opacity: 1;
+}
 </style>
 
 <script>
