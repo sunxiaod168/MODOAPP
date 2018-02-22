@@ -9,9 +9,9 @@
                 <div class="item-title">{{item.CustomerName }}
                 </div>
                 <span>
-                  {{item.OrderStatusName}}</span>
-                <span>
                   <i class="fas fa-phone-square"></i>{{item.Phone}} </span>
+                <span>
+                  {{item.OrderStatusName}}</span>
               </div>
             </a>
             <div class="accordion-item-content">
@@ -33,13 +33,29 @@
                   <span>{{item.ReceivedAmonut |money}}</span>
                 </p>
                 <p class="dash-line">
+                  <label>订单余款：</label>
+                  <span>{{item.OrderBalanceAmount |money}}</span>
+                </p>
+                <p class="dash-line">
                   <label>预计送货日期：</label>
                   <span>{{item.PlanDeliveryTime | date}}</span>
+                </p>
+                <p class="dash-line">
+                  <label>送货地址：</label>
+                  <span>{{item.Address}}</span>
+                </p>
+                 <p class="dash-line">
+                  <label>业务类型：</label>
+                  <span>{{item.BusinessTypeName}}</span>
                 </p>
                 <p class="dash-line">
                   <label>审核状态：</label>
                   <span>{{item.ExamineStatusName}}</span>
                 </p>
+                <p class="dash-line">
+                  <label>订单状态：</label>
+                  <span>{{item.OrderStatusName}}</span>
+                </p>                
               </div>
             </div>
           </li>
@@ -83,7 +99,7 @@ export default {
       request: api.orderProgress
     };
   },
-  components: { DataListPage },
+  components: { DataListPage }
 };
 </script>
 

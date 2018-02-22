@@ -4,11 +4,16 @@
       <div class="list-block">
         <ul>
           <li class="accordion-item" v-for="item in props.data">
-            <a href="#" class="item-content item-link">
+            <a href="#" class="item-content item-link" :class="{'corner-flag': item.OrderListID != null}">
               <div class="item-inner">
-                <div class="item-title">{{item.Product.Name }}
+                <div class="item-title">
+                  <p class="item-name">{{item.Product.Name }}</p>
+                  <p class="item-count">
+                    <span>实时：{{item.StoreAmount}}</span>
+                    <span>锁定：{{item.LockAmount}}</span>
+                    <span>可用：{{item.CanUseAmount}}</span>
+                  </p>
                 </div>
-                <span>可用数量：{{item.CanUseAmount}}</span>
               </div>
             </a>
             <div class="accordion-item-content">
@@ -41,6 +46,18 @@
                   <label>类别：</label>
                   <span>{{item.Product.SortName}}</span>
                 </p>
+                <p class="dash-line" v-if="item.OrderListID != null">
+                  <label>订单编号：</label>
+                  <span>{{item.OrderCode}}</span>
+                </p>
+                <p class="dash-line" v-if="item.OrderListID != null">
+                  <label>客户姓名：</label>
+                  <span>{{item.CustomerName}}</span>
+                </p>
+                <p class="dash-line" v-if="item.OrderListID != null">
+                  <label>签单店面：</label>
+                  <span>{{item.OrderZZName}}</span>
+                </p>
               </div>
             </div>
           </li>
@@ -66,6 +83,15 @@
   width: 80px;
   text-align: right;
 }
+.item-name {
+  margin: 0;
+  text-align: left;
+}
+.item-count {
+  font-size: 14px;
+  margin: 0;
+  margin-top: 8px;
+}
 </style>
 
 <script>
@@ -80,6 +106,6 @@ export default {
       request: api.inventory
     };
   },
-  components: { DataListPage },
+  components: { DataListPage }
 };
 </script>

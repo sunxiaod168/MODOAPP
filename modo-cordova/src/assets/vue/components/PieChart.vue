@@ -13,12 +13,7 @@ export default {
   props: ["sdata","refreshTick"],
   data() {
     return {
-      option: {
-        tooltip: {
-          trigger: "item",
-          confine: true,
-          formatter: "{b}：{d}%"
-        },
+      option: {       
         series: []
       },
       unwatch: []
@@ -32,8 +27,9 @@ export default {
         center: ["50%", "50%"],
         label: {
           normal: {
-            position: "inner"
-          }
+            position: "inner",
+            formatter: "{b}：{c} \n{d}%"
+          }          
         },
         labelLine: {
           normal: {

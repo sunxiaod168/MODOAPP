@@ -12,7 +12,10 @@ import OrderStat from 'pages/Stat/OrderStat'
 import AssetStat from 'pages/Stat/AssetStat'
 import IncomeExpensesStat from 'pages/Stat/IncomeExpensesStat'
 import InventoryStat from 'pages/Stat/InventoryStat'
-import ProfitAccounting from 'pages/Stat/ProfitAccounting'
+import ProfitAccounting from 'pages/Stat/ProfitAccountingTotal'
+import ProfitAccountingByDelivery from 'pages/Stat/ProfitAccountingByDelivery'
+import ProfitAccountingByOrder from 'pages/Stat/ProfitAccountingByOrder'
+
 import UnfinishedOrderStat from 'pages/Stat/UnfinishedOrderStat'
 
 import Delivery from 'pages/Delivery/Index'
@@ -96,6 +99,14 @@ const routes = [
 	{
 		path: '/profit-accounting',
 		component: ProfitAccounting
+	},
+	{
+		path: '/profit-accounting-delivery',
+		component: ProfitAccountingByDelivery
+	},
+	{
+		path: '/profit-accounting-order',
+		component: ProfitAccountingByOrder
 	},
 	{
 		path: '/unfinished-order-stat',

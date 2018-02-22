@@ -3,23 +3,13 @@
     <f7-grid class="asset-total">
       <f7-col>
         <label>总资产</label>
+      </f7-col>      
+    </f7-grid>
+    <f7-grid class="asset-total">      
+       <f7-col>
         <span>{{assetData.AssetTotal | money}}</span>
       </f7-col>
-    </f7-grid>
-    <f7-grid class="asset-detail">
-      <f7-col>
-        <label>存货总额</label>
-        <span>{{assetData.GoodsTotal | money}}</span>
-      </f7-col>
-      <f7-col>
-        <label>现金余额</label>
-        <span>{{assetData.MoneyTotal | money}}</span>
-      </f7-col>
-      <f7-col>
-        <label>应收款总额</label>
-        <span>{{assetData.ReceiveTotal | money}}</span>
-      </f7-col>
-    </f7-grid>
+    </f7-grid>    
     <pie-chart :sdata="pieData"></pie-chart>
   </f7-page>
 </template>
@@ -32,7 +22,7 @@
 <style>
 .asset-total {
   font-size: 25px;
-  padding: 20px 15px 10px;
+  padding: 10px 15px;
   font-weight: bold;
   background-color: #007aff;
   color: #fff;

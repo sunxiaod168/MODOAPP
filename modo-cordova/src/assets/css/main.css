@@ -76,7 +76,7 @@
 }
 
 .accordion-item-expanded>.item-content {
-    background: #007aff;
+    background-color: #007aff;
     color: #fff;
 }
 
@@ -221,4 +221,12 @@ ul {
 .start-bg .page-content{
     background: url(../images/modou-bj.jpg);
     background-size: cover;
+}
+.corner-flag {
+    background-image: url(../images/corner-blue.png) ;
+    background-repeat: no-repeat;
+}
+.accordion-item-expanded .corner-flag{
+    background-image: url(../images/corner-white.png);
+    background-repeat: no-repeat;
 }
