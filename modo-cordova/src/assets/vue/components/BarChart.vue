@@ -25,7 +25,10 @@ export default {
       option: {
         tooltip: {
           trigger: "axis",
-          confine: true
+          confine: true,
+          axisPointer: {
+            type: "shadow"
+          }
         },
         legend: {
           bottom: 0
@@ -52,7 +55,6 @@ export default {
             axisLabel: { show: false }
           }
         ],
-
         series: []
       },
       labelOption: {
@@ -62,12 +64,12 @@ export default {
           formatter: this.seriesLabelFormatter
         }
       },
-      unwatch: null
+      unwatch: []
     };
   },
   mounted() {
     var me = this;
-    this.unwatch = this.$watch("sdata", function(newVal, oldVal) {
+    var unwatch = this.$watch("sdata", function(newVal, oldVal) {
       newVal.forEach(item => {
         item.type = "bar";
         if (!item.label) {
@@ -76,9 +78,17 @@ export default {
       });
       me.option.series = newVal;
     });
+    this.unwatch.push(unwatch);
+
+    unwatch = this.$watch("category", function(newVal, oldVal) {
+      me.option.yAxis[0].data = newVal;
+    });
+    this.unwatch.push(unwatch);
   },
   beforeDestroy() {
-    this.unwatch();
+    this.unwatch.forEach(unwatch => {
+      unwatch();
+    });
   }
 };
 </script>

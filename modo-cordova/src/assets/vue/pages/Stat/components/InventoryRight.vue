@@ -1,7 +1,8 @@
 <template>
   <div>
     <right-nav-bar title="过滤条件" button="清除" @rightNavBarClick="clear"></right-nav-bar>
-    <org-single-selector :params="orgParams" v-model="zzid" title="组织名称"></org-single-selector>
+    <org-multi-selector :params="orgParams" v-model="zzids" title="组织名称"></org-multi-selector>
+
   </div>
 </template>
 <style>
@@ -9,7 +10,7 @@
 </style>
 <script>
 import { bus } from "common";
-import OrgSingleSelector from "components/OrgSingleSelector";
+import OrgMultiSelector from "components/OrgMultiSelector";
 import RightNavBar from "components/RightNavBar";
 
 export default {
@@ -19,10 +20,10 @@ export default {
         zzid: this.$store.state.userInfo.zzid,
         type: "inventory"
       },
-      zzid: null
+      zzids: []
     };
   },
-  components: { OrgSingleSelector, RightNavBar },
+  components: { OrgMultiSelector, RightNavBar },
   mounted() {
     bus.$on("rightPanelClosed", this.rightDone);
   },
@@ -31,10 +32,11 @@ export default {
   },
   methods: {
     rightDone() {
-      bus.$emit("rightDone", this.zzid);
+      var query = { zzids: this.zzids};
+      bus.$emit("rightDone", query);
     },
     clear() {
-      this.zzid = 0;
+      this.zzids = [];
     }
   }
 };

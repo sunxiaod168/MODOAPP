@@ -7,10 +7,10 @@
       </f7-buttons>
       <f7-tabs swipeable>
         <f7-tab id="inventory-tab1" active>
-          <p class="total">
+         <p class="total">
             <label>存货总额</label>
             <span>{{totalAmount | money}}</span>
-          </p>
+          </p>      
           <pie-chart :sdata="orgPieData"></pie-chart>
           <div class="data-table card">
             <table>
@@ -33,7 +33,7 @@
           <p class="total">
             <label>存货总额</label>
             <span>{{totalAmount | money}}</span>
-          </p>
+          </p>      
           <pie-chart :sdata="brandPieData"></pie-chart>
           <div class="data-table card">
             <table>
@@ -66,6 +66,9 @@
   position: absolute;
   width: 100%;
 }
+.total >>> label{
+  display: block;
+}
 </style>
 
 <style>
@@ -83,7 +86,7 @@ export default {
     return {
       msg: "",
       query: {
-        zzid: null
+        zzids: []
       },
       isLoading: false,
       totalAmount: null,
@@ -157,7 +160,7 @@ export default {
       if (this.isLoading) {
         return;
       }
-      this.query.zzid = payload;
+      this.query = payload;
       this.loadData();
     }
   }
