@@ -15,8 +15,7 @@ import InventoryStat from 'pages/Stat/InventoryStat'
 import ProfitAccounting from 'pages/Stat/ProfitAccountingTotal'
 import ProfitAccountingByDelivery from 'pages/Stat/ProfitAccountingByDelivery'
 import ProfitAccountingByOrder from 'pages/Stat/ProfitAccountingByOrder'
-
-import UnfinishedOrderStat from 'pages/Stat/UnfinishedOrderStat'
+import AchievementStat from 'pages/Stat/AchievementStat'
 
 import Delivery from 'pages/Delivery/Index'
 import DeliveryReport from 'pages/Delivery/DeliveryReport'
@@ -109,8 +108,8 @@ const routes = [
 		component: ProfitAccountingByOrder
 	},
 	{
-		path: '/unfinished-order-stat',
-		component: UnfinishedOrderStat
+		path: '/achievement-stat',
+		component: AchievementStat
 	},
 	{
 		path: '/delivery-report',

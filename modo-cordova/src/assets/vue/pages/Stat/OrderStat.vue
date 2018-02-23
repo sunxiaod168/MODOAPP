@@ -2,19 +2,15 @@
   <f7-page nav-title="订单统计分析" pull-to-refresh @page:beforeinit="initHandle" @page:back="backHandler" @ptr:refresh="onRefresh">
     <f7-block>
       <f7-buttons>
-        <f7-button tab-link="#order-stat-tab1" active>销售业绩</f7-button>
-        <f7-button tab-link="#order-stat-tab2">销售趋势</f7-button>
-        <f7-button tab-link="#order-stat-tab3">业绩排名</f7-button>
+        <f7-button tab-link="#order-stat-tab1" active>全部订单</f7-button>
+        <f7-button tab-link="#unfinished-order-stat-tab2">未完成订单</f7-button>
       </f7-buttons>
       <f7-tabs swipeable>
         <f7-tab id="order-stat-tab1" active>
-          <bar-chart :sdata="colData" :seriesLabelFormatter="moneyFormatter"></bar-chart>
+          <bar-chart :sdata="allData" :category="allCategory" :seriesLabelFormatter="moneyFormatter" left="20%" :right="10" :top="10" :bottom="30"></bar-chart>
         </f7-tab>
-        <f7-tab id="order-stat-tab2">
-          <line-chart :sdata="lineData"></line-chart>
-        </f7-tab>
-        <f7-tab id="order-stat-tab3">
-          <bar-chart :sdata="barData" :vertical="false" :seriesLabelFormatter="moneyFormatter"></bar-chart>
+        <f7-tab id="unfinished-order-stat-tab2">
+          <bar-chart :sdata="unfinishedData" :category="unfinishedCategory" :seriesLabelFormatter="moneyFormatter" :left="10" :right="10" :top="10" :bottom="30"></bar-chart>
         </f7-tab>
       </f7-tabs>
     </f7-block>
@@ -30,13 +26,11 @@
 
 </style>
 <script>
-import { bus,localDateString,moneyString } from "common";
+import { bus, moneyString } from "common";
 import Right from "./components/OrderRight";
 import api from "api/Stat";
 import CONST from "const";
 import BarChart from "components/BarChart";
-import LineChart from "components/LineChart";
-
 
 export default {
   data() {
@@ -48,12 +42,13 @@ export default {
         endDate: null
       },
       isLoading: false,
-      colData: [],
-      lineData: [],
-      barData: []
+      allData: [],
+      allCategory: [],
+      unfinishedData: [],
+      unfinishedCategory: []
     };
   },
-  components: { BarChart, LineChart },
+  components: { BarChart },
   mounted() {
     bus.$on("rightDone", this.rightDone);
   },
@@ -86,7 +81,7 @@ export default {
         .then(function(response) {
           var data = response.data;
           if (data.status === CONST.STATUS_SUCCESS) {
-            me.refreshChart(data.data);
+            me.convertData(data.data);
           } else {
             me.msg = data.msg;
           }
@@ -94,45 +89,71 @@ export default {
           me.isLoading = false;
         })
         .catch(function(err) {
+          console.log("err:" + err);
           me.$f7.pullToRefreshDone();
           me.msg = err;
           me.isLoading = false;
         });
     },
-    refreshChart(data) {
-      this.convertColData(data.ColGrid);
-      this.convertLineData(data.DayLineGrid);
-      this.convertBarData(data.StaffBarGrid);
-    },
-    convertColData(data) {    
-      this.colData = data.map(item => {
-        return {
-          name:item.ZZName,
-          data:[item.Total]
+    convertData(data) {
+      var allData = data.allData;
+      var newAllData = [
+        {
+          name: "成交金额",
+          stack: "总量",
+          data: []
+        },
+        {
+          name: "取消金额",
+          stack: "总量",
+          data: [],
+          label: {
+            normal: {
+              show: true,
+              position: "left",
+              fontSize: 12,
+              formatter: this.moneyFormatter
+            }
+          }
+        },
+        {
+          name: "差额",
+          data: []
         }
-      })      
-    },
-    convertLineData(data) {
-      this.lineData = data.map(item => {
-        var lineItems = item.LineData.map(lineItem => {
-          return [localDateString(lineItem.AnchorDate), lineItem.Total]
-        })
-        return {
-          name:item.ZZName,
-          data:lineItems
+      ];
+      this.allCategory = [];
+      this.allCategory.push("合计");
+      newAllData[0].data.push(allData.DealAmount);
+      newAllData[1].data.push(allData.Cancel);
+      newAllData[2].data.push(allData.NetIncrease);
+      this.allData = newAllData;
+
+      var unfinishedData = data.unfinishedData;
+      var newUnfinishedData = [
+        {
+          name: "成交金额",
+          data: []
+        },
+        {
+          name: "已收金额",
+          data: []
+        },
+        {
+          name: "未收金额",
+          data: []
         }
-      })     
+      ];
+      this.unfinishedCategory = [];
+      for (var j = 0, len = unfinishedData.length; j < len; j++) {
+        this.unfinishedCategory.push(unfinishedData[j].ZZName);
+        newUnfinishedData[0].data.push(unfinishedData[j].DealAmount);
+        newUnfinishedData[1].data.push(unfinishedData[j].ReceivedAmonut);
+        newUnfinishedData[2].data.push(unfinishedData[j].OrderBalanceAmount);
+      }
+      this.unfinishedData = newUnfinishedData;
     },
-    convertBarData(data) {
-      this.barData = data.map(item => {
-        return {
-          name: item.StaffName,
-          data:[item.Total]
-        }
-      })     
-    },
-    moneyFormatter(a){
-      return moneyString(a.value)
+    moneyFormatter(a) {
+      return moneyString(a.value);
     },
     rightDone(payload) {
       if (this.isLoading) {

@@ -14,7 +14,7 @@ const path = require('path'),
 let config = function (env) {
   console.log("env:::" + env)
   let returner = {
-    entry: entryFile,
+    entry: ["babel-polyfill",entryFile],
     
     resolve: {
       extensions: ['.js', '.json', '.vue'],

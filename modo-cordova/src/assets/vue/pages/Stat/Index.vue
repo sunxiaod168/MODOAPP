@@ -5,7 +5,7 @@
     <f7-list-item class="no-bottom-border" media="<i class='list-icon icon-profit'></i>" title="利润核算分析" link="/profit-accounting"/>
     <f7-list-item class="devider"/>
     <f7-list-item media="<i class='list-icon icon-achievement'></i>" title="订单统计分析" link="/order-stat"/>
-    <f7-list-item  class="no-bottom-border" media="<i class='list-icon icon-unfinish-order'></i>" title="未完成订单统计" link="/unfinished-order-stat"/>
+    <f7-list-item  class="no-bottom-border" media="<i class='list-icon icon-unfinish-order'></i>" title="业绩统计分析" link="/achievement-stat"/>
     <f7-list-item class="devider"/>
     <f7-list-item media="<i class='list-icon icon-storage'></i>" title="存货统计分析" link="/inventory-stat"/>
     <f7-list-item media="<i class='list-icon icon-income-expense'></i>" title="收支统计分析" link="/income-expenses-stat"/>

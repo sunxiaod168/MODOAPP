@@ -11,8 +11,8 @@ const api = {
   order(params) {
     return axios.post('/stat/order', params)
   },
-  unfinishedOrder(params) {
-    return axios.post('/stat/unfinishedOrder', params)
+  achievement(params) {
+    return axios.post('/stat/achievement', params)
   },
   inventory(params) {
     return axios.post('/stat/inventory', params)
