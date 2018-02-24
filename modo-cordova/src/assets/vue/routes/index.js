@@ -24,6 +24,7 @@ import DeliveryInstallPlan from 'pages/Delivery/DeliveryInstallPlan'
 import DeliveryInstallPlanEdit from 'pages/Delivery/DeliveryInstallPlanEdit'
 import InstallReport from 'pages/Delivery/InstallReport'
 import InstallReportEdit from 'pages/Delivery/InstallReportEdit'
+import DeliveryDetail from 'pages/Delivery/DeliveryDetail'
 
 import Mine from 'pages/Mine/Index'
 import Profile from 'pages/Mine/Profile'
@@ -36,7 +37,7 @@ const routes = [
 	{
 		path: '/login',
 		component: Login
-	},	
+	},
 	{
 		path: '/tabbar/',
 		component: Tabs,
@@ -55,14 +56,14 @@ const routes = [
 				path: '/tab3/',
 				tabId: 'tab3',
 				component: Delivery
-			},       
+			},
 			{
 				path: '/tab4/',
 				tabId: 'tab4',
 				component: Mine
-			}        
+			}
 		]
-	},    
+	},
 	{
 		path: '/cost-price-query',
 		component: CostPriceQuery
@@ -118,7 +119,7 @@ const routes = [
 	{
 		path: '/delivery-report-edit',
 		component: DeliveryReportEdit
-	},	
+	},
 	{
 		path: '/delivery-install-plan',
 		component: DeliveryInstallPlan
@@ -126,15 +127,19 @@ const routes = [
 	{
 		path: '/delivery-install-plan-edit',
 		component: DeliveryInstallPlanEdit
-	},	
+	},
 	{
 		path: '/install-report',
 		component: InstallReport
 	},
 	{
+		path: 'delivery-detail',
+		component: DeliveryDetail
+	},
+	{
 		path: '/install-report-edit',
 		component: InstallReportEdit
-	},	
+	},
 	{
 		path: '/profile',
 		component: Profile

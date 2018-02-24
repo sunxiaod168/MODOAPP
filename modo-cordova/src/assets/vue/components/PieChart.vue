@@ -10,12 +10,12 @@ import "echarts/lib/chart/pie";
 import "echarts/lib/component/tooltip";
 
 export default {
-  props: ["sdata", "refreshTick"],
+  props: ["sdata", "refreshTick", "formatter"],
   data() {
     return {
       option: {
-        legend: {
-          bottom: 0
+        legend: {        
+          bottom:0
         },
         series: [
           {
@@ -26,12 +26,12 @@ export default {
               normal: {
                 show: false,
                 position: "center",
-                formatter: "{b}\n{c}\n{d}%"
+                formatter: this.formatter
               },
               emphasis: {
                 show: true,
                 textStyle: {
-                  fontSize: "20"
+                  fontSize: "16"
                 }
               }
             },
@@ -39,8 +39,8 @@ export default {
               normal: {
                 show: false
               }
-            }, 
-            data:[]
+            },
+            data: []
           }
         ]
       },
@@ -49,7 +49,6 @@ export default {
   },
   mounted() {
     var sdataUnwatch = this.$watch("sdata", function(newVal, oldVal) {
-     
       this.option.series[0].data = newVal;
     });
     this.unwatch.push(sdataUnwatch);

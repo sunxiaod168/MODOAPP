@@ -10,7 +10,7 @@
         <span>{{assetData.AssetTotal | money}}</span>
       </f7-col>
     </f7-grid>    
-    <pie-chart :sdata="pieData"></pie-chart>
+    <pie-chart :sdata="pieData" :formatter="labelFormatter"></pie-chart>
   </f7-page>
 </template>
 <style scoped>
@@ -37,7 +37,7 @@
 }
 </style>
 <script>
-import { bus } from "common";
+import { bus, moneyString } from "common";
 import Right from "./components/AssetRight";
 import api from "api/Stat";
 import CONST from "const";
@@ -115,6 +115,10 @@ export default {
       }
       this.query.zzid = payload;
       this.loadData();
+    },
+    labelFormatter(params){
+      var value = moneyString(params.value);
+      return params.name + "\n\n" + value + "（" + params.percent + "%）"
     }
   }
 };

@@ -11,7 +11,7 @@
             <label>存货总额</label>
             <span>{{totalAmount | money}}</span>
           </p>      
-          <pie-chart :sdata="orgPieData"></pie-chart>
+          <pie-chart :sdata="orgPieData" :formatter="labelFormatter"></pie-chart>
           <div class="data-table card">
             <table>
               <thead>
@@ -34,7 +34,7 @@
             <label>存货总额</label>
             <span>{{totalAmount | money}}</span>
           </p>      
-          <pie-chart :sdata="brandPieData"></pie-chart>
+          <pie-chart :sdata="brandPieData" :formatter="labelFormatter"></pie-chart>
           <div class="data-table card">
             <table>
               <thead>
@@ -75,7 +75,7 @@
 
 </style>
 <script>
-import { bus } from "common";
+import { bus, moneyString } from "common";
 import Right from "./components/InventoryRight";
 import api from "api/Stat";
 import CONST from "const";
@@ -162,6 +162,10 @@ export default {
       }
       this.query = payload;
       this.loadData();
+    },
+    labelFormatter(params){
+      var value = moneyString(params.value);
+      return params.name + "\n\n" + value + "（" + params.percent + "%）"
     }
   }
 };

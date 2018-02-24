@@ -12,6 +12,18 @@ Mock.mock('/api/delivery/list',
         }
     })
 
+Mock.mock('/api/delivery/detail',
+    'post',
+    function (options) {
+        var params = JSON.parse(options.body)
+        return {
+            status: CONST.STATUS_SUCCESS,
+            msg: '成功',
+            data: detailData
+        }
+    })
+
+
 Mock.mock('/api/delivery/deliveryInstallPlan',
     'post',
     function (options) {
@@ -33,7 +45,7 @@ Mock.mock('/api/delivery/deliveryDispatchList',
             data: dispatchListData
         }
     })
-    
+
 Mock.mock('/api/delivery/installDispatchList',
     'post',
     function (options) {
@@ -813,6 +825,95 @@ var listData = [
         }
     }
 ]
+
+var detailData = {
+    "ZZID": "4100008001002",
+    "CreateTime": "\/Date(1512652217263)\/",
+    "Quantity": 2,
+    "CustomerName": "王利杰",
+    "ID": 1181,
+    "DeliveryHeaderID": "DE410000817120703",
+    "ZZName": "华兰家具欧凯龙北环店",
+    "CustomerID": 0,
+    "Customer": null,
+    "ZongBaoShu": 0.00,
+    "ZongTiJi": 0.00,
+    "SongHuoDanJinE": 3000.00,
+    "BeiZhu": null,
+    "Status": 85,
+    "StatusName": "审核通过",
+    "CreateUser": 23,
+    "CreateUserName": null,
+    "SubmitUser": null,
+    "SubmitUserName": null,
+    "SubmitTime": null,
+    "ExamineUser": 23,
+    "ExmaineUserName": null,
+    "ExamineTime": "\/Date(1512652250313)\/",
+    "List": null,
+    "OrderID": 0,
+    "OrderCode": "SAC002171027018",
+    "DetailList": [
+        {
+            "ID": 1593,
+            "HeaderID": 0,
+            "OrderListID": 3060,
+            "LeftAmount": 0,
+            "DeliveryAmount": 1,
+            "Amount": 2055.00,
+            "StorageID": "4100008001004",
+            "Storage": {
+                "Name": "郑州西四环仓库",
+                "ID": "4100008001004"
+            },
+            "Memo": null,
+            "Product": {
+                "ID": 0,
+                "Name": "中式 01餐边柜",
+                "ProductCode": "H01[CBG]",
+                "BrandName": "华兰",
+                "CatenaName": "中式",
+                "SortName": "餐边柜",
+                "XingHao": "01",
+                "GuiGe": "1300*420*1000",
+                "ColorName": "柚金色",
+                "AuxColor": "",
+                "DealPrice": 2055.00
+            },
+            "BaoShu": 0,
+            "TiJi": 0.00
+        },
+        {
+            "ID": 1594,
+            "HeaderID": 0,
+            "OrderListID": 3061,
+            "LeftAmount": 0,
+            "DeliveryAmount": 1,
+            "Amount": 945.00,
+            "StorageID": "4100008001004",
+            "Storage": {
+                "Name": "郑州西四环仓库",
+                "ID": "4100008001004"
+            },
+            "Memo": null,
+            "Product": {
+                "ID": 0,
+                "Name": "中式 25客厅柜低",
+                "ProductCode": "H25[KTGD]",
+                "BrandName": "华兰",
+                "CatenaName": "中式",
+                "SortName": "客厅柜",
+                "XingHao": "25",
+                "GuiGe": "701*450*900",
+                "ColorName": "柚金色",
+                "AuxColor": "",
+                "DealPrice": 945.00
+            },
+            "BaoShu": 0,
+            "TiJi": 0.00
+        }
+    ]
+}
 
 var dispatchListData = [
     {

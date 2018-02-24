@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { convertJsonDate, moneyString} from 'common'
+import { convertJsonDate, moneyString } from 'common'
 import CurrencyFormatter from 'currency-formatter'
 
 Vue.filter('date', function (value) {
@@ -11,15 +11,20 @@ Vue.filter('date', function (value) {
         return ''
     }
 })
-Vue.filter('datetime', function (value) {
+Vue.filter('datetime', function (value, withSecond) {
 
     var date = convertJsonDate(value)
     if (date != null) {
-        return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+        var localDate =  date.toLocaleDateString().replace(/\//g, '-');
+        var time = date.toLocaleTimeString('zh',{hour12:false});
+        if (!withSecond) {
+            time = time.substr(0, time.length - 3);
+        }
+        return localDate + ' ' + time;
     } else {
         return ''
     }
 })
 Vue.filter('money', function (value) {
-    return moneyString(value);   
+    return moneyString(value);
 })

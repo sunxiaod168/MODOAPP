@@ -3,41 +3,26 @@
     <template slot-scope="props">
       <div class="list-block">
         <ul>
-          <li class="accordion-item swipeout" v-for="item in props.data" :key="item.ID" @accordion:open="accordionOpen" @accordion:opened="accordionOpened" @swipeout:open="swipeoutOpen" @swipeout:opened="swipeoutOpened">
-            <a href="#" class="item-content item-link swipeout-content">
+          <li class="swipeout" v-for="item in props.data" :key="item.ID">
+            <a href="#" class="item-content item-link swipeout-content" @click="viewDelivery($event,item)">
               <div class="item-inner">
-                <div class="item-title cname">{{item.Customer.Name }}
+                <div class="item-title cname">
+                  <p class="item-name">
+                    <span>{{item.Customer.Name}}</span>
+                    <span class="cphone">
+                      <i class="fas fa-phone-square"></i>{{item.Customer.Phone}}</span>
+                  </p>
+                  <p class="item-subtitle">
+                    <span>送货时间：{{item.DeliveryDispatch.DeliveryDate | datetime}}</span>
+                    <span>送货金额：{{item.SongHuoDanJinE | money}}</span>
+                  </p>
                 </div>
-                <span class="phone">
-                  <i class="fas fa-phone-square"></i>{{item.Customer.Phone}}</span>
-                <span>
-                  {{item.SongHuoDanJinE | money}} </span>
               </div>
             </a>
             <div class="swipeout-actions-left">
-              <a class="edit-action" href="#" @click="editPlan($event,item)" v-if="item.DeliveryDispatch.ID > 0 || item.InstallDispatch.ID">编辑计划</a>
+              <a class="edit-action" href="#" @click="editPlan($event,item)" v-if="item.DeliveryDispatch.ID > 0 || item.InstallDispatch.ID > 0">编辑计划</a>
               <a class="edit-action" href="#" @click="addPlan($event,item)" v-else>新增计划</a>
-              <a class="view-action" href="#" @click="viewPlan($event,item)" v-if="item.DeliveryDispatch.ID > 0 || item.InstallDispatch.ID">查看计划</a>
-            </div>
-            <div class="accordion-item-content">
-              <div class="content-block">
-                <p class="dash-line">
-                  <label>组织名称：</label>
-                  <span>{{item.ZZName}}</span>
-                </p>
-                <p class="dash-line">
-                  <label>送货单编号：</label>
-                  <span>{{item.DeliveryHeaderID}}</span>
-                </p>
-                <p class="dash-line">
-                  <label>总包数：</label>
-                  <span>{{item.ZongBaoShu}}</span>
-                </p>
-                <p class="dash-line">
-                  <label>总体积：</label>
-                  <span>{{item.ZongTiJi}}</span>
-                </p>
-              </div>
+              <a class="view-action" href="#" @click="viewPlan($event,item)" v-if="item.DeliveryDispatch.ID > 0 || item.InstallDispatch.ID > 0">查看计划</a>
             </div>
           </li>
         </ul>
@@ -66,6 +51,25 @@
 .fa-phone-square {
   margin-right: 5px;
 }
+.cname {
+  text-align: left;
+  width: 100%;
+}
+.cphone {
+  float: right;
+}
+.item-name {
+  margin: 0;
+  text-align: left;
+}
+.item-subtitle {
+  margin: 10px 0 0;
+  white-space: normal;
+}
+.item-subtitle>>>span {
+  display: block;
+  font-size: 14px;
+}
 </style>
 
 <script>
@@ -82,34 +86,7 @@ export default {
     };
   },
   components: { DataListPage },
-  methods: {   
-    accordionOpen(e) {
-      var swipeout = e.target;
-      var actions = Dom7(".edit-action, .view-action", swipeout);
-      actions.transition(0);
-      this.$f7.swipeoutClose(swipeout);
-    },
-    accordionOpened(e) {
-      var swipeout = e.target;
-      var actions = Dom7(".edit-action, .view-action", swipeout);
-      actions.transition(".3s");
-    },
-    swipeoutOpen(e) {
-      var accordionItem = e.target;
-      if (Dom7(accordionItem).hasClass("accordion-item-expanded")) {
-        var accordionItemContent = Dom7(
-          ".accordion-item-content",
-          accordionItem
-        );
-        accordionItemContent.css('height',0);
-        Dom7(accordionItem).removeClass('accordion-item-expanded');       
-      }
-    },
-    swipeoutOpened(e) {
-      var accordionItem = e.target;
-      var accordionItemContent = Dom7(".accordion-item-content", accordionItem);
-      accordionItemContent.transition(".3s");
-    },
+  methods: {
     addPlan(e, item) {
       this.toEdit(e, item, true, "新增配送计划");
     },
@@ -123,6 +100,11 @@ export default {
       this.$f7.swipeoutClose(Dom7(e.target).parents("li")[0]);
       var query = { data: clone(item), editable: editable, title: title };
       this.$router.load({ url: "/delivery-install-plan-edit", query: query });
+    },
+    viewDelivery(e, item) {
+      this.$f7.swipeoutClose(Dom7(e.target).parents("li")[0]);
+      var query = { ID: item.ID };
+      this.$router.load({ url: "/delivery-detail", query: query });
     }
   }
 };

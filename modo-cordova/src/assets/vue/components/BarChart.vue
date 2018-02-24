@@ -28,7 +28,8 @@ export default {
           confine: true,
           axisPointer: {
             type: "shadow"
-          }
+          },
+          extraCssText: "text-align: left;"
         },
         legend: {
           bottom: 0
