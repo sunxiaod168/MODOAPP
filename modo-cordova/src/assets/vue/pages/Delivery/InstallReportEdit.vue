@@ -2,30 +2,30 @@
   <f7-page nav-title="" @page:init="initHandle" @page:beforeinit="beforeinitHandle" @page:back="backHandler">
     <f7-list>
       <f7-list-item smart-select title="安装负责人" smart-select-open-in="popup" smart-select-searchbar smart-select-searchbar-cancel="取消" smart-select-searchbar-placeholder="查找" smart-select-back-text="关闭">
-        <select name="installMasterStaff" v-model="Leader">
+        <select name="installMasterStaff" v-model="Leader" :disabled="editable == false">
           <option v-for="staff in staffs" :value="staff.ID" :key="staff.ID">{{staff.Name}}</option>
         </select>
       </f7-list-item>
       <f7-list-item smart-select title="安装人" smart-select-open-in="popup" smart-select-searchbar smart-select-searchbar-cancel="取消" smart-select-searchbar-placeholder="查找" smart-select-back-text="关闭">
-        <select name="installStaffs" multiple="multiple" v-model="InstallStaffList">
+        <select name="installStaffs" multiple="multiple" v-model="InstallStaffList" :disabled="editable == false">
           <option v-for="staff in staffs" :value="staff.ID" :key="staff.ID">{{staff.Name}}</option>
         </select>
       </f7-list-item>
       <f7-list-item>
         <label>安装计划开始时间</label>
-        <date-picker v-model="PlanInstallDate" placeholder="安装计划开始时间" type="datetime"></date-picker>
+        <date-picker v-model="PlanInstallDate" placeholder="安装计划开始时间" type="datetime" :disabled="editable == false"></date-picker>
       </f7-list-item>
       <f7-list-item>
         <label>安装计划完成时间</label>
-        <date-picker v-model="PlanInstallFinishDate" placeholder="安装计划完成时间" type="datetime"></date-picker>
+        <date-picker v-model="PlanInstallFinishDate" placeholder="安装计划完成时间" type="datetime" :disabled="editable == false"></date-picker>
       </f7-list-item>
       <f7-list-item>
         <label>安装开始时间</label>
-        <date-picker v-model="InstallDate" placeholder="安装开始时间" type="datetime"></date-picker>
+        <date-picker v-model="InstallDate" placeholder="安装开始时间" type="datetime" :disabled="editable == false"></date-picker>
       </f7-list-item>
       <f7-list-item>
         <label>安装完成时间</label>
-        <date-picker v-model="InstallFinishDate" placeholder="安装完成时间" type="datetime"></date-picker>
+        <date-picker v-model="InstallFinishDate" placeholder="安装完成时间" type="datetime" :disabled="editable == false"></date-picker>
       </f7-list-item>
     </f7-list>
   </f7-page>
@@ -55,7 +55,8 @@ export default {
       InstallDate: null,
       InstallFinishDate: null,
       Leader: 0,
-      InstallStaffList: []
+      InstallStaffList: [],
+      editable: false
     };
   },
   components: { DatePicker },
@@ -86,7 +87,7 @@ export default {
       page.container.setAttribute("nav-title", page.query.title);
 
       this.$store.state.navRightPanelEnabled = false;
-      this.$store.state.navRightTitle = "保存";
+      this.$store.state.navRightTitle = "提交";
       this.$store.state.navRightIcon = "";
 
       this.PlanInstallDate = convertJsonDate(pageData.PlanInstallDate);
@@ -97,9 +98,14 @@ export default {
       this.InstallFinishDate = convertJsonDate(pageData.InstallFinishDate);
       this.Leader = pageData.Leader;
       this.InstallStaffList = pageData.InstallStaffList;
+      this.editable = page.query.editable;
 
       Dom7('[name="installMasterStaff"]+.item-after').text(pageData.LeaderName);
       Dom7('[name="installStaffs"]+.item-after').text(pageData.InstallStaffs);
+      if (this.editable == false) {
+        this.$store.state.navRightTitle = "";
+        bus.$off("navRightButtonClicked", this.save);
+      }
     },
     backHandler(e) {
       this.$store.state.navRightPanelEnabled = true;
@@ -121,15 +127,15 @@ export default {
         .then(function(response) {
           var data = response.data;
           if (data.status === CONST.STATUS_SUCCESS) {
-            me.$f7.alert("", "保存成功", function() {
+            me.$f7.alert("", "提交成功", function() {
               me.$router.back();
             });
           } else {
-            me.$f7.alert(data.msg, "保存失败");
+            me.$f7.alert(data.msg, "提交失败");
           }
         })
         .catch(function(err) {
-          me.$f7.alert(err, "保存失败");
+          me.$f7.alert(err, "提交失败");
         });
     }
   }

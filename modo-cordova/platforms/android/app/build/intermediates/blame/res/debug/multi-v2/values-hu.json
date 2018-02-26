@@ -4,7 +4,7 @@
             "outputFile": "D:\\Dev\\ModoAPP\\modo-cordova\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hu\\values-hu.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Jack\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\abdf44f96f16752fd2c80b0ce3d24b74\\res\\values-hu\\values-hu.xml",
+                    "source": "C:\\Users\\Jack\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\bfabec66672fec49f6c82148550853c3\\res\\values-hu\\values-hu.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

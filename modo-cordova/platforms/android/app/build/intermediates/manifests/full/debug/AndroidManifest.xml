@@ -41,16 +41,6 @@
             </intent-filter>
         </activity>
 
-        <provider
-            android:name="io.github.pwlin.cordova.plugins.fileopener2.FileProvider"
-            android:authorities="com.modencloud.modoapp.opener.provider"
-            android:exported="false"
-            android:grantUriPermissions="true" >
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/opener_paths" />
-        </provider>
-
         <receiver
             android:name="com.borismus.webintent.WebIntent$ReferralReceiver"
             android:enabled="true"
@@ -60,6 +50,16 @@
                 <action android:name="com.android.vending.INSTALL_REFERRER" />
             </intent-filter>
         </receiver>
+
+        <provider
+            android:name="io.github.pwlin.cordova.plugins.fileopener2.FileProvider"
+            android:authorities="com.modencloud.modoapp.opener.provider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/opener_paths" />
+        </provider>
     </application>
 
 </manifest>

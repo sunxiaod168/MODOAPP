@@ -1,18 +1,12 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
-        "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
-        "id": "cordova-plugin-splashscreen.SplashScreen",
-        "pluginId": "cordova-plugin-splashscreen",
+        "file": "plugins/com.borismus.webintent/www/webintent.js",
+        "id": "com.borismus.webintent.WebIntent",
+        "pluginId": "com.borismus.webintent",
         "clobbers": [
-            "navigator.splashscreen"
+            "WebIntent"
         ]
-    },
-    {
-        "file": "plugins/cordova-plugin-splashscreen/src/browser/SplashScreenProxy.js",
-        "id": "cordova-plugin-splashscreen.SplashScreenProxy",
-        "pluginId": "cordova-plugin-splashscreen",
-        "runs": true
     },
     {
         "file": "plugins/cordova-plugin-device/www/device.js",
@@ -208,6 +202,14 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/cordova-plugin-file-opener2/www/plugins.FileOpener2.js",
+        "id": "cordova-plugin-file-opener2.FileOpener2",
+        "pluginId": "cordova-plugin-file-opener2",
+        "clobbers": [
+            "cordova.plugins.fileOpener2"
+        ]
+    },
+    {
         "file": "plugins/cordova-plugin-file-transfer/www/FileTransferError.js",
         "id": "cordova-plugin-file-transfer.FileTransferError",
         "pluginId": "cordova-plugin-file-transfer",
@@ -232,32 +234,30 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/cordova-plugin-file-opener2/www/plugins.FileOpener2.js",
-        "id": "cordova-plugin-file-opener2.FileOpener2",
-        "pluginId": "cordova-plugin-file-opener2",
+        "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+        "id": "cordova-plugin-splashscreen.SplashScreen",
+        "pluginId": "cordova-plugin-splashscreen",
         "clobbers": [
-            "cordova.plugins.fileOpener2"
+            "navigator.splashscreen"
         ]
     },
     {
-        "file": "plugins/com.borismus.webintent/www/webintent.js",
-        "id": "com.borismus.webintent.WebIntent",
-        "pluginId": "com.borismus.webintent",
-        "clobbers": [
-            "WebIntent"
-        ]
+        "file": "plugins/cordova-plugin-splashscreen/src/browser/SplashScreenProxy.js",
+        "id": "cordova-plugin-splashscreen.SplashScreenProxy",
+        "pluginId": "cordova-plugin-splashscreen",
+        "runs": true
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "cordova-plugin-splashscreen": "5.0.2-dev",
-    "cordova-plugin-whitelist": "1.3.3",
+    "com.borismus.webintent": "1.1.0",
     "cordova-plugin-device": "2.0.1",
     "cordova-plugin-file": "6.0.1",
-    "cordova-plugin-file-transfer": "1.7.1",
     "cordova-plugin-file-opener2": "2.0.19",
-    "com.borismus.webintent": "1.1.0"
+    "cordova-plugin-file-transfer": "1.7.1",
+    "cordova-plugin-splashscreen": "5.0.2-dev",
+    "cordova-plugin-whitelist": "1.3.3"
 }
 // BOTTOM OF METADATA
 });

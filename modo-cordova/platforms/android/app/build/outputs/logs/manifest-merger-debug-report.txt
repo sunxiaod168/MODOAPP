@@ -1,28 +1,28 @@
 -- Merging decision tree log ---
 provider#io.github.pwlin.cordova.plugins.fileopener2.FileProvider
-INJECTED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:12:9-14:20
+INJECTED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:17:9-19:20
 	android:grantUriPermissions
-		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:12:99-133
+		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:17:99-133
 	android:authorities
 		INJECTED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml
-		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:12:19-73
+		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:17:19-73
 	android:exported
-		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:12:74-98
+		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:17:74-98
 	android:name
-		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:12:134-205
+		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:17:134-205
 manifest
 ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:2:1-24:12
 INJECTED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:2:1-24:12
 INJECTED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:2:1-24:12
 INJECTED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:2:1-24:12
-MERGED from [com.android.support:support-v4:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\5e3220dec05b57eb7330991e9ef9f36e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\654089620f0a44df477fddd9e0851b64\AndroidManifest.xml:17:1-22:12
 MERGED from [:CordovaLib] D:\Dev\ModoAPP\modo-cordova\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:20:1-27:12
-MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\be1a7093349350ecc4505eac51729e02\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\12a16618d50e2190dc9f13aefe86e728\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\d5dab81665889a7c36d0e88e5ba6f431\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\d8dd18d4fe0b50d66b63ec183dc75e2f\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\abdf44f96f16752fd2c80b0ce3d24b74\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\5b852ccac9eb1b54f69d89f823103a4b\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\fff49de54dff2fa94b4ae339479aa1fb\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\5b92622faa3b13e58c6b77f6ff1e01b5\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\61fdf40aefe66464db73113fb0dcad2c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\0aedd5b1ba9ec93c5768cbaa74a01e71\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\bfabec66672fec49f6c82148550853c3\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\42a1990941dabe20dc7afebe75869122\AndroidManifest.xml:17:1-24:12
 INJECTED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:2:1-24:12
 INJECTED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:2:1-24:12
 INJECTED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:2:1-24:12
@@ -63,15 +63,13 @@ ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidMan
 application
 ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:5:5-20:19
 	android:supportsRtl
-		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:5:140-166
+		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:5:114-140
 	android:label
-		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:5:107-139
+		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:5:81-113
 	android:hardwareAccelerated
-		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:5:44-78
-	android:debuggable
-		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:5:18-43
+		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:5:18-52
 	android:icon
-		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:5:79-106
+		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:5:53-80
 activity#com.modencloud.modoapp.MainActivity
 ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:6:9-11:20
 	android:label
@@ -99,39 +97,39 @@ ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidMan
 	android:name
 		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:9:27-74
 receiver#com.borismus.webintent.WebIntent$ReferralReceiver
-ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:15:9-19:20
+ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:12:9-16:20
 	android:enabled
-		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:15:19-41
+		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:12:19-41
 	android:label
-		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:15:66-98
+		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:12:66-98
 	android:exported
-		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:15:42-65
+		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:12:42-65
 	android:name
-		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:15:99-163
+		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:12:99-163
 intent-filter#com.android.vending.INSTALL_REFERRER
-ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:16:13-18:29
+ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:13:13-15:29
 action#com.android.vending.INSTALL_REFERRER
-ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:17:17-79
+ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:14:17-79
 	android:name
-		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:17:25-76
+		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:14:25-76
 uses-sdk
 ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:21:5-74
-MERGED from [com.android.support:support-v4:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\5e3220dec05b57eb7330991e9ef9f36e\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\5e3220dec05b57eb7330991e9ef9f36e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\654089620f0a44df477fddd9e0851b64\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\654089620f0a44df477fddd9e0851b64\AndroidManifest.xml:20:5-44
 MERGED from [:CordovaLib] D:\Dev\ModoAPP\modo-cordova\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-44
 MERGED from [:CordovaLib] D:\Dev\ModoAPP\modo-cordova\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-44
-MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\be1a7093349350ecc4505eac51729e02\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\be1a7093349350ecc4505eac51729e02\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\12a16618d50e2190dc9f13aefe86e728\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\12a16618d50e2190dc9f13aefe86e728\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\d5dab81665889a7c36d0e88e5ba6f431\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\d5dab81665889a7c36d0e88e5ba6f431\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\d8dd18d4fe0b50d66b63ec183dc75e2f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\d8dd18d4fe0b50d66b63ec183dc75e2f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\abdf44f96f16752fd2c80b0ce3d24b74\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\abdf44f96f16752fd2c80b0ce3d24b74\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\5b852ccac9eb1b54f69d89f823103a4b\AndroidManifest.xml:20:5-22:41
-MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\5b852ccac9eb1b54f69d89f823103a4b\AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\fff49de54dff2fa94b4ae339479aa1fb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\fff49de54dff2fa94b4ae339479aa1fb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\5b92622faa3b13e58c6b77f6ff1e01b5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\5b92622faa3b13e58c6b77f6ff1e01b5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\61fdf40aefe66464db73113fb0dcad2c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\61fdf40aefe66464db73113fb0dcad2c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\0aedd5b1ba9ec93c5768cbaa74a01e71\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\0aedd5b1ba9ec93c5768cbaa74a01e71\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\bfabec66672fec49f6c82148550853c3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\bfabec66672fec49f6c82148550853c3\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\42a1990941dabe20dc7afebe75869122\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\42a1990941dabe20dc7afebe75869122\AndroidManifest.xml:20:5-22:41
 	android:targetSdkVersion
 		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:21:42-71
 	android:minSdkVersion
@@ -145,8 +143,8 @@ ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidMan
 	android:name
 		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:23:22-77
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:13:13-114
+ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:18:13-114
 	android:resource
-		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:13:75-111
+		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:18:75-111
 	android:name
-		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:13:24-74
+		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:18:24-74

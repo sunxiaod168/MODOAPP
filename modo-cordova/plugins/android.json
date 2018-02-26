@@ -7,10 +7,7 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "com.modencloud.modoapp"
-    },
-    "cordova-plugin-whitelist": {
+    "com.borismus.webintent": {
       "PACKAGE_NAME": "com.modencloud.modoapp"
     },
     "cordova-plugin-device": {
@@ -19,13 +16,16 @@
     "cordova-plugin-file": {
       "PACKAGE_NAME": "com.modencloud.modoapp"
     },
-    "cordova-plugin-file-transfer": {
-      "PACKAGE_NAME": "com.modencloud.modoapp"
-    },
     "cordova-plugin-file-opener2": {
       "PACKAGE_NAME": "com.modencloud.modoapp"
     },
-    "com.borismus.webintent": {
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.modencloud.modoapp"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.modencloud.modoapp"
+    },
+    "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.modencloud.modoapp"
     }
   },

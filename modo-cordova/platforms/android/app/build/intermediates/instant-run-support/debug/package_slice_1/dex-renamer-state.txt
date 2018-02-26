@@ -1,4 +1,0 @@
-#Wed Feb 07 17:06:46 CST 2018
-base.0=D\:\\Dev\\ModoAPP\\modo-cordova\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\401
-path.0=classes.dex
-renamed.0=classes.dex

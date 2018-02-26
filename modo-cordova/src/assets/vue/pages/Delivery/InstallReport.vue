@@ -3,68 +3,24 @@
     <template slot-scope="props">
       <div class="list-block">
         <ul>
-          <li class="accordion-item swipeout" v-for="item in props.data" :key="item.DeliveryID" @accordion:open="accordionOpen" @accordion:opened="accordionOpened" @swipeout:open="swipeoutOpen" @swipeout:opened="swipeoutOpened">
-            <a href="#" class="item-content item-link swipeout-content">
+          <li class="swipeout" v-for="item in props.data" :key="item.DeliveryID">
+            <a href="#" class="item-content item-link swipeout-content" @click="viewDelivery($event,item)">
               <div class="item-inner">
-                <div class="item-title cname">{{item.CustomerName }}
+                <div class="item-title cname">
+                  <p class="item-name">
+                    <span>{{item.CustomerName}}</span>
+                    <span class="cphone">
+                      <i class="fas fa-phone-square"></i>{{item.CustomerPhone}}</span>
+                  </p>
+                  <p class="item-subtitle">
+                    <span>计划安装时间：{{item.PlanInstallDate | datetime}}</span>
+                  </p>
                 </div>
-                <span class="phone">
-                  <i class="fas fa-phone-square"></i>{{item.CustomerPhone}}</span>
-                <span>
-                  {{item.LeaderName}} </span>
               </div>
             </a>
             <div class="swipeout-actions-left">
-              <a class="edit-action" href="#" @click="editPlan($event,item)" v-if="item.DeliveryIsFinished">编辑汇报</a>
-              <a class="edit-action" href="#" @click="addPlan($event,item)" v-else>新增汇报</a>
-            </div>
-            <div class="accordion-item-content">
-              <div class="content-block">
-                <p class="dash-line">
-                  <label>组织名称：</label>
-                  <span>{{item.ZZName}}</span>
-                </p>
-                <p class="dash-line">
-                  <label>订单编号：</label>
-                  <span>{{item.OrderCode}}</span>
-                </p>
-                <p class="dash-line">
-                  <label>送货单编号：</label>
-                  <span>{{item.DeliveryHeaderID}}</span>
-                </p>
-                <p class="dash-line">
-                  <label>安装人：</label>
-                  <span>{{item.InstallStaffs}}</span>
-                </p>
-                <p class="dash-line">
-                  <label>安装负责人：</label>
-                  <span>{{item.LeaderName}}</span>
-                </p>                
-                <p class="dash-line">
-                  <label>计划开始时间：</label>
-                  <span>{{item.PlanInstallDate | datetime}}</span>
-                </p>
-                <p class="dash-line">
-                  <label>计划完成时间：</label>
-                  <span>{{item.PlanInstallFinishDate | datetime}}</span>
-                </p>
-                <p class="dash-line">
-                  <label>实际开始时间：</label>
-                  <span>{{item.InstallDate | datetime}}</span>
-                </p>
-                <p class="dash-line">
-                  <label>实际完成时间：</label>
-                  <span>{{item.InstallFinishDate | datetime}}</span>
-                </p>
-                <p class="dash-line">
-                  <label>完工汇报人：</label>
-                  <span>{{item.InstallReporter}}</span>
-                </p>
-                <p class="dash-line">
-                  <label>完工汇报时间：</label>
-                  <span>{{item.InstallReportTime | datetime}}</span>
-                </p>
-              </div>
+              <a class="edit-action" href="#" @click="viewPlan($event,item)" v-if="item.InstallIsFinished">查看完工汇报</a>
+              <a class="edit-action" href="#" @click="editPlan($event,item)" v-else>提交完工汇报</a>
             </div>
           </li>
         </ul>
@@ -93,6 +49,26 @@
 .fa-phone-square {
   margin-right: 5px;
 }
+.cname {
+  text-align: left;
+  width: 100%;
+}
+.cphone {
+  float: right;
+}
+.item-name {
+  margin: 0;
+  text-align: left;
+}
+.item-subtitle {
+  margin: 10px 0 0;
+  white-space: normal;
+  color: #6d6d72;
+}
+.item-subtitle>>>span {
+  display: block;
+  font-size: 14px;
+}
 </style>
 
 <script>
@@ -108,44 +84,25 @@ export default {
     };
   },
   components: { DataListPage },
-  methods: {   
-    accordionOpen(e) {
-      var swipeout = e.target;
-      var actions = Dom7(".edit-action, .view-action", swipeout);
-      actions.transition(0);
-      this.$f7.swipeoutClose(swipeout);
-    },
-    accordionOpened(e) {
-      var swipeout = e.target;
-      var actions = Dom7(".edit-action, .view-action", swipeout);
-      actions.transition(".3s");
-    },
-    swipeoutOpen(e) {
-      var accordionItem = e.target;
-      if (Dom7(accordionItem).hasClass("accordion-item-expanded")) {
-        var accordionItemContent = Dom7(
-          ".accordion-item-content",
-          accordionItem
-        );
-        accordionItemContent.css("height", 0);
-        Dom7(accordionItem).removeClass("accordion-item-expanded");
-      }
-    },
-    swipeoutOpened(e) {
-      var accordionItem = e.target;
-      var accordionItemContent = Dom7(".accordion-item-content", accordionItem);
-      accordionItemContent.transition(".3s");
-    },
-    addPlan(e, item) {
-      this.toEdit(e, item, "新增安装完工汇报");
+  methods: {
+    viewPlan(e, item) {
+      this.toEdit(e, item, "查看完工汇报", false);
     },
     editPlan(e, item) {
-      this.toEdit(e, item, "编辑安装完工汇报");
-    },   
-    toEdit(e, item, title) {
+      this.toEdit(e, item, "提交完工汇报", true);
+    },
+    toEdit(e, item, title, editable) {
       this.$f7.swipeoutClose(Dom7(e.target).parents("li")[0]);
-      var query = { data: item, title: title };
-      this.$router.load({ url: "/install-report-edit", query: query });
+      var query = { data: item, title: title, editable: editable };
+      this.$router.load({
+        url: "/install-report-edit",
+        query: query
+      });
+    },
+    viewDelivery(e, item) {
+      this.$f7.swipeoutClose(Dom7(e.target).parents("li")[0]);
+      var query = { ID: item.DeliveryID };
+      this.$router.load({ url: "/delivery-detail", query: query });
     }
   }
 };

@@ -831,6 +831,7 @@ var detailData = {
     "CreateTime": "\/Date(1512652217263)\/",
     "Quantity": 2,
     "CustomerName": "王利杰",
+    "CustomerPhone": "18838918960",    
     "ID": 1181,
     "DeliveryHeaderID": "DE410000817120703",
     "ZZName": "华兰家具欧凯龙北环店",
@@ -921,7 +922,7 @@ var dispatchListData = [
         "OrderCode": "SAC001171028006",
         "OrderFinished": true,
         "DeliveryHeaderID": "DE410000817112402",
-        "CustomerName": "王璇",
+        "CustomerName": "王杰",
         "CustomerPhone": "15290893205",
         "DeliveryDispatchID": 19,
         "DeliveryID": 1162,
@@ -949,7 +950,8 @@ var dispatchListData = [
         "InstallReportTime": "\/Date(1511511185440)\/",
         "InstallReportContent": null,
         "DeliveryHours": null,
-        "InstallHours": null
+        "InstallHours": null,
+        "SongHuoDanJinE": 3000.00,
     },
     {
         "ZZName": "华兰家具欧凯龙西环店",
@@ -984,6 +986,7 @@ var dispatchListData = [
         "InstallReportTime": null,
         "InstallReportContent": null,
         "DeliveryHours": null,
-        "InstallHours": null
+        "InstallHours": null,
+        "SongHuoDanJinE": 3000.00,
     }
 ]

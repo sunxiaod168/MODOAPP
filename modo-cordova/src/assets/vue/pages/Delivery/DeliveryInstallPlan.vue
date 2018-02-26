@@ -65,6 +65,7 @@
 .item-subtitle {
   margin: 10px 0 0;
   white-space: normal;
+  color:#6d6d72;
 }
 .item-subtitle>>>span {
   display: block;

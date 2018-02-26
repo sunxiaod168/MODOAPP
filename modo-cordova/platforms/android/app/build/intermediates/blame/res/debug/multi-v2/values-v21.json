@@ -4,7 +4,7 @@
             "outputFile": "D:\\Dev\\ModoAPP\\modo-cordova\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Jack\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\abdf44f96f16752fd2c80b0ce3d24b74\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\Jack\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\bfabec66672fec49f6c82148550853c3\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Jack\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.0.2.aar\\be1a7093349350ecc4505eac51729e02\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\Jack\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.0.2.aar\\fff49de54dff2fa94b4ae339479aa1fb\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,5,8,11",
                         "startColumns": "4,4,4,4",
