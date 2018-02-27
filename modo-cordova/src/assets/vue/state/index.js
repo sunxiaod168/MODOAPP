@@ -8,30 +8,31 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
 	state: {
 		token: null,
+		platform: null,
+		uuid: null,
 		userInfo: null,
 		userPermissions: null,
 		navBackVisiable: false,
-		navRightVisiable: false,	
-		navRightPanelEnabled:false,	
+		navRightVisiable: false,
+		navRightPanelEnabled: false,
 		navBarTitle: CONST.NAV_TITLE_DEFAULT,
-		navRightTitle:'',
-		navRightIcon:'',
-		currentRightView: null,
-		uuid:null,
-		platform:null
+		navRightTitle: '',
+		navRightIcon: '',
+		currentRightView: null
 	},
 	mutations: {
 		setUserInfo(state, userInfo) {
-
 			var permission = userInfo.permission
 			var token = userInfo.token
-			delete userInfo.permission 
-			delete userInfo.token    
+			delete userInfo.permission
+			delete userInfo.token
 			state.token = token
-			state.userInfo = userInfo      
+			state.userInfo = userInfo
 			state.userPermissions = convertPermission(permission)
-			state.uuid = device.uuid;
+		},
+		setDeviceInfo() {
 			state.platform = device.platform;
+			state.uuid = device.uuid;
 		},
 		hideNavBack(state) {
 			state.navBackVisiable = false

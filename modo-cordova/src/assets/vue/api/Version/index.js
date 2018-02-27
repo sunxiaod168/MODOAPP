@@ -1,8 +1,8 @@
-import axios from 'api/base'
+import base from 'api/base'
 
 const api = {
 	check() {
-		return axios.post('/version/check')						 
+		return base.post('/version/check')						 
 	}
 }
 

@@ -10,7 +10,6 @@ import ECharts from "vue-echarts/components/ECharts.vue";
 
 import FontAwsome from './assets/css/fontawesome-all.min.css'
 import AppStyles from './assets/css/main.css'
-import Mock from 'mock'
 
 import { setNavBack, setNavTitle } from 'common'
 import routes from 'routes'
@@ -18,6 +17,8 @@ import store from 'state'
 import app from './App'
 import Filters from 'filters'
 import Directives from 'directives'
+
+//import Mock from 'mock'
 
 
 Vue.use(Framework7Vue)
@@ -52,3 +53,9 @@ new Vue({
 		}
 	}	
 })
+
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+	console.log(device.cordova);
+	store.commit("setDeviceInfo");
+}

@@ -1,17 +1,17 @@
-import axios from 'api/base'
+import base from 'api/base'
 
 const api = {
 	profile() {
-		return axios.post('/user/profile')
+		return base.post('/user/profile')
 	},
 	login(params) {
-		return axios.post('/user/login', params)
+		return base.post('/user/login', params)
 	},
 	staffList(params) {
-		return axios.post('/user/staffList', params)
+		return base.post('/user/staffList', params)
 	},
 	modifyPwd(params) {
-		return axios.post('/user/modifyPwd', params)
+		return base.post('/user/modifyPwd', params)
 	},
 	
 }

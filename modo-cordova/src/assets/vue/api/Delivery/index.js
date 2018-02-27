@@ -1,27 +1,27 @@
-import axios from 'api/base'
+import base from 'api/base'
 
 const api = {
 
   list(params) {
-    return axios.post('/delivery/list', params)
+    return base.post('/delivery/list', params)
   },  
   detail(params){
-    return axios.post('/delivery/detail', params)
+    return base.post('/delivery/detail', params)
   },
   deliveryInstallPlan(params) {
-    return axios.post('/delivery/deliveryInstallPlan', params)
+    return base.post('/delivery/deliveryInstallPlan', params)
   },
   deliveryDispatchList(params) {
-    return axios.post('/delivery/deliveryDispatchList', params)
+    return base.post('/delivery/deliveryDispatchList', params)
   },  
   installDispatchList(params) {
-    return axios.post('/delivery/installDispatchList', params)
+    return base.post('/delivery/installDispatchList', params)
   },  
   deliveryReport(params) {
-    return axios.post('/delivery/deliveryReport', params)
+    return base.post('/delivery/deliveryReport', params)
   },
   installReport(params) {
-    return axios.post('/delivery/installReport', params)
+    return base.post('/delivery/installReport', params)
   }  
 }
 

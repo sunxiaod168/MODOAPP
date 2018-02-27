@@ -1,18 +1,18 @@
-import axios from 'api/base'
+import base from 'api/base'
 
 const api = {
 
 	retailPrice (params) {
-		return axios.post('/query/retailPrice', params)
+		return base.post('/query/retailPrice', params)
 	},
 	costPrice (params) {
-		return axios.post('/query/costPrice', params)
+		return base.post('/query/costPrice', params)
 	},
 	inventory(params) {
-		return axios.post('/query/inventory', params)
+		return base.post('/query/inventory', params)
 	},
 	orderProgress(params){
-		return axios.post('/query/orderProgress', params)
+		return base.post('/query/orderProgress', params)
 	}	
 }
 

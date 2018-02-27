@@ -1,24 +1,24 @@
-import axios from 'api/base'
+import base from 'api/base'
 
 const api = {
 
   asset(params) {
-    return axios.post('/stat/asset', params)
+    return base.post('/stat/asset', params)
   },
   profit(params) {
-    return axios.post('/stat/profit', params)
+    return base.post('/stat/profit', params)
   },
   order(params) {
-    return axios.post('/stat/order', params)
+    return base.post('/stat/order', params)
   },
   achievement(params) {
-    return axios.post('/stat/achievement', params)
+    return base.post('/stat/achievement', params)
   },
   inventory(params) {
-    return axios.post('/stat/inventory', params)
+    return base.post('/stat/inventory', params)
   },
   incomeExpense(params) {
-    return axios.post('/stat/incomeExpense', params)
+    return base.post('/stat/incomeExpense', params)
   }
 }
 
