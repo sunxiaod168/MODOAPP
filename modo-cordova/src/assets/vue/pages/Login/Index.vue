@@ -15,7 +15,7 @@
         <f7-button class="btn-login" big active @click="login">登录</f7-button>
       </f7-list-item>
       <f7-list-label>
-        <p>{{ msg }}</p>
+        <p class="err-msg">{{ msg }}</p>
       </f7-list-label>
     </f7-list>
   </f7-page>
@@ -42,7 +42,7 @@
 .list-block>>>.item-inner::after {
   display: none;
 }
-.list-block >>> ul{
+.list-block>>>ul {
   background: none;
   color: #fff;
 }
@@ -51,6 +51,10 @@
 }
 .list-block>>>ul::after {
   display: none;
+}
+.item-input>>>input,
+.err-msg {
+  color: #fff;
 }
 </style>
 
@@ -61,8 +65,8 @@ import CONST from "const";
 export default {
   data() {
     return {
-      uname: "",
-      pwd: "",
+      uname: "pAdmin",
+      pwd: "admin@modocloud",
       msg: ""
     };
   },
@@ -73,7 +77,7 @@ export default {
         .login({ uname: this.uname, pwd: this.pwd })
         .then(function(response) {
           var data = response.data;
-         
+
           if (data.status === CONST.STATUS_SUCCESS) {
             me.$store.commit("setUserInfo", data.data);
             me.$router.load({ url: "/tabbar/", pushState: false });
@@ -82,7 +86,11 @@ export default {
           }
         })
         .catch(function(err) {
-          me.msg = err;
+         
+          console.log(err);
+          if(err.code == 'ECONNABORTED'){
+            me.msg = '登录超时，请重试';
+          }
         });
     }
   }

@@ -21,7 +21,7 @@ const store = new Vuex.Store({
 		currentRightView: null
 	},
 	mutations: {
-		setUserInfo(state, userInfo) {
+		setUserInfo(state, userInfo) {			
 			var permission = userInfo.permission
 			var token = userInfo.token
 			delete userInfo.permission

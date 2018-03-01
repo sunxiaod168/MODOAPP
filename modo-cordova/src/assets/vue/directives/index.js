@@ -7,15 +7,17 @@ Vue.directive('permission', {
 			var userPermissions = vnode.componentInstance.$store.state.userPermissions
 			var p = binding.value
 			var hasPermission = false
-			userPermissions.forEach(element => {
-				if (element == p) {
-					hasPermission = true
-					return
-				}
-			})
-			if (!hasPermission){
+			if (userPermissions && userPermissions.length > 0) {
+				userPermissions.forEach(permission => {
+					if (permission == p) {
+						hasPermission = true
+						return
+					}
+				})
+			}
+			if (!hasPermission) {
 				$(el).remove()
 			}
-		}       
+		}
 	}
 })

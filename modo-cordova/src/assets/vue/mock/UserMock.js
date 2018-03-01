@@ -13,7 +13,6 @@ import CONST from 'const'
 // 		msg: '登录成功',
 // 		data: {
 // 			uname: 'admin',
-// 			zzid: '40008001',
 // 			token: '597235720sfsf',
 // 			permission: [1, 2, 3, 4]
 // 		}
