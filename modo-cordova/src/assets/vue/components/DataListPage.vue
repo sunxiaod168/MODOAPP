@@ -13,15 +13,16 @@ import CONST from "const";
 
 var $$ = window.Dom7;
 export default {
-  props:['request', 'rightPanel', 'title','searchPlaceholder'],
+  props: ["request", "rightPanel", "title", "searchPlaceholder"],
   data() {
     return {
       msg: "",
       query: {
-        pageNum: 1,
-        pageSize: 15,       
-        keywords: null       
+        pageNum: 0,
+        pageSize: 100,
+        keywords: null
       },
+      totalPage: 0,
       isLoading: false,
       dataList: [],
       notFoundDisplay: "none"
@@ -49,6 +50,7 @@ export default {
       if (this.isLoading) {
         return;
       }
+
       this.query.pageNum = 1;
       this.loadData();
     },
@@ -56,6 +58,10 @@ export default {
       if (this.isLoading) {
         return;
       }
+      if (this.query.pageNum == this.totalPage) {
+        return;
+      }
+
       $$(".infinite-scroll-preloader").show();
       this.query.pageNum++;
       var me = this;
@@ -64,7 +70,7 @@ export default {
         function(response) {
           var data = response.data;
           if (data.status === CONST.STATUS_SUCCESS) {
-            var dataList = data.data;
+            var dataList = data.data.list;
             if (!dataList || dataList.length == 0) {
               me.query.pageNum--;
             }
@@ -79,14 +85,16 @@ export default {
     },
     loadData(nextPage) {
       var me = this;
-
+      //111
       return new Promise((resolve, reject) => {
         me.isLoading = true;
-        me.request(this.query)
+        me
+          .request(this.query)
           .then(function(response) {
             var data = response.data;
             if (data.status === CONST.STATUS_SUCCESS) {
-              var dataList = data.data;
+              var dataList = data.data.list;
+              me.totalPage = data.data.totalPage;
               if (dataList && dataList.length > 0) {
                 if (!nextPage) {
                   me.dataList = [];
@@ -102,31 +110,24 @@ export default {
             me.isLoading = false;
           })
           .catch(function(err) {
-            reject();
             me.hideInfinitePreloader();
             me.$f7.pullToRefreshDone();
-            me.msg = err;
             me.isLoading = false;
+
+            if (err.response.status == 403) {
+              me.$router.back({
+                url: "/login",
+                force: true
+              });
+            } else {
+              reject();
+            }
           });
       });
     },
     hideInfinitePreloader(response) {
       var preloader = $$(".infinite-scroll-preloader");
-
-      if (response == null) {
-        preloader.hide();
-        return;
-      }
-
-      var data = response.data;
-      if (data.status === CONST.STATUS_SUCCESS) {
-        var dataList = data.data;
-        if (!dataList || dataList.length < this.query.pageSize) {
-          preloader.hide();
-        }
-      } else {
-        preloader.hide();
-      }
+      preloader.hide();
     },
     onEnableSearch() {},
     onDisableSearch() {
@@ -171,11 +172,11 @@ export default {
       this.dataList = [];
       this.query.pageNum = 1;
       for (const key in payload) {
-        if (payload.hasOwnProperty(key)) {          
-          this.query[key] = payload[key];          
+        if (payload.hasOwnProperty(key)) {
+          this.query[key] = payload[key];
         }
       }
-      
+
       this.loadData();
     }
   }

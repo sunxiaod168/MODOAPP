@@ -3,7 +3,7 @@
          <f7-block-title>{{title}}</f7-block-title>
         <f7-list>
             <f7-list-item checkbox v-model="checkAll" value="0" title="全选" key="0" @click="toggleAll"></f7-list-item>
-            <f7-list-item checkbox v-model="zzids" v-for="org in orgList" :value="org.zzid" :input-value="org.zzid" :title="org.zzname" :key="org.zzid"></f7-list-item>
+            <f7-list-item checkbox v-model="zzids" v-for="org in orgList" :value="org.ZZID" :input-value="org.ZZID" :title="org.Name" :key="org.ZZID"></f7-list-item>
         </f7-list>        
     </div>
 </template>
@@ -25,6 +25,14 @@ import CONST from "const";
 
 export default {
   props: ["value", "params","title"],
+  data() {
+    return {     
+      checkAll: false,
+      orgList: [],
+      zzids: [],
+      unwatch: []
+    };
+  },
   mounted() {
     var me = this;
 
@@ -45,15 +53,7 @@ export default {
     this.unwatch.forEach(unwatch => {
         unwatch();
     });
-  },
-  data() {
-    return {     
-      checkAll: false,
-      orgList: [],
-      zzids: [],
-      unwatch: []
-    };
-  },
+  },  
   methods: {
     loadData() {
       var me = this;
@@ -72,7 +72,7 @@ export default {
     toggleAll() {
       this.checkAll = !this.checkAll;
       if (this.checkAll) {
-        this.zzids = this.orgList.map(org => org.zzid);
+        this.zzids = this.orgList.map(org => org.ZZID);
       } else {
         this.zzids = [];
       }

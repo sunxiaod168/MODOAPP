@@ -86,11 +86,7 @@ export default {
           }
         })
         .catch(function(err) {
-         
-          console.log(err);
-          if(err.code == 'ECONNABORTED'){
-            me.msg = '登录超时，请重试';
-          }
+          me.msg = err.message;        
         });
     }
   }
