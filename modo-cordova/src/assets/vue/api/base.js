@@ -3,7 +3,7 @@ import store from 'state'
 
 var base = axios.create({
     baseURL: 'http://localhost:5795/api/',
-    timeout: 15000
+    timeout: 1000*60*2
 })
 
 base.interceptors.request.use(function (config) {

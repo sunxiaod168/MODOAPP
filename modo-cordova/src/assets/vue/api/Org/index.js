@@ -8,6 +8,14 @@ const api = {
 			case 'retail-price':
 				url = '/org/AllDescendantSaleTree';
 				break;
+			case 'cost-price':
+				url = '/org/AllSelfManageUnitTree';
+				break;
+			case 'inventory':
+				url = '/org/AllStorages';
+				break;
+
+				
 			default:
 				break;
 		}

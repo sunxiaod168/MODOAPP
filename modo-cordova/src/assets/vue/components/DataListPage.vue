@@ -19,7 +19,7 @@ export default {
       msg: "",
       query: {
         pageNum: 0,
-        pageSize: 100,
+        pageSize: 20,
         keywords: null
       },
       totalPage: 0,
@@ -31,9 +31,11 @@ export default {
   components: { SearchbarNotFound },
   mounted() {
     bus.$on("rightDone", this.rightDone);
+    console.log('rightDone on')
   },
   beforeDestroy() {
     bus.$off("rightDone", this.rightDone);
+    console.log('rightDone off')
   },
   methods: {
     initHandle() {
@@ -52,7 +54,9 @@ export default {
       }
 
       this.query.pageNum = 1;
-      this.loadData();
+      this.loadData().catch(function(err){
+        
+      });
     },
     onInfiniteScroll() {
       if (this.isLoading) {
@@ -66,26 +70,27 @@ export default {
       this.query.pageNum++;
       var me = this;
 
-      this.loadData(true).then(
-        function(response) {
-          var data = response.data;
-          if (data.status === CONST.STATUS_SUCCESS) {
-            var dataList = data.data.list;
-            if (!dataList || dataList.length == 0) {
+      this.loadData(true)
+        .then(
+          function(response) {
+            var data = response.data;
+            if (data.status === CONST.STATUS_SUCCESS) {
+              var dataList = data.data.list;
+              if (!dataList || dataList.length == 0) {
+                me.query.pageNum--;
+              }
+            } else {
               me.query.pageNum--;
             }
-          } else {
+          },
+          function(err) {
             me.query.pageNum--;
           }
-        },
-        function(err) {
-          me.query.pageNum--;
-        }
-      );
+        )        
     },
     loadData(nextPage) {
       var me = this;
-      //111
+
       return new Promise((resolve, reject) => {
         me.isLoading = true;
         me
@@ -113,14 +118,20 @@ export default {
             me.hideInfinitePreloader();
             me.$f7.pullToRefreshDone();
             me.isLoading = false;
+            reject(err);
+           
+            if (err.response) {
+              var status = err.response.status;
+              if (err.response.status == 403) {
+                me.$router.back({
+                  url: "/login",
+                  force: true
+                });
+              }
+            } else if (err.request) {
 
-            if (err.response.status == 403) {
-              me.$router.back({
-                url: "/login",
-                force: true
-              });
             } else {
-              reject();
+              
             }
           });
       });
@@ -177,7 +188,9 @@ export default {
         }
       }
 
-      this.loadData();
+      this.loadData().catch(function(err){
+
+      });
     }
   }
 };
