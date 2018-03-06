@@ -2,7 +2,7 @@
   <div class="org-select">
     <f7-block-title>{{title}}</f7-block-title>
     <f7-list>
-      <f7-list-item radio v-model="zzid" v-for="org in orgList" :value="org.zzid" :input-value="org.zzid" :title="org.zzname" :key="org.zzid"></f7-list-item>
+      <f7-list-item radio v-model="zzid" v-for="org in orgList" :value="org.ZZID" :input-value="org.ZZID" :title="org.Name" :key="org.ZZID"></f7-list-item>
     </f7-list>
   </div>
 </template>

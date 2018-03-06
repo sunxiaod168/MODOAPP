@@ -3,13 +3,9 @@
     <f7-grid class="asset-total">
       <f7-col>
         <label>总资产</label>
-      </f7-col>      
-    </f7-grid>
-    <f7-grid class="asset-total">      
-       <f7-col>
         <span>{{assetData.AssetTotal | money}}</span>
       </f7-col>
-    </f7-grid>    
+    </f7-grid>
     <pie-chart :sdata="pieData" :formatter="labelFormatter"></pie-chart>
   </f7-page>
 </template>
@@ -21,11 +17,16 @@
 
 <style>
 .asset-total {
-  font-size: 25px;
-  padding: 10px 15px;
-  font-weight: bold;
+  padding: 10px 15px;  
   background-color: #007aff;
   color: #fff;
+}
+.asset-total label {
+  display:block;
+}
+.asset-total span {
+  font-size: 25px;
+  font-weight: bold;
 }
 .asset-detail {
   padding: 10px 15px;
@@ -116,9 +117,9 @@ export default {
       this.query.zzid = payload;
       this.loadData();
     },
-    labelFormatter(params){
+    labelFormatter(params) {
       var value = moneyString(params.value);
-      return params.name + "\n\n" + value + "（" + params.percent + "%）"
+      return params.name + "\n\n" + value + "（" + params.percent + "%）";
     }
   }
 };

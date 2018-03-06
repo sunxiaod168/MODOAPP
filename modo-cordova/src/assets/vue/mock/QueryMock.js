@@ -1,5 +1,4 @@
 import Mock from 'mockjs'
-// import Cookie from 'js-cookie'
 import CONST from 'const'
 
 

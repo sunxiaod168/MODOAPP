@@ -31,8 +31,7 @@ export default {
   data() {
     return {
       orgParams: {
-        zzid: this.$store.state.userInfo.zzid,
-        type: "achievement"
+        type: "order"
       },
       zzids: [],
       startDate: null,

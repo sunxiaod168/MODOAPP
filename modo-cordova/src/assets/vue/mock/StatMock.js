@@ -85,7 +85,6 @@ var achievementData = {
         { "StaffID": 30, "StaffName": "刘晓娇", "Increase": 241087, "Cancel": -41087, "NetIncrease": 200000 },
         { "StaffID": 31, "StaffName": "李娜", "Increase": 231663, "Cancel": -31663, "NetIncrease": 200000 }]
 }
-
 var inventoryData = {
     "orgList": [
         { "ZZID": "4100008001001", "ZZName": "华兰家具欧凯龙西环店", "StorageAmount": 155610, "Percent": 16.623135225215120098706875830 },

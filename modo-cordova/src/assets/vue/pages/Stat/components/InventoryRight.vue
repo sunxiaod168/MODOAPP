@@ -17,7 +17,6 @@ export default {
   data() {
     return {
       orgParams: {
-        zzid: this.$store.state.userInfo.zzid,
         type: "inventory"
       },
       zzids: []
