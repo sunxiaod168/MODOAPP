@@ -6,6 +6,7 @@ const api = {
 		var url = '';
 		switch (type) {
 			case 'retail-price':
+			case 'order-progress':
 				url = '/org/AllDescendantSaleTree';
 				break;
 			case 'cost-price':
@@ -14,8 +15,9 @@ const api = {
 			case 'inventory':
 				url = '/org/AllStorages';
 				break;
-
+			
 				
+
 			default:
 				break;
 		}

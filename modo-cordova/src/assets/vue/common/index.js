@@ -2,6 +2,7 @@ import CONST, { PermissionMap } from 'const'
 import $ from 'jquery'
 import Vue from 'vue'
 import CurrencyFormatter from 'currency-formatter'
+import moment from 'moment'
 
 export const bus = new Vue()
 
@@ -61,13 +62,11 @@ export function convertPermission(permissions) {
 
 export function convertJsonDate(value) {
 
-	var regex = /\/Date\((\d+)\)\//ig
-	var result = regex.exec(value)
-	if (result && result.length == 2) {
-		var numValue = parseInt(result[1])
-		return new Date(numValue)
+	var date = moment(value);
+	if(date.isValid){
+		return date.toDate();
 	} else {
-		return null
+		return null;
 	}
 }
 

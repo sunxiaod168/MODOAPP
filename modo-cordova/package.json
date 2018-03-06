@@ -73,6 +73,7 @@
         "lodash.merge": "^4.6.0",
         "loglevel": "^1.4.1",
         "mockjs": "^1.0.1-beta3",
+        "moment": "^2.21.0",
         "vue": "^2.2.4",
         "vue-echarts": "^3.0.1",
         "vue2-datepicker": "^1.8.2",
