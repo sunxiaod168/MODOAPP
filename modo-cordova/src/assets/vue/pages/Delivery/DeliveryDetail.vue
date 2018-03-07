@@ -34,7 +34,7 @@
           </p>
         </f7-card-content>
       </f7-card>
-      <f7-card v-for="(item, index) in pageData.DetailList" :key="item.ID">        
+      <f7-card v-for="(item, index) in pageData.List" :key="item.ID">        
         <f7-card-content class="delivery-detail">
           <p>
             <label>物品名称：</label>
@@ -143,7 +143,8 @@ export default {
         ID: 0
       },
       isLoading: false,
-      pageData: {}
+      pageData: {        
+      }
     };
   },
   mounted() {},

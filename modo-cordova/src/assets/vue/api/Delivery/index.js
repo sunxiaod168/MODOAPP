@@ -22,7 +22,10 @@ const api = {
   },
   installReport(params) {
     return base.post('/delivery/installReport', params)
-  }  
+  },
+  staffList(params) {
+		return base.post('/delivery/staffList', params)
+	},  
 }
 
 export default api

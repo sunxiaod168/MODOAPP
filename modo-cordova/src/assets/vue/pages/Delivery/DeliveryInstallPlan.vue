@@ -8,9 +8,9 @@
               <div class="item-inner">
                 <div class="item-title cname">
                   <p class="item-name">
-                    <span>{{item.Customer.Name}}</span>
+                    <span>{{item.CustomerName}}</span>
                     <span class="cphone">
-                      <i class="fas fa-phone-square"></i>{{item.Customer.Phone}}</span>
+                      <i class="fas fa-phone-square"></i>{{item.CustomerPhone}}</span>
                   </p>
                   <p class="item-subtitle">
                     <span>送货时间：{{item.DeliveryDispatch.DeliveryDate | datetime}}</span>

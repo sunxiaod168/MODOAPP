@@ -24,6 +24,11 @@ const api = {
 			case 'income-expense':
 				url = '/org/AllDescendantCostAndProfitTree';
 				break;
+			case 'install-plan':
+			case 'delivery-report':
+			case 'install-report':
+				url = '/org/AllDescendantOrg';
+				break;
 			default:
 				break;
 		}

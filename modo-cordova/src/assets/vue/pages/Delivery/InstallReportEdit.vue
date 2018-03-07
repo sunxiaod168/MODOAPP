@@ -42,8 +42,7 @@
 <script>
 import { bus, convertJsonDate } from "common";
 import DatePicker from "components/DateTimePicker";
-import userApi from "api/User";
-import deliveryApi from "api/Delivery";
+import api from "api/Delivery";
 import CONST from "const";
 
 export default {
@@ -69,7 +68,7 @@ export default {
   methods: {
     beforeinitHandle() {
       var me = this;
-      userApi
+      api
         .staffList()
         .then(function(response) {
           var data = response.data;
@@ -122,7 +121,7 @@ export default {
         InstallStaffList: this.InstallStaffList
       };
       var me = this;
-      deliveryApi
+      api
         .installReport(params)
         .then(function(response) {
           var data = response.data;
