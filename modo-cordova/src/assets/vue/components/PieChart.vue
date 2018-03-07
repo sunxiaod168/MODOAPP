@@ -14,13 +14,14 @@ export default {
   data() {
     return {
       option: {
-        legend: {        
+        legend: {     
+          type:'scroll',   
           bottom:0
         },
         series: [
           {
             type: "pie",
-            radius: ["70%", "90%"],
+            radius: ["60%", "85%"],
             avoidLabelOverlap: false,
             label: {
               normal: {

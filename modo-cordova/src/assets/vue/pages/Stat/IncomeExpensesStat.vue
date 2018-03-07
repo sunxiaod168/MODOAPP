@@ -10,7 +10,7 @@
       <f7-tabs>
         <f7-tab id="income-expense-tab1" active>
           <bar-chart :sdata="totalChartData" :seriesLabelFormatter="moneyFormatter" :category="totalCategory" left="20%" :right="10" :top="10" :bottom="30"></bar-chart>
-          <div class="data-list">
+          <div class="data-list" v-if="totalData.length > 0">
             <ul>
               <li v-for="item in totalData" :key="item.ZZID">
                 <p class="cell-title">{{item.ZZName}}</p>
@@ -88,13 +88,11 @@
   margin-top: 15px;
 }
 .tabs .tab {
-  width: 290px;
+  
 }
 .total {
   font-size: 16px;
-  margin: 10px 0 0 0;
-  position: absolute;
-  width: 100%;
+  margin: 10px 0 0 0; 
 }
 .total >>> label{
   display: block;

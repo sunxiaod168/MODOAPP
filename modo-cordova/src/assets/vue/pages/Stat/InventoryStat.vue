@@ -63,8 +63,6 @@
 .total {
   font-size: 20px;
   margin: 10px 0 0 0;
-  position: absolute;
-  width: 100%;
 }
 .total >>> label{
   display: block;

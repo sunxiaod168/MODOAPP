@@ -21,6 +21,7 @@ const api = {
 				url = '/org/SelfAndDescendantManageUnit';
 				break;
 			case 'profit':
+			case 'income-expense':
 				url = '/org/AllDescendantCostAndProfitTree';
 				break;
 			default:

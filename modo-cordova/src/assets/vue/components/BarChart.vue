@@ -43,7 +43,7 @@ export default {
         },
         xAxis: [
           {
-            type: "value",
+            type: "value",           
             axisLabel: { show: true, rotate: 90 },
             axisTick: { show: false },
             position: "top"
@@ -51,7 +51,7 @@ export default {
         ],
         yAxis: [
           {
-            type: "category",
+            type: "category",            
             data: this.category,
             axisLabel: { show: false }
           }
