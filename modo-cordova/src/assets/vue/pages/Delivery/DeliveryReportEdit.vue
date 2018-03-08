@@ -2,17 +2,17 @@
   <f7-page nav-title="" @page:init="initHandle" @page:beforeinit="beforeinitHandle" @page:back="backHandler">
     <f7-list>
       <f7-list-item smart-select title="送货人" smart-select-open-in="popup" smart-select-searchbar smart-select-searchbar-cancel="取消" smart-select-searchbar-placeholder="查找" smart-select-back-text="关闭">
-        <select name="deliveryStaffs" multiple="multiple" v-model="DeliveryStaffList" :disabled="editable == false">
+        <select name="deliveryStaffs" multiple="multiple" v-model="delivery.DeliveryStaffs" :disabled="editable == false">
           <option v-for="staff in staffs" :value="staff.ID" :key="staff.ID" selected="">{{staff.Name}}</option>
         </select>
       </f7-list-item>
       <f7-list-item>
         <label>送货开始时间</label>
-        <date-picker v-model="DeliveryDate" placeholder="送货开始时间" type="datetime" :disabled="editable == false"></date-picker>
+        <date-picker v-model="delivery.DeliveryDate" placeholder="送货开始时间" type="datetime" :disabled="editable == false"></date-picker>
       </f7-list-item>
       <f7-list-item>
         <label>送货完成时间</label>
-        <date-picker v-model="DeliveryFinishDate" placeholder="送货完成时间" type="datetime" :disabled="editable == false"></date-picker>
+        <date-picker v-model="delivery.FinishedDate" placeholder="送货完成时间" type="datetime" :disabled="editable == false"></date-picker>
       </f7-list-item>
     </f7-list>
   </f7-page>
@@ -31,14 +31,13 @@ import { bus, convertJsonDate } from "common";
 import DatePicker from "components/DateTimePicker";
 import api from "api/Delivery";
 import CONST from "const";
+import moment from "moment";
 
 export default {
   data() {
     return {
-      staffs: [{ ID: 0, Name: "" }],
-      DeliveryStaffList: [],
-      DeliveryDate: null,
-      DeliveryFinishDate: null,
+      staffs: [{ ID: 0, Name: "" }],     
+      delivery:{DeliveryStaffs:[]},
       editable: false
     };
   },
@@ -65,20 +64,19 @@ export default {
         });
     },
     initHandle(e) {
-      var page = e.detail.page;
-      var pageData = page.query.data;
+      var page = e.detail.page;      
       page.container.setAttribute("nav-title", page.query.title);
 
       this.$store.state.navRightPanelEnabled = false;
       this.$store.state.navRightTitle = "提交";
       this.$store.state.navRightIcon = "";
 
-      this.DeliveryStaffList = pageData.DeliveryStaffList;
-      this.DeliveryDate = convertJsonDate(pageData.DeliveryDate);
-      this.DeliveryFinishDate = convertJsonDate(pageData.DeliveryFinishDate);
+      this.delivery = page.query.data;      
       this.editable = page.query.editable;
 
-      Dom7('[name="deliveryStaffs"]+.item-after').text(pageData.DeliveryStaffs);
+      Dom7('[name="deliveryStaffs"]+.item-after').text(
+        this.delivery.DeliveryStaffsName
+      );
       if (this.editable == false) {
         this.$store.state.navRightTitle = "";
         bus.$off("navRightButtonClicked", this.save);
@@ -90,11 +88,20 @@ export default {
       this.$store.state.navRightIcon = "fas fa-filter";
     },
     save() {
-      var params = {
-        DeliveryStaffList: this.DeliveryStaffList,
-        DeliveryDate: this.DeliveryDate,
-        DeliveryFinishDate: this.DeliveryFinishDate
-      };
+
+      var date = moment(this.delivery.DeliveryDate);
+      if (date.isValid()) {
+        this.delivery.DeliveryDate = date.format("YYYY-MM-DD HH:mm:ss");
+      }
+
+      date = moment(this.delivery.FinishedDate);
+      if (date.isValid()) {
+        this.delivery.FinishedDate = date.format("YYYY-MM-DD HH:mm:ss");
+      }     
+
+      this.delivery.IsFinished = true;
+
+      var params = this.delivery;
       var me = this;
       api
         .deliveryReport(params)

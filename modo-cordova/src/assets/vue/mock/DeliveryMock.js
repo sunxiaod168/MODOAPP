@@ -304,6 +304,7 @@ var dispatchListData = [
         "DeliveryMemo": null,
         "DeliveryStaffList": [1, 2],
         "DeliveryStaffs": "洪金彪,王鹏",
+        
         "InstallDispatchID": 19,
         "PlanInstallDate": "\/Date(1511511185440)\/",
         "PlanInstallFinishDate": "\/Date(1511511185440)\/",

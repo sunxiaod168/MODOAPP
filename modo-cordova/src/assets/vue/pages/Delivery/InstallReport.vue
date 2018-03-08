@@ -19,7 +19,7 @@
               </div>
             </a>
             <div class="swipeout-actions-left">
-              <a class="edit-action" href="#" @click="viewPlan($event,item)" v-if="item.InstallIsFinished">查看完工汇报</a>
+              <a class="view-action" href="#" @click="viewPlan($event,item)" v-if="item.IsFinished">查看完工汇报</a>
               <a class="edit-action" href="#" @click="editPlan($event,item)" v-else>提交完工汇报</a>
             </div>
           </li>
