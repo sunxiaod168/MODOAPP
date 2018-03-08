@@ -18,17 +18,6 @@ Mock.mock('/api/user/login', 'post', function (options) {
 		}
 	}
 })
-
-Mock.mock('/api/user/staffList', 'post', function (options) {
-	var params = JSON.parse(options.body)
-	return {
-		status: CONST.STATUS_SUCCESS,
-		msg: '成功',
-		data: [{ ID: 1, Name: "洪金彪" }, { ID: 2, Name: "王鹏" }, { ID: 3, Name: "杨静" }]
-	}
-
-})
-
 Mock.mock('/api/user/modifyPwd', 'post', function (options) {
 	var params = JSON.parse(options.body)
 	var status = CONST.STATUS_FAILD;

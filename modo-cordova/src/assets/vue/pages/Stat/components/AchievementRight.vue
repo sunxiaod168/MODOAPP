@@ -30,8 +30,7 @@ import RightNavBar from "components/RightNavBar";
 export default {
   data() {
     return {
-      orgParams: {
-        zzid: this.$store.state.userInfo.zzid,
+      orgParams: {        
         type: "achievement"
       },
       zzids: [],

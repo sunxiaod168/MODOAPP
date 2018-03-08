@@ -32,7 +32,6 @@
   </f7-page>
 </template>
 <style scoped>
-
 .list-block>>>.item-inner {
   overflow: visible;
   flex-wrap: wrap;
@@ -46,6 +45,7 @@ import { bus, convertJsonDate } from "common";
 import DatePicker from "components/DateTimePicker";
 import api from "api/Delivery";
 import CONST from "const";
+import moment from "moment";
 
 export default {
   data() {
@@ -144,6 +144,21 @@ export default {
       return install;
     },
     save() {
+      var date = moment(this.delivery.DeliveryDate);
+      if (date.isValid()) {
+        this.delivery.DeliveryDate = date.format("YYYY-MM-DD HH:mm:ss");
+      }
+
+      date = moment(this.install.PlanInstallDate);
+      if (date.isValid()) {
+        this.install.PlanInstallDate = date.format("YYYY-MM-DD HH:mm:ss");
+      }
+      
+      date = moment(this.install.PlanFinishDate);
+      if (date.isValid()) {
+        this.install.PlanFinishDate = date.format("YYYY-MM-DD HH:mm:ss");
+      }
+
       var params = { delivery: this.delivery, install: this.install };
       var me = this;
       api

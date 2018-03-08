@@ -21,6 +21,7 @@ Vue.filter('datetime', function (value, withSecond) {
     } else {
         var date = convertJsonDate(value);
         if (date != null) {
+           
             var localDate = date.toLocaleDateString().replace(/\//g, '-');
             var time = date.toLocaleTimeString('zh', { hour12: false });
             if (!withSecond) {

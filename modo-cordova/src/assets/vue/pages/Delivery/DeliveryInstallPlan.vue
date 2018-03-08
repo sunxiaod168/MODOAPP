@@ -20,9 +20,8 @@
               </div>
             </a>
             <div class="swipeout-actions-left">
-              <a class="edit-action" href="#" @click="editPlan($event,item)" v-if="item.DeliveryDispatch.ID > 0 || item.InstallDispatch.ID > 0">编辑计划</a>
-              <a class="edit-action" href="#" @click="addPlan($event,item)" v-else>新增计划</a>
-              <a class="view-action" href="#" @click="viewPlan($event,item)" v-if="item.DeliveryDispatch.ID > 0 || item.InstallDispatch.ID > 0">查看计划</a>
+              <a class="edit-action" href="#" @click="editPlan($event,item)" v-if="item.InstallDispatch == null || item.InstallDispatch.IsFinished == false">编辑计划</a>
+              <a class="view-action" href="#" @click="viewPlan($event,item)">查看计划</a>
             </div>
           </li>
         </ul>
@@ -65,7 +64,7 @@
 .item-subtitle {
   margin: 10px 0 0;
   white-space: normal;
-  color:#6d6d72;
+  color: #6d6d72;
 }
 .item-subtitle>>>span {
   display: block;
