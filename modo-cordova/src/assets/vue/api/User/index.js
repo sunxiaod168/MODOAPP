@@ -7,8 +7,8 @@ const api = {
 	login(params) {
 		return base.post('/user/login', params)
 	},	
-	modifyPwd(params) {
-		return base.post('/user/modifyPwd', params)
+	changePassword(params) {
+		return base.post('/user/changePassword', params)
 	},
 	
 }

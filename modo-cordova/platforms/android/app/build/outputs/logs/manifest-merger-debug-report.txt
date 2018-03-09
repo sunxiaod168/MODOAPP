@@ -15,14 +15,17 @@ ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidMan
 INJECTED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:2:1-24:12
 INJECTED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:2:1-24:12
 INJECTED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:2:1-24:12
-MERGED from [com.android.support:support-v4:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\b43eb6101ec556ef62c26e7931c6d1fc\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:27.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.0.aar\4a81cdb979f55d7f3a83aeaf8a798569\AndroidManifest.xml:17:1-22:12
 MERGED from [:CordovaLib] D:\Dev\ModoAPP\modo-cordova\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:20:1-27:12
-MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\5c7ca68a2f42c164b76de0b119a2d4dd\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\8b631bae1f6eeacc7092b1822e5d2d78\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\1043250812bec6ddba260bcc0413519f\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\1a86b912955e19bea3496d2b5be0657c\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\baf24b02bed1096634737416d896de94\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\5173dff1cd9fb32e6ab58800696c5348\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-media-compat:27.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.0.aar\131a7eb6545d46817cc11517a791351a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.0.aar\452cd16c0d858f6dc42b21520f88aff6\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.0.aar\83e39897b61b794d7ce5a26455396e83\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.0.aar\c4befc09afc9da8a318d895f6b44c803\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.0.aar\51a8f230b2a2ecfc46670c6cd466c2cd\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\7cf8ed7adfc28c6170ca158be1e53057\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\8d7ac512c9239d6dcb6a049e89d018fe\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\7aca1a53b6548293f4573b70606a1db9\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\d976da32ddc588d375c50d5af54a2139\AndroidManifest.xml:17:1-22:12
 INJECTED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:2:1-24:12
 INJECTED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:2:1-24:12
 INJECTED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:2:1-24:12
@@ -114,22 +117,28 @@ ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidMan
 		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:14:25-76
 uses-sdk
 ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:21:5-74
-MERGED from [com.android.support:support-v4:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\b43eb6101ec556ef62c26e7931c6d1fc\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\b43eb6101ec556ef62c26e7931c6d1fc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.0.aar\4a81cdb979f55d7f3a83aeaf8a798569\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.0.aar\4a81cdb979f55d7f3a83aeaf8a798569\AndroidManifest.xml:20:5-44
 MERGED from [:CordovaLib] D:\Dev\ModoAPP\modo-cordova\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-44
 MERGED from [:CordovaLib] D:\Dev\ModoAPP\modo-cordova\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-44
-MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\5c7ca68a2f42c164b76de0b119a2d4dd\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\5c7ca68a2f42c164b76de0b119a2d4dd\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\8b631bae1f6eeacc7092b1822e5d2d78\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\8b631bae1f6eeacc7092b1822e5d2d78\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\1043250812bec6ddba260bcc0413519f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\1043250812bec6ddba260bcc0413519f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\1a86b912955e19bea3496d2b5be0657c\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\1a86b912955e19bea3496d2b5be0657c\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\baf24b02bed1096634737416d896de94\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.0.2] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\baf24b02bed1096634737416d896de94\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\5173dff1cd9fb32e6ab58800696c5348\AndroidManifest.xml:20:5-22:41
-MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\5173dff1cd9fb32e6ab58800696c5348\AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support:support-media-compat:27.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.0.aar\131a7eb6545d46817cc11517a791351a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.0.aar\131a7eb6545d46817cc11517a791351a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.0.aar\452cd16c0d858f6dc42b21520f88aff6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.0.aar\452cd16c0d858f6dc42b21520f88aff6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.0.aar\83e39897b61b794d7ce5a26455396e83\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.0.aar\83e39897b61b794d7ce5a26455396e83\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.0.aar\c4befc09afc9da8a318d895f6b44c803\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.0.aar\c4befc09afc9da8a318d895f6b44c803\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.0.aar\51a8f230b2a2ecfc46670c6cd466c2cd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.0.aar\51a8f230b2a2ecfc46670c6cd466c2cd\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\7cf8ed7adfc28c6170ca158be1e53057\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\7cf8ed7adfc28c6170ca158be1e53057\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\8d7ac512c9239d6dcb6a049e89d018fe\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\8d7ac512c9239d6dcb6a049e89d018fe\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\7aca1a53b6548293f4573b70606a1db9\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\7aca1a53b6548293f4573b70606a1db9\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\d976da32ddc588d375c50d5af54a2139\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Jack\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\d976da32ddc588d375c50d5af54a2139\AndroidManifest.xml:20:5-44
 	android:targetSdkVersion
 		ADDED from D:\Dev\ModoAPP\modo-cordova\platforms\android\app\src\main\AndroidManifest.xml:21:42-71
 	android:minSdkVersion

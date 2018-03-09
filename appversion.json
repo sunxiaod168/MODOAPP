@@ -1,0 +1,10 @@
+{
+    "ios": {
+        "version_code": 101,
+        "url": ""
+    },
+    "android": {
+        "version_code": 101,
+        "url": "http://app.modoucloud.com/download/modo.apk"
+    }
+}

@@ -30,7 +30,6 @@ import Mine from 'pages/Mine/Index'
 import Profile from 'pages/Mine/Profile'
 import About from 'pages/Mine/About'
 import ChangePassword from 'pages/Mine/ChangePassword'
-import FindPassword from 'pages/Mine/FindPassword'
 import Version from 'pages/Mine/Version'
 
 const routes = [
@@ -151,11 +150,7 @@ const routes = [
 	{
 		path: '/change-password',
 		component: ChangePassword
-	},
-	{
-		path: '/find-password',
-		component: FindPassword
-	},
+	},	
 	{
 		path: '/version',
 		component: Version

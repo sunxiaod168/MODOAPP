@@ -36,23 +36,22 @@ export default {
       if (this.checkInput()) {
         var params = {
           oldPwd: this.oldPwd,
-          newPwd: this.newPwd2,
-          newPwd2: this.newPwd2
+          newPwd: this.newPwd,         
         };
 
         var me = this;
         api
-          .modifyPwd(params)
+          .changePassword(params)
           .then(function(response) {
             var data = response.data;
             if (data.status === CONST.STATUS_SUCCESS) {
               me.$f7.alert("", "修改成功");
             } else {
-              me.$f7.alert(data.msg, "修改失败");
+              me.$f7.alert("",data.msg);
             }
           })
           .catch(function(err) {
-            me.$f7.alert(err, "修改失败");
+            me.$f7.alert("",err);
           });
       }
     },

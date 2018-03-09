@@ -38,7 +38,7 @@ h1 {
 }
 .progress-front {
   padding: 1px;
-  color:#fff;
+  color: #fff;
   line-height: 20px;
   background-color: #007aff;
   text-align: center;
@@ -51,8 +51,12 @@ import CONST from "const";
 export default {
   data() {
     return {
-      version: "V1.0.0",
-      publishDate: "2018-02-06",
+      // VERSION: '1.0.0',
+      // 	VERSION_CODE: 100,
+      // 	VERSION_DATE: '2018-2-1'
+      version: CONST.VERSION,
+      versionCode: CONST.VERSION_CODE,
+      publishDate: CONST.VERSION_DATE,
       url: "",
       hasNew: false,
       newVersion: "",
@@ -73,13 +77,24 @@ export default {
         .then(function(response) {
           var data = response.data;
           if (data.status === CONST.STATUS_SUCCESS) {
-            var version = data.data.version;
-            if (version === me.version) {
-              me.$f7.alert("", "已经是最新版本");
-            } else {
+            var platform = me.$store.state.platform;
+
+            var version = data.data.android.version;
+            var versionCode = data.data.android.versionCode;
+            var url =  data.data.android.url;
+            if (platform == "iOS") {
+              version = data.data.ios.version;
+              versionCode = data.data.ios.versionCode;
+              url =  data.data.ios.url;
+            }
+            //111
+
+            if (me.versionCode < versionCode) {
               me.hasNew = true;
-              me.url = data.data.url;
+              me.url = url;
               me.newVersion = version;
+            } else {
+              me.$f7.alert("", "已经是最新版本");
             }
           } else {
             me.$f7.alert(data.msg, "版本检测失败");
@@ -116,7 +131,9 @@ export default {
               var fileTransfer = new FileTransfer();
               fileTransfer.onprogress = function(progressEvent) {
                 if (progressEvent.lengthComputable) {
-                  me.progress = Math.floor(progressEvent.loaded / progressEvent.total * 100);
+                  me.progress = Math.floor(
+                    progressEvent.loaded / progressEvent.total * 100
+                  );
                 }
               };
               me.isDownloading = true;
