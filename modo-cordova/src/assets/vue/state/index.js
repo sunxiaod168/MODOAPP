@@ -30,7 +30,7 @@ const store = new Vuex.Store({
 			state.userInfo = userInfo
 			state.userPermissions = convertPermission(permission)
 		},
-		setDeviceInfo() {
+		setDeviceInfo(state) {
 			state.platform = device.platform;
 			state.uuid = device.uuid;
 		},
