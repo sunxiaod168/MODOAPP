@@ -53,7 +53,13 @@ let config = function (env) {
         {test: /\.scss$/, loader: [ 'vue-style-loader', 'css-loader', 'sass-loader']},
         {test: /\.sass$/, loader: [ 'vue-style-loader', 'css-loader', 'sass-loader?indentedSyntax']},
         {test: /\.vue$/, loader: 'vue-loader'},
-        { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }   
+        { test: /\.js$/, 
+          // exclude: /node_modules/, 
+          include: [
+            path.resolve(__dirname, "src"),
+            path.resolve(__dirname, "node_modules/resize-detector")
+          ],
+          loader: "babel-loader" }   
       ]
     },
     
