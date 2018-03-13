@@ -1,67 +1,63 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.modencloud.modoapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <hook src="hooks/hookers.js" type="before_prepare" />
-    <hook src="hooks/beforedep.js" type="before_deploy" />
-    <name>墨斗云</name>
-    <description>墨斗云家居建材零售行业销售管理平台</description>
-    <author email="sunxiaod168@hotmail.com" href="http://www.modencloud.com">Modou Team</author>
-    <content src="index.html" />
-    <access origin="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
+<widget id="com.modoucloud.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <hook src="hooks/hookers.js" type="before_prepare"/>
+    <hook src="hooks/beforedep.js" type="before_deploy"/>
+    <name>&#x58A8;&#x6597;&#x4E91;</name>
+    <description>&#x58A8;&#x6597;&#x4E91;&#x5BB6;&#x5C45;&#x5EFA;&#x6750;&#x96F6;&#x552E;&#x884C;&#x4E1A;&#x9500;&#x552E;&#x7BA1;&#x7406;&#x5E73;&#x53F0;</description>
+    <author email="sunxiaod168@hotmail.com" href="http://www.modoucloud.com">Modou Team</author>
+    <content src="index.html"/>
+    <access origin="*"/>
+    <allow-intent href="http://*/*"/>
+    <allow-intent href="https://*/*"/>
+    <allow-intent href="tel:*"/>
+    <allow-intent href="sms:*"/>
+    <allow-intent href="mailto:*"/>
+    <allow-intent href="geo:*"/>
     <platform name="android">
-        <allow-intent href="market:*" />
-        <icon density="ldpi" src="src/assets/images/android/Icon-36.png" />
-        <icon density="mdpi" src="src/assets/images/android/Icon-48.png" />
-        <icon density="hdpi" src="src/assets/images/android/Icon-72.png" />
-        <icon density="xhdpi" src="src/assets/images/android/Icon-96.png" />
-        <icon density="xxhdpi" src="src/assets/images/android/Icon-144.png" />
-        <icon density="xxxhdpi" src="src/assets/images/android/Icon-192.png" />
-        <splash density="port-hdpi" src="src/assets/images/launch-480-800.png" />
-        <splash density="port-ldpi" src="src/assets/images/launch-200-320.png" />
-        <splash density="port-mdpi" src="src/assets/images/launch-320-480.png" />
-        <splash density="port-xhdpi" src="src/assets/images/launch-720-1280.png" />
+        <allow-intent href="market:*"/>
+         <!--
+            ldpi    : 36x36 px
+            mdpi    : 48x48 px
+            hdpi    : 72x72 px
+            xhdpi   : 96x96 px
+            xxhdpi  : 144x144 px
+            xxxhdpi : 192x192 px
+        -->
+        <icon src="src/assets/images/android/ldpi.png" density="ldpi"/>
+        <icon src="src/assets/images/android/mdpi.png" density="mdpi"/>
+        <icon src="src/assets/images/android/hdpi.png" density="hdpi"/>
+        <icon src="src/assets/images/android/xhdpi.png" density="xhdpi"/>
+        <icon src="src/assets/images/android/xxhdpi.png" density="xxhdpi"/>
+        <icon src="src/assets/images/android/xxxhdpi.png" density="xxxhdpi"/>       
+        <splash density="port-hdpi" src="src/assets/images/android/launch-480-800.png"/>
+        <splash density="port-ldpi" src="src/assets/images/android/launch-240-320.png"/>
+        <splash density="port-mdpi" src="src/assets/images/android/launch-320-480.png"/>
+        <splash density="port-xhdpi" src="src/assets/images/android/launch-640-960.png"/>
     </platform>
     <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-        <icon height="180" src="src/assets/images/ios/Icon-180.png" width="180" />
-        <icon height="60" src="src/assets/images/ios/Icon-60.png" width="60" />
-        <icon height="120" src="src/assets/images/ios/Icon-120.png" width="120" />
-        <icon height="76" src="src/assets/images/ios/Icon-76.png" width="76" />
-        <icon height="152" src="src/assets/images/ios/Icon-152.png" width="152" />
-        <icon height="40" src="src/assets/images/ios/Icon-40.png" width="40" />
-        <icon height="80" src="src/assets/images/ios/Icon-80.png" width="80" />
-        <icon height="57" src="src/assets/images/ios/Icon-57.png" width="57" />
-        <icon height="114" src="src/assets/images/ios/Icon-114.png" width="114" />
-        <icon height="72" src="src/assets/images/ios/Icon-72.png" width="72" />
-        <icon height="144" src="src/assets/images/ios/Icon-144.png" width="144" />
-        <icon height="167" src="src/assets/images/ios/Icon-167.png" width="167" />
-        <icon height="29" src="src/assets/images/ios/Icon-29.png" width="29" />
-        <icon height="58" src="src/assets/images/ios/Icon-58.png" width="58" />
-        <icon height="50" src="src/assets/images/ios/Icon-50.png" width="50" />
-        <icon height="100" src="src/assets/images/ios/Icon-100.png" width="100" />
-        <icon height="167" src="src/assets/images/ios/Icon-167.png" width="167" />
-        <splash height="480" src="src/assets/images/launch-320-480.png" width="320" />
-        <splash height="960" src="src/assets/images/launch-640-960.png" width="640" />
-        <splash height="1024" src="src/assets/images/launch-768-1024.png" width="768" />
-        <splash height="2048" src="src/assets/images/launch-1536-2048.png" width="1536" />
-        <splash height="1136" src="src/assets/images/launch-640-1136.png" width="640" />
-        <splash height="1334" src="src/assets/images/launch-750-1334.png" width="750" />
-        <splash height="2208" src="src/assets/images/launch-1242-2208.png" width="1242" />
+        <allow-intent href="itms:*"/>
+        <allow-intent href="itms-apps:*"/>
+        <icon src="src/assets/images/ios/Icon-60@2x.png"/>
+        <icon src="src/assets/images/ios/Icon-60@3x.png"/>
+        <icon src="src/assets/images/ios/Icon-76.png"/>
+        <icon src="src/assets/images/ios/Icon-76@2x.png"/>
+        <icon src="src/assets/images/ios/Icon-83.5@2x.png"/>
+        <icon src="src/assets/images/ios/Icon-Small-40.png"/>
+        <icon src="src/assets/images/ios/Icon-Small-40@2x.png"/>
+        <icon src="src/assets/images/ios/Icon-Small-40@3x.png"/>
+        <icon src="src/assets/images/ios/Icon-Small.png"/>
+        <icon src="src/assets/images/ios/Icon-Small@2x.png"/>
+        <splash height="2208" src="src/assets/images/ios/launch-1242-2208.png" width="1242"/>
+        <splash height="2436" src="src/assets/images/ios/launch-1125-2436.png" width="1125"/>
+        <splash height="1334" src="src/assets/images/ios/launch-750-1334.png" width="750"/>
+        <splash height="1136" src="src/assets/images/ios/launch-640-1136.png" width="640"/>
     </platform>
-    <allow-navigation href="*" />
-    <plugin name="cordova-plugin-whitelist" spec="1" />
-    <plugin name="cordova-plugin-splashscreen" spec="~5.0.2-dev" />
-    <plugin name="cordova-plugin-device" spec="^2.0.1" />
-    <plugin name="cordova-plugin-file" spec="^6.0.1" />
-    <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
-    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
-    <plugin name="cordova-plugin-file-opener2" spec="^2.0.19" />
-    <engine name="browser" spec="^5.0.3" />
-    <engine name="android" spec="^7.0.0" />
+    <allow-navigation href="*"/>
+    <plugin name="cordova-plugin-whitelist" spec="1"/>
+    <plugin name="cordova-plugin-splashscreen" spec="~5.0.2-dev"/>
+    <plugin name="cordova-plugin-device" spec="^2.0.1"/>
+    <plugin name="cordova-plugin-file" spec="^6.0.1"/>
+    <plugin name="cordova-plugin-file-transfer" spec="^1.7.1"/>
+    <preference name="AndroidPersistentFileLocation" value="Compatibility"/>
+    <plugin name="cordova-plugin-file-opener2" spec="^2.0.19"/>
 </widget>

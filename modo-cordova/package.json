@@ -90,9 +90,6 @@
             "com.borismus.webintent": {},
             "cordova-plugin-file-opener2": {}
         },
-        "platforms": [
-            "browser",
-            "android"
-        ]
+        "platforms": []
     }
 }
