@@ -5,11 +5,11 @@
     <f7-list>
       <f7-list-item>
         <f7-label>用户名</f7-label>
-        <f7-input v-model="uname" type="text" placeholder="用户名" />
+        <f7-input v-model="uname" type="text" placeholder="输入登录账号" />
       </f7-list-item>
       <f7-list-item>
         <f7-label>密码</f7-label>
-        <f7-input v-model="pwd" type="password" placeholder="密码" />
+        <f7-input v-model="pwd" type="password" placeholder="输入密码" />
       </f7-list-item>
       <f7-list-item>
         <f7-button class="btn-login" big active @click="login">登录</f7-button>
@@ -56,6 +56,11 @@
 .err-msg {
   color: #fff;
 }
+.item-input>>>input::placeholder {
+  color: #ccc;
+  border-bottom: 1px solid #ccc;
+  font-size: 15px;
+}
 </style>
 
 <script>
@@ -65,8 +70,8 @@ import CONST from "const";
 export default {
   data() {
     return {
-      uname: "pAdmin",
-      pwd: "admin@modocloud",
+      uname: "",
+      pwd: "",
       msg: ""
     };
   },

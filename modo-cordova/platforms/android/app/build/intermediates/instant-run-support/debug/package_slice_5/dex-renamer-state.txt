@@ -1,4 +1,4 @@
-#Tue Mar 13 19:04:42 CST 2018
-base.0=/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/transforms/dexMerger/debug/44
+#Wed Mar 14 10:33:02 CST 2018
+base.0=D\:\\Dev\\ModoAPP\\modo-cordova\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\63
 path.0=classes.dex
 renamed.0=classes.dex

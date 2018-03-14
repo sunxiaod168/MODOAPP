@@ -10,7 +10,9 @@ const api = {
 	changePassword(params) {
 		return base.post('/user/changePassword', params)
 	},
-	
+	logout() {
+		return base.post('/user/logout')
+	},	
 }
 
 export default api

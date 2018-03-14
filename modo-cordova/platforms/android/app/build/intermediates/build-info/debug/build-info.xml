@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="x86"
-    api-level="22"
+    abi="arm64-v8a,armeabi-v7a,armeabi"
+    api-level="25"
     build-mode="FULL"
-    density="560dpi"
+    density="xxhdpi"
     format="10"
     plugin-version="3.0.1"
-    timestamp="1520939202044"
+    timestamp="1520995071935"
     token="7091414142308134016"
     verifier="FULL_BUILD_REQUESTED" >
 
@@ -24,81 +24,147 @@
         duration="0" />
 
     <artifact
-        location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+        location="D:\Users\sunxiaodong\Dev\MODOAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
         type="SPLIT" />
     <artifact
-        location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+        location="D:\Users\sunxiaodong\Dev\MODOAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
         type="SPLIT" />
     <artifact
-        location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+        location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
         type="SPLIT" />
     <artifact
-        location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+        location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
         type="SPLIT" />
     <artifact
-        location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+        location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
         type="SPLIT" />
     <artifact
-        location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+        location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
         type="SPLIT" />
     <artifact
-        location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+        location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
         type="SPLIT" />
     <artifact
-        location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+        location="D:\Users\sunxiaodong\Dev\MODOAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
         type="SPLIT" />
     <artifact
-        location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+        location="D:\Users\sunxiaodong\Dev\MODOAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
         type="SPLIT" />
     <artifact
-        location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+        location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
         type="SPLIT" />
     <artifact
-        location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+        location="D:\Users\sunxiaodong\Dev\MODOAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
         type="SPLIT" />
     <artifact
-        location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/outputs/apk/debug/app-debug.apk"
+        location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Users\sunxiaodong\Dev\MODOAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Users\sunxiaodong\Dev\MODOAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Users\sunxiaodong\Dev\MODOAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Users\sunxiaodong\Dev\MODOAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Users\sunxiaodong\Dev\MODOAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Users\sunxiaodong\Dev\MODOAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\outputs\apk\debug\app-debug.apk"
         type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1520939202044"
+        timestamp="1520995071935"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            location="D:\Users\sunxiaodong\Dev\MODOAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            location="D:\Users\sunxiaodong\Dev\MODOAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            location="D:\Users\sunxiaodong\Dev\MODOAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            location="D:\Users\sunxiaodong\Dev\MODOAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            location="D:\Users\sunxiaodong\Dev\MODOAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/outputs/apk/debug/app-debug.apk"
+            location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Users\sunxiaodong\Dev\MODOAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Users\sunxiaodong\Dev\MODOAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Users\sunxiaodong\Dev\MODOAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Users\sunxiaodong\Dev\MODOAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Users\sunxiaodong\Dev\MODOAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Users\sunxiaodong\Dev\MODOAPP\modo-cordova\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\Dev\ModoAPP\modo-cordova\platforms\android\app\build\outputs\apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
 

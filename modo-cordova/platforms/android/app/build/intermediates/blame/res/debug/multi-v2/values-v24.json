@@ -1,10 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
+            "outputFile": "D:\\Dev\\ModoAPP\\modo-cordova\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.0.aar/916f5b52259d7b0aeda4a284b07c2440/res/values-v24/values-v24.xml",
+                    "source": "C:\\Users\\Jack\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.0.aar\\131a7eb6545d46817cc11517a791351a\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,121,182,248",
+                        "endColumns": "65,60,65,66",
+                        "endOffsets": "116,177,243,310"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Users\\sunxiaodong\\Dev\\MODOAPP\\modo-cordova\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
+            "map": [
+                {
+                    "source": "D:\\Users\\sunxiaodong\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.0.aar\\916f5b52259d7b0aeda4a284b07c2440\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
