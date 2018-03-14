@@ -51,5 +51,5 @@
     <preference name="Orientation" value="portrait" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <preference name="target-device" value="handset" />
-    <preference name="deployment-target" value="10.0" />
+    <preference name="deployment-target" value="9.3" />
 </widget>

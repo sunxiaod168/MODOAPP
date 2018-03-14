@@ -15,17 +15,17 @@ ADDED from /Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/src
 INJECTED from /Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/src/main/AndroidManifest.xml:2:1-19:12
 INJECTED from /Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/src/main/AndroidManifest.xml:2:1-19:12
 INJECTED from /Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/src/main/AndroidManifest.xml:2:1-19:12
-MERGED from [com.android.support:support-v4:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.0.aar/9cc00f4033f3154373a2c3394c91ebb5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.0.aar/62cff9b5e22f24a1ddd4d5d47b556d2c/AndroidManifest.xml:17:1-22:12
 MERGED from [:CordovaLib] /Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/CordovaLib/build/intermediates/manifests/full/debug/AndroidManifest.xml:20:1-27:12
-MERGED from [com.android.support:support-media-compat:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.0.aar/c71a6017b84318945f398c17d0c7c85b/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.0.aar/b7b2b42096815c1f80256eade24c148c/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.0.aar/0cec63a09f58810940cf993e7ce84594/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.0.aar/226dc03cc7a00850107e6f632e12871d/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.0.aar/d9b1c246ca6d046d03d5e9d31588b123/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/96a06ef8f0ba75f300cf6c1ad7fc5b8e/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/ee080e2f57923678ba3df1de093cd285/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/51233c7f7c1ecbf3c7d4b3910230bba1/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/8f6a17bc071fefe79433ebee22bb9262/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.0.aar/916f5b52259d7b0aeda4a284b07c2440/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.0.aar/153fe411aaab2e25aa012ab53b1f0316/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.0.aar/a1aad10faf871f4929c3c44706568178/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.0.aar/f3b00492afba8e0502acf3a63424a70e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.0.aar/1dd5c806af4ab7f214e6f9a711ad6fcc/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/cdf78ee7f68f14c6c54e5c4b7d865a6a/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/48bea93c17e333e0b09a3b22da65f939/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/47f61cc1c0a0da61413410be6e879a06/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/e4c1058f49f14b37b2d3e35c54276b48/AndroidManifest.xml:17:1-22:12
 INJECTED from /Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/src/main/AndroidManifest.xml:2:1-19:12
 INJECTED from /Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/src/main/AndroidManifest.xml:2:1-19:12
 INJECTED from /Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/src/main/AndroidManifest.xml:2:1-19:12
@@ -103,28 +103,28 @@ ADDED from /Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/src
 		ADDED from /Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/src/main/AndroidManifest.xml:9:27-74
 uses-sdk
 ADDED from /Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/src/main/AndroidManifest.xml:16:5-74
-MERGED from [com.android.support:support-v4:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.0.aar/9cc00f4033f3154373a2c3394c91ebb5/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.0.aar/9cc00f4033f3154373a2c3394c91ebb5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.0.aar/62cff9b5e22f24a1ddd4d5d47b556d2c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.0.aar/62cff9b5e22f24a1ddd4d5d47b556d2c/AndroidManifest.xml:20:5-44
 MERGED from [:CordovaLib] /Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/CordovaLib/build/intermediates/manifests/full/debug/AndroidManifest.xml:25:5-44
 MERGED from [:CordovaLib] /Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/CordovaLib/build/intermediates/manifests/full/debug/AndroidManifest.xml:25:5-44
-MERGED from [com.android.support:support-media-compat:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.0.aar/c71a6017b84318945f398c17d0c7c85b/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.0.aar/c71a6017b84318945f398c17d0c7c85b/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.0.aar/b7b2b42096815c1f80256eade24c148c/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.0.aar/b7b2b42096815c1f80256eade24c148c/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.0.aar/0cec63a09f58810940cf993e7ce84594/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.0.aar/0cec63a09f58810940cf993e7ce84594/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.0.aar/226dc03cc7a00850107e6f632e12871d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.0.aar/226dc03cc7a00850107e6f632e12871d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.0.aar/d9b1c246ca6d046d03d5e9d31588b123/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.0.aar/d9b1c246ca6d046d03d5e9d31588b123/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/96a06ef8f0ba75f300cf6c1ad7fc5b8e/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/96a06ef8f0ba75f300cf6c1ad7fc5b8e/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/ee080e2f57923678ba3df1de093cd285/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/ee080e2f57923678ba3df1de093cd285/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/51233c7f7c1ecbf3c7d4b3910230bba1/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/51233c7f7c1ecbf3c7d4b3910230bba1/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/8f6a17bc071fefe79433ebee22bb9262/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/8f6a17bc071fefe79433ebee22bb9262/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.0.aar/916f5b52259d7b0aeda4a284b07c2440/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.0.aar/916f5b52259d7b0aeda4a284b07c2440/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.0.aar/153fe411aaab2e25aa012ab53b1f0316/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.0.aar/153fe411aaab2e25aa012ab53b1f0316/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.0.aar/a1aad10faf871f4929c3c44706568178/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.0.aar/a1aad10faf871f4929c3c44706568178/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.0.aar/f3b00492afba8e0502acf3a63424a70e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.0.aar/f3b00492afba8e0502acf3a63424a70e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.0.aar/1dd5c806af4ab7f214e6f9a711ad6fcc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.0.aar/1dd5c806af4ab7f214e6f9a711ad6fcc/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/cdf78ee7f68f14c6c54e5c4b7d865a6a/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/cdf78ee7f68f14c6c54e5c4b7d865a6a/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/48bea93c17e333e0b09a3b22da65f939/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/48bea93c17e333e0b09a3b22da65f939/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/47f61cc1c0a0da61413410be6e879a06/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/47f61cc1c0a0da61413410be6e879a06/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/e4c1058f49f14b37b2d3e35c54276b48/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/e4c1058f49f14b37b2d3e35c54276b48/AndroidManifest.xml:20:5-44
 	android:targetSdkVersion
 		ADDED from /Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/src/main/AndroidManifest.xml:16:42-71
 	android:minSdkVersion

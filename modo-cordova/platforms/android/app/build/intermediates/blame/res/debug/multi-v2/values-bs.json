@@ -4,7 +4,7 @@
             "outputFile": "/Users/sunxiaodong/Dev/MODOAPP/modo-cordova/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-bs/values-bs.xml",
             "map": [
                 {
-                    "source": "/Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.0.aar/d9b1c246ca6d046d03d5e9d31588b123/res/values-bs/values-bs.xml",
+                    "source": "/Users/sunxiaodong/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.0.aar/1dd5c806af4ab7f214e6f9a711ad6fcc/res/values-bs/values-bs.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
