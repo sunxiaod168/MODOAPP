@@ -17,4 +17,4 @@ selenium-debug.log
 *.sln
 
 www/**
-platforms/android/app/build/
+platforms/
