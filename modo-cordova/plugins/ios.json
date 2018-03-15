@@ -7,22 +7,22 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.modoucloud.app"
-    },
-    "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "com.modoucloud.app"
-    },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.modoucloud.app"
     },
     "cordova-plugin-file": {
       "PACKAGE_NAME": "com.modoucloud.app"
     },
+    "cordova-plugin-file-opener2": {
+      "PACKAGE_NAME": "com.modoucloud.app"
+    },
     "cordova-plugin-file-transfer": {
       "PACKAGE_NAME": "com.modoucloud.app"
     },
-    "cordova-plugin-file-opener2": {
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.modoucloud.app"
+    },
+    "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.modoucloud.app"
     }
   },
