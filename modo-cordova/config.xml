@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.modoucloud.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.modoucloud.appdemo" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <hook src="hooks/hookers.js" type="before_prepare" />
     <hook src="hooks/beforedep.js" type="before_deploy" />
-    <name>墨斗云</name>
+    <name>墨斗云Demo</name>
     <description>墨斗云家居建材零售行业销售管理平台</description>
     <author email="sunxiaod168@hotmail.com" href="http://www.modoucloud.com">Modou Team</author>
     <content src="index.html" />
@@ -29,16 +29,17 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
-        <icon src="src/assets/images/ios/Icon-60@2x.png" />
-        <icon src="src/assets/images/ios/Icon-60@3x.png" />
-        <icon src="src/assets/images/ios/Icon-76.png" />
-        <icon src="src/assets/images/ios/Icon-76@2x.png" />
-        <icon src="src/assets/images/ios/Icon-83.5@2x.png" />
-        <icon src="src/assets/images/ios/Icon-Small-40.png" />
-        <icon src="src/assets/images/ios/Icon-Small-40@2x.png" />
-        <icon src="src/assets/images/ios/Icon-Small-40@3x.png" />
-        <icon src="src/assets/images/ios/Icon-Small.png" />
-        <icon src="src/assets/images/ios/Icon-Small@2x.png" />
+        <icon height="120" src="src/assets/images/ios/Icon-60@2x.png" width="120" />
+        <icon height="180" src="src/assets/images/ios/Icon-60@3x.png" width="180" />
+        <icon height="76" src="src/assets/images/ios/Icon-76.png" width="76" />
+        <icon height="152" src="src/assets/images/ios/Icon-76@2x.png" width="152" />
+        <icon height="167" src="src/assets/images/ios/Icon-83.5@2x.png" width="167" />
+        <icon height="40" src="src/assets/images/ios/Icon-Small-40.png" width="40" />
+        <icon height="80" src="src/assets/images/ios/Icon-Small-40@2x.png" width="80" />
+        <icon height="120" src="src/assets/images/ios/Icon-Small-40@3x.png" width="120" />
+        <icon height="29" src="src/assets/images/ios/Icon-Small.png" width="29" />
+        <icon height="1024" src="src/assets/images/ios/Icon-1024.png" width="1024" />
+        <icon height="58" src="src/assets/images/ios/Icon-Small@2x.png" width="58" />
         <splash height="2208" src="src/assets/images/ios/launch-1242-2208.png" width="1242" />
         <splash height="2436" src="src/assets/images/ios/launch-1125-2436.png" width="1125" />
         <splash height="1334" src="src/assets/images/ios/launch-750-1334.png" width="750" />
@@ -56,6 +57,6 @@
     <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
     <plugin name="cordova-plugin-file-opener2" spec="^2.0.19" />
     <engine name="browser" spec="^5.0.3" />
-    <engine name="ios" spec="^4.5.4" />
     <engine name="android" spec="^7.0.0" />
+    <engine name="ios" spec="^4.5.4" />
 </widget>
