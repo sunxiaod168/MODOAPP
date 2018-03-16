@@ -81,11 +81,11 @@ export default {
 
             var version = data.data.android.version;
             var versionCode = data.data.android.versionCode;
-            var url =  data.data.android.url;
+            var url = data.data.android.url;
             if (platform == "iOS") {
               version = data.data.ios.version;
               versionCode = data.data.ios.versionCode;
-              url =  data.data.ios.url;
+              url = data.data.ios.url;
             }
             //111
 
@@ -169,7 +169,22 @@ export default {
         }
       );
     },
-    iosDownload() {}
+    iosDownload() {   
+
+      const { OpenSchemeUrl } = window.cordova.plugins;
+      var url = "itms-apps://itunes.apple.com/no/app/youtube/id544007664";
+      url = "itms-apps://itunes.apple.com/app/id1359541945";
+      url = "itms-apps://itunes.apple.com/us/app/%E5%A2%A8%E6%96%97%E4%BA%91demo/id1359541945?l=zh&ls=1&mt=8"
+      OpenSchemeUrl.open(url,
+        () => {
+          console.log("URL opened successfully.");
+        },
+        () => {
+          console.log("URL schema not handled.");
+          
+        }
+      );
+    }
   }
 };
 </script>
