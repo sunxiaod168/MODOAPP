@@ -54,7 +54,3 @@ new Vue({
 	}	
 })
 
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-	store.commit("setDeviceInfo");
-}

@@ -85,6 +85,7 @@ export default {
 
           if (data.status === CONST.STATUS_SUCCESS) {
             me.$store.commit("setUserInfo", data.data);
+            me.$store.commit("setDeviceInfo");
             me.$router.load({ url: "/tabbar/", pushState: false });
           } else {
             me.msg = data.msg;
