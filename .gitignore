@@ -17,7 +17,6 @@ selenium-debug.log
 *.sln
 
 www/
-# platforms/
-# !platforms/android/
-# !platforms/android/project.properties    
+platforms/
+!modo-cordova/platforms/android/project.properties    
          
