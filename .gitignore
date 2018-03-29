@@ -18,3 +18,4 @@ selenium-debug.log
 
 www/
 platforms/
+!platforms/android/project.properties
