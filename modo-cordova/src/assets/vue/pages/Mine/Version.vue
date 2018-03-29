@@ -3,13 +3,17 @@
     <f7-block>
       <h1>当前版本：{{version}}</h1>
       <p>发布时间：{{publishDate}}</p>
-      <div v-if="hasNew" class="download">
-        <f7-button fill big @click="download" v-show="isDownloading == false">下载新版本：{{newVersion}}</f7-button>
+      <div v-if="hasNewAndroid" class="download">
+        <f7-button fill big @click="androidDownload" v-show="isDownloading == false">下载新版本：{{newVersion}}</f7-button>
         <div class="progress-back" v-show="isDownloading">
         </div>
         <div class="progress-front" v-show="isDownloading" :style="{width:progressWidth}">
           {{progressWidth}}
         </div>
+      </div>
+      <div v-else-if="hasNewIOS" class="ios-download">
+        <p class="ios-version">发现新版本：{{newVersion}}</p>
+        <p>请前往App Store进行更新</p>      
       </div>
       <p v-else>
         <f7-button fill big @click="checkVersion">检查更新</f7-button>
@@ -23,6 +27,12 @@ h1 {
 }
 .download {
   position: relative;
+}
+.ios-download {
+  font-size: 20px;
+  font-weight: bold;
+  color: #007aff;
+  padding: 0 1em;
 }
 .progress-front,
 .progress-back {
@@ -58,7 +68,8 @@ export default {
       versionCode: CONST.VERSION_CODE,
       publishDate: CONST.VERSION_DATE,
       url: "",
-      hasNew: false,
+      hasNewAndroid: false,
+      hasNewIOS: false,
       newVersion: "",
       isDownloading: false,
       progress: 0
@@ -78,22 +89,21 @@ export default {
           var data = response.data;
           if (data.status === CONST.STATUS_SUCCESS) {
             var platform = me.$store.state.platform;
+            var versionCode;
 
-            var version = data.data.android.version;
-            var versionCode = data.data.android.versionCode;
-            var url = data.data.android.url;
             if (platform == "iOS") {
-              version = data.data.ios.version;
+              me.newVersion = data.data.ios.version;
+              me.url = data.data.ios.url;
               versionCode = data.data.ios.versionCode;
-              url = data.data.ios.url;
-            }
-            //111
-
-            if (me.versionCode < versionCode) {
-              me.hasNew = true;
-              me.url = url;
-              me.newVersion = version;
+              me.hasNewIOS = me.versionCode < versionCode;
             } else {
+              me.newVersion = data.data.android.version;
+              me.url = data.data.android.url;
+              versionCode = data.data.android.versionCode;
+              me.hasNewAndroid = me.versionCode < versionCode;
+            }
+
+            if (!me.hasNewIOS && !me.hasNewAndroid) {
               me.$f7.alert("", "已经是最新版本");
             }
           } else {
@@ -104,15 +114,7 @@ export default {
           me.$f7.alert(err, "版本检测失败");
         });
     },
-    download() {
-      var platform = this.$store.state.platform;
-      if (platform == "Android") {
-        this.androidDownload();
-      } else if (platform == "iOS") {
-        this.iosDownload();
-      }
-    },
-    androidDownload() {
+    androidDownload0() {
       var fileName = "modo." + this.newVersion + ".apk";
       var me = this;
       window.requestFileSystem(
@@ -169,21 +171,56 @@ export default {
         }
       );
     },
-    iosDownload() {   
-
-      const { OpenSchemeUrl } = window.cordova.plugins;
-      var url = "itms-apps://itunes.apple.com/no/app/youtube/id544007664";
-      url = "itms-apps://itunes.apple.com/app/id1359541945";
-      url = "itms-apps://itunes.apple.com/us/app/%E5%A2%A8%E6%96%97%E4%BA%91demo/id1359541945?l=zh&ls=1&mt=8"
-      OpenSchemeUrl.open(url,
-        () => {
-          console.log("URL opened successfully.");
+    androidDownload() {
+      var me = this;
+      var fileName = "modo." + this.newVersion + ".apk";
+      var localPath = cordova.file.applicationStorageDirectory + fileName;
+      var apkURL = encodeURI(me.url);
+      var fileTransfer = new FileTransfer();
+      fileTransfer.onprogress = function(progressEvent) {
+        if (progressEvent.lengthComputable) {
+          me.progress = Math.floor(
+            progressEvent.loaded / progressEvent.total * 100
+          );
+        }
+      };
+      me.isDownloading = true;
+      
+      fileTransfer.download(
+        apkURL,
+        localPath,
+        function(entry) {
+          me.isDownloading = false;
+          cordova.plugins.fileOpener2.open(
+            entry.toInternalURL(),
+            "application/vnd.android.package-archive",
+            {
+              error: function(e) {
+                me.$f7.alert("", "启动安装失败");
+              },
+              success: function() {}
+            }
+          );
         },
-        () => {
-          console.log("URL schema not handled.");
-          
+        function(error) {
+          me.$f7.alert("", "下载失败");
+          me.isDownloading = false;
         }
       );
+    },
+    iosDownload() {
+      // const { OpenSchemeUrl } = window.cordova.plugins;
+      // var url = "itms-apps://itunes.apple.com/no/app/youtube/id544007664";
+      // url = "itms-apps://itunes.apple.com/app/id1359541945";
+      // url = "itms-apps://itunes.apple.com/us/app/%E5%A2%A8%E6%96%97%E4%BA%91demo/id1359541945?l=zh&ls=1&mt=8"
+      // OpenSchemeUrl.open(url,
+      //   () => {
+      //     console.log("URL opened successfully.");
+      //   },
+      //   () => {
+      //     console.log("URL schema not handled.");
+      //   }
+      // );
     }
   }
 };

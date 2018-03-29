@@ -26,24 +26,22 @@ export default {
       var me = this;
 
       this.$f7.confirm(
-        "确定要退出当前账户吗？","",
+        "确定要退出当前账户吗？",
+        "",
         function() {
-          
           api
             .logout()
             .then(function(response) {
-              var data = response.data;
-              if (data.status === CONST.STATUS_SUCCESS) {
-                me.$router.back({
-                  url: "/login",
-                  force: true
-                });
-              } else {
-                me.$f7.alert("", data.msg);
-              }
+              me.$router.back({
+                url: "/login",
+                force: true
+              });
             })
             .catch(function(err) {
-              me.$f7.alert("", err);
+              me.$router.back({
+                url: "/login",
+                force: true
+              });
             });
         },
         function() {}

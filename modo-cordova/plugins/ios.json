@@ -19,13 +19,13 @@
     "cordova-plugin-file-transfer": {
       "PACKAGE_NAME": "com.modoucloud.appdemo"
     },
+    "cordova-plugin-open-scheme-url": {
+      "PACKAGE_NAME": "com.modoucloud.appdemo"
+    },
     "cordova-plugin-splashscreen": {
       "PACKAGE_NAME": "com.modoucloud.appdemo"
     },
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.modoucloud.appdemo"
-    },
-    "cordova-plugin-open-scheme-url": {
       "PACKAGE_NAME": "com.modoucloud.appdemo"
     }
   },
