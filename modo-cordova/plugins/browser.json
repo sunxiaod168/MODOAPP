@@ -8,25 +8,22 @@
   },
   "installed_plugins": {
     "cordova-plugin-device": {
-      "PACKAGE_NAME": "com.modoucloud.app"
+      "PACKAGE_NAME": "com.modoucloud.appdemo"
     },
     "cordova-plugin-file": {
-      "PACKAGE_NAME": "com.modoucloud.app"
+      "PACKAGE_NAME": "com.modoucloud.appdemo"
     },
     "cordova-plugin-file-opener2": {
-      "PACKAGE_NAME": "com.modoucloud.app"
+      "PACKAGE_NAME": "com.modoucloud.appdemo"
     },
     "cordova-plugin-file-transfer": {
-      "PACKAGE_NAME": "com.modoucloud.app"
+      "PACKAGE_NAME": "com.modoucloud.appdemo"
     },
     "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "com.modoucloud.app"
+      "PACKAGE_NAME": "com.modoucloud.appdemo"
     },
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.modoucloud.app"
-    },
-    "cordova-plugin-open-scheme-url": {
-      "PACKAGE_NAME": "com.modoucloud.app"
+      "PACKAGE_NAME": "com.modoucloud.appdemo"
     }
   },
   "dependent_plugins": {}
