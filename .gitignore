@@ -17,6 +17,6 @@ selenium-debug.log
 *.sln
 
 www/
-platforms/
+platforms
 !project.properties    
          
