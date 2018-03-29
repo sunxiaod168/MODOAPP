@@ -102,7 +102,6 @@ export default {
               versionCode = data.data.android.versionCode;
               me.hasNewAndroid = me.versionCode < versionCode;
             }
-
             if (!me.hasNewIOS && !me.hasNewAndroid) {
               me.$f7.alert("", "已经是最新版本");
             }
@@ -113,68 +112,11 @@ export default {
         .catch(function(err) {
           me.$f7.alert(err, "版本检测失败");
         });
-    },
-    androidDownload0() {
-      var fileName = "modo." + this.newVersion + ".apk";
-      var me = this;
-      window.requestFileSystem(
-        LocalFileSystem.PERSISTENT,
-        0,
-        function(fileSystem) {
-          fileSystem.root.getFile(
-            "download/" + fileName,
-            {
-              create: true,
-              exclusive: false
-            },
-            function(fileEntry) {
-              var localPath = fileEntry.toURL();
-              var apkURL = encodeURI(me.url);
-              var fileTransfer = new FileTransfer();
-              fileTransfer.onprogress = function(progressEvent) {
-                if (progressEvent.lengthComputable) {
-                  me.progress = Math.floor(
-                    progressEvent.loaded / progressEvent.total * 100
-                  );
-                }
-              };
-              me.isDownloading = true;
-              fileTransfer.download(
-                apkURL,
-                localPath,
-                function(entry) {
-                  me.isDownloading = false;
-                  cordova.plugins.fileOpener2.open(
-                    entry.toInternalURL(),
-                    "application/vnd.android.package-archive",
-                    {
-                      error: function(e) {
-                        me.$f7.alert("", "启动安装失败");
-                      },
-                      success: function() {}
-                    }
-                  );
-                },
-                function(error) {
-                  me.$f7.alert("", "下载失败");
-                  me.isDownloading = false;
-                }
-              );
-            },
-            function(error) {
-              me.$f7.alert("", "下载失败");
-            }
-          );
-        },
-        function(error) {
-          me.$f7.alert("", "下载失败");
-        }
-      );
-    },
+    }, 
     androidDownload() {
       var me = this;
-      var fileName = "modo." + this.newVersion + ".apk";
-      var localPath = cordova.file.applicationStorageDirectory + fileName;
+      var fileName = "modouapp.apk";
+      var localPath = cordova.file.dataDirectory + fileName;
       var apkURL = encodeURI(me.url);
       var fileTransfer = new FileTransfer();
       fileTransfer.onprogress = function(progressEvent) {
@@ -184,8 +126,7 @@ export default {
           );
         }
       };
-      me.isDownloading = true;
-      
+      me.isDownloading = true;      
       fileTransfer.download(
         apkURL,
         localPath,
@@ -198,7 +139,9 @@ export default {
               error: function(e) {
                 me.$f7.alert("", "启动安装失败");
               },
-              success: function() {}
+              success: function() {
+
+              }
             }
           );
         },
@@ -207,21 +150,7 @@ export default {
           me.isDownloading = false;
         }
       );
-    },
-    iosDownload() {
-      // const { OpenSchemeUrl } = window.cordova.plugins;
-      // var url = "itms-apps://itunes.apple.com/no/app/youtube/id544007664";
-      // url = "itms-apps://itunes.apple.com/app/id1359541945";
-      // url = "itms-apps://itunes.apple.com/us/app/%E5%A2%A8%E6%96%97%E4%BA%91demo/id1359541945?l=zh&ls=1&mt=8"
-      // OpenSchemeUrl.open(url,
-      //   () => {
-      //     console.log("URL opened successfully.");
-      //   },
-      //   () => {
-      //     console.log("URL schema not handled.");
-      //   }
-      // );
-    }
+    } 
   }
 };
 </script>
