@@ -1,6 +1,6 @@
 <template>
 
-  <f7-page login-scree name="login" class="start-bg">
+  <f7-page login-scree name="login" class="start-bg"  @page:beforeanimation="hideNavbar">
 
     <f7-list>
       <f7-list-item>
@@ -76,6 +76,10 @@ export default {
     };
   },
   methods: {
+    hideNavbar(){
+      
+      this.$f7.hideNavbar('.navbar', false);
+    },
     login() {
       var me = this;
       api
@@ -85,6 +89,7 @@ export default {
 
           if (data.status === CONST.STATUS_SUCCESS) {
             me.$store.commit("setUserInfo", data.data);
+            me.$store.commit("setDeviceInfo");
             me.$router.load({ url: "/tabbar/", pushState: false });
           } else {
             me.msg = data.msg;

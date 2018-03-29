@@ -46,5 +46,13 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "cordova-plugin-open-scheme-url": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-open-scheme-url"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

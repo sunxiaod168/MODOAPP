@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin id="cordova-plugin-open-scheme-url" version="1.0.14" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>OpenAppSettings</name>
+    <description>Open a scheme url/deep link.</description>
+    <keywords>cordova,open,scheme,url,deep,link</keywords>
+    <js-module name="OpenSchemeUrl" src="www/OpenSchemeUrl.js">
+        <clobbers target="cordova.plugins.OpenSchemeUrl" />
+    </js-module>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="OpenSchemeUrl">
+                <param name="ios-package" value="OpenSchemeUrl" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/OpenSchemeUrl.h" />
+        <source-file src="src/ios/OpenSchemeUrl.m" />
+    </platform>
+
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="OpenSchemeUrl">
+                <param name="android-package" value="no.amphibian.openschemeurl.OpenSchemeUrl" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/OpenSchemeUrl.java" target-dir="src/no/amphibian/openschemeurl" />
+    </platform>
+</plugin>
