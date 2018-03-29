@@ -17,7 +17,7 @@ selenium-debug.log
 *.sln
 
 www/
-platforms/
-!platforms/android/
-!platforms/android/project.properties    
+# platforms/
+# !platforms/android/
+# !platforms/android/project.properties    
          
