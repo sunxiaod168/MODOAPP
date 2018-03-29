@@ -18,5 +18,5 @@ selenium-debug.log
 
 www/
 platforms/
-!android/project.properties    
+!project.properties    
          
