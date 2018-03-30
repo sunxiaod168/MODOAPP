@@ -23,9 +23,7 @@ import Directives from 'directives'
 
 Vue.use(Framework7Vue)
 Vue.component("chart", ECharts);
-
-
-new Vue({
+var vm =  new Vue({
 	el: '#app',
 	components: {
 		app
@@ -53,4 +51,6 @@ new Vue({
 		}
 	}	
 })
+
+window.vm = vm;
 

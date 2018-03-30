@@ -120,19 +120,19 @@ export default {
             me.isLoading = false;
             reject(err);
            
-            if (err.response) {
-              var status = err.response.status;
-              if (err.response.status == 403) {
-                me.$router.back({
-                  url: "/login",
-                  force: true
-                });
-              }
-            } else if (err.request) {
+            // if (err.response) {
+            //   var status = err.response.status;
+            //   if (err.response.status == 403) {
+            //     me.$router.back({
+            //       url: "/login",
+            //       force: true
+            //     });
+            //   }
+            // } else if (err.request) {
 
-            } else {
+            // } else {
               
-            }
+            // }
           });
       });
     },
