@@ -24,6 +24,9 @@
     },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.modoucloud.appdemo"
+    },
+    "cordova-plugin-fileopener": {
+      "PACKAGE_NAME": "com.modoucloud.appdemo"
     }
   },
   "dependent_plugins": {}

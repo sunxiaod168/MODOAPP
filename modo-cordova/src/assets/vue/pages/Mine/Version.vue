@@ -112,7 +112,7 @@ export default {
         .catch(function(err) {
           me.$f7.alert(err, "版本检测失败");
         });
-    }, 
+    },
     androidDownload() {
       var me = this;
       var fileName = "modouapp.apk";
@@ -126,12 +126,13 @@ export default {
           );
         }
       };
-      me.isDownloading = true;      
+      me.isDownloading = true;
       fileTransfer.download(
         apkURL,
         localPath,
         function(entry) {
           me.isDownloading = false;
+
           cordova.plugins.fileOpener2.open(
             entry.toInternalURL(),
             "application/vnd.android.package-archive",
@@ -139,18 +140,18 @@ export default {
               error: function(e) {
                 me.$f7.alert("", "启动安装失败");
               },
-              success: function() {
-
-              }
+              success: function() {}
             }
           );
+
+          
         },
         function(error) {
           me.$f7.alert("", "下载失败");
           me.isDownloading = false;
         }
       );
-    } 
+    }
   }
 };
 </script>
