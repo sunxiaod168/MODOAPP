@@ -59,7 +59,7 @@ export const PermissionMap = [
 	{ id: 14, key: Permissions.MINE_PROFILE },
 	{ id: 15, key: Permissions.MINE_CHANGE_PASSWORD },
 	{ id: 16, key: Permissions.MINE_ABOUT },
-	{ id: 18, key: Permissions.MINE_VERSION }
+	{ id: 17, key: Permissions.MINE_VERSION }
 ]
 
 export const MonthNames = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
