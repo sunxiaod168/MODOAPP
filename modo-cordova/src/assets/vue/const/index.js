@@ -9,9 +9,9 @@ export default {
 	NAV_TITLE_DELIVERY: '配送进度',
 	NAV_TITLE_MINE: '我的',
 
-	VERSION: '1.0.0',
-	VERSION_CODE: 100,
-	VERSION_DATE: '2018-2-1'
+	VERSION: '1.0.1',
+	VERSION_CODE: 101,
+	VERSION_DATE: '2018-04-10'
 }
 
 export const Permissions = {
