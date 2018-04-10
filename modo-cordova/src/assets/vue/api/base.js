@@ -2,8 +2,8 @@ import axios from 'axios'
 import store from 'state'
 
 var base = axios.create({
-  baseURL: 'http://localhost:5795/api/',
-  // baseURL: 'https://appdemo.modoucloud.com/api/',
+  // baseURL: 'http://localhost:5795/api/',
+  baseURL: 'https://appp.modoucloud.com/api/',
   timeout: 1000 * 60 * 2
 })
 
