@@ -89,9 +89,9 @@
             "cordova-plugin-file-opener2": {}
         },
         "platforms": [
-            "android",
             "ios",
-            "browser"
+            "browser",
+            "android"
         ]
     }
 }
