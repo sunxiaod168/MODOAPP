@@ -46,20 +46,19 @@ export const PermissionMap = [
 	{ id: 4, key: Permissions.QUERY_ORDER_PROGRESS },
 
 	{ id: 5, key: Permissions.STAT_ASSET },
-	{ id: 6, key: Permissions.STAT_ACHIEVEMENT },
-	{ id: 7, key: Permissions.STAT_INCOME_EXPENSES },
-	{ id: 8, key: Permissions.STAT_INVENTORY },
-	{ id: 9, key: Permissions.STAT_PROFIT_ACCOUNTING },
-	{ id: 10, key: Permissions.STAT_UNFINISH_ORDER },
+	{ id: 6, key: Permissions.STAT_PROFIT_ACCOUNTING },
+	{ id: 7, key: Permissions.STAT_ORDER },
+	{ id: 8, key: Permissions.STAT_ACHIEVEMENT },
+	{ id: 9, key: Permissions.STAT_INVENTORY },
+	{ id: 10, key: Permissions.STAT_INCOME_EXPENSES },
 
-	{ id: 11, key: Permissions.DELIVERY_DELIVERY_REPORT },
-	{ id: 12, key: Permissions.DELIVERY_INSTALL_PLAN },
+	{ id: 11, key: Permissions.DELIVERY_INSTALL_PLAN },
+	{ id: 12, key: Permissions.DELIVERY_DELIVERY_REPORT },
 	{ id: 13, key: Permissions.DELIVERY_INSTALL_REPORT },
 
-	{ id: 14, key: Permissions.MINE_ABOUT },
+	{ id: 14, key: Permissions.MINE_PROFILE },
 	{ id: 15, key: Permissions.MINE_CHANGE_PASSWORD },
-	{ id: 16, key: Permissions.MINE_FIND_PASSWORD },
-	{ id: 17, key: Permissions.MINE_PROFILE },
+	{ id: 16, key: Permissions.MINE_ABOUT },
 	{ id: 18, key: Permissions.MINE_VERSION }
 ]
 
